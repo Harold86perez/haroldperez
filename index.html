@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harold Pérez — Psicólogo</title>
+  <meta name="description" content="Psicología basada en evidencia, no en autoayuda. Triple perfil clínico, educativo y social. Pereira, Colombia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO PRINCIPAL ── */
+    #hero {
+      min-height: 100vh;
+      background: var(--tinta);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(74,107,90,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(74,107,90,0.06) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--salvia-light);
+      border: 1px solid rgba(107,155,122,0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--salvia-light);
+      border-radius: 50%;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.0;
+      color: var(--blanco);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--salvia-light);
+      font-weight: 400;
+      display: block;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-style: italic;
+      color: rgba(250,250,248,0.45);
+      margin-bottom: 2rem;
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .hero-perfiles {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .perfil-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(250,250,248,0.5);
+      padding: 0.4rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 2px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--tinta-soft);
+    }
+
+    .hero-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(20%) contrast(1.05);
+      display: block;
+    }
+
+    .hero-photo-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(26,26,46,0.6) 100%
+      );
+    }
+
+    .hero-photo-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: var(--salvia);
+      padding: 1.25rem 1.5rem;
+      border-radius: 4px;
+      z-index: 2;
+    }
+
+    .hero-photo-badge p {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--blanco);
+      line-height: 1;
+    }
+
+    .hero-photo-badge span {
+      font-size: 0.7rem;
+      color: rgba(250,250,248,0.7);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-line {
+      width: 1px;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+      margin: 0 auto;
+    }
+
+    /* ── CIFRAS ── */
+    #cifras {
+      background: var(--arena);
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--gris-claro);
+    }
+
+    .cifras-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .cifra-item {
+      padding: 2rem 2.5rem;
+      border-right: 1px solid var(--gris-claro);
+    }
+
+    .cifra-item:last-child { border-right: none; }
+
+    .cifra-numero {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--tinta);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .cifra-label {
+      font-size: 0.78rem;
+      color: var(--gris);
+      line-height: 1.5;
+      max-width: 140px;
+    }
+
+    /* ── SERVICIOS OVERVIEW ── */
+    #servicios {
+      padding: 7rem 0;
+      background: var(--blanco);
+    }
+
+    .servicios-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .servicios-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--gris-claro);
+      border: 1.5px solid var(--gris-claro);
+    }
+
+    .servicio-card {
+      background: var(--blanco);
+      padding: 2.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.25s;
+      display: block;
+    }
+
+    .servicio-card:hover { background: var(--tinta); }
+    .servicio-card:hover .sc-num { color: var(--salvia-light); }
+    .servicio-card:hover .sc-title { color: var(--blanco); }
+    .servicio-card:hover .sc-desc { color: rgba(250,250,248,0.5); }
+    .servicio-card:hover .sc-link { color: var(--salvia-light); }
+
+    .sc-num {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--gris-claro);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      transition: color 0.25s;
+    }
+
+    .sc-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--tinta);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+      transition: color 0.25s;
+    }
+
+    .sc-desc {
+      font-size: 0.85rem;
+      color: var(--gris);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      transition: color 0.25s;
+    }
+
+    .sc-link {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--salvia);
+      transition: color 0.25s;
+    }
+
+    /* ── SOBRE HAROLD ── */
+    #sobre {
+      background: var(--tinta);
+      padding: 7rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #sobre::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse 50% 80% at 0% 50%, rgba(74,107,90,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sobre-perfiles {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .sobre-perfil {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.2s;
+    }
+
+    .sobre-perfil:last-child { border-bottom: none; }
+    .sobre-perfil:hover { background: rgba(255,255,255,0.03); }
+
+    .sp-titulo {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--salvia-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .sp-desc {
+      font-size: 0.88rem;
+      color: rgba(250,250,248,0.5);
+      line-height: 1.7;
+    }
+
+    .sobre-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--blanco);
+      line-height: 1.4;
+      margin-bottom: 2.5rem;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--salvia);
+    }
+
+    .sobre-bio {
+      font-size: 0.92rem;
+      color: rgba(250,250,248,0.55);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    /* ── TESTIMONIOS ── */
+    #testimonios {
+      background: var(--arena);
+      padding: 7rem 0;
+    }
+
+    .test-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .test-card {
+      background: var(--blanco);
+      padding: 2.5rem;
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .test-marca {
+      font-family: var(--font-display);
+      font-size: 4rem;
+      color: var(--salvia);
+      line-height: 1;
+      margin-bottom: 1rem;
+      opacity: 0.4;
+    }
+
+    .test-texto {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--tinta);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .test-sep {
+      width: 30px;
+      height: 1.5px;
+      background: var(--salvia);
+      margin-bottom: 1rem;
+    }
+
+    .test-autor {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tinta);
+      margin-bottom: 0.2rem;
+    }
+
+    .test-cargo {
+      font-size: 0.78rem;
+      color: var(--gris);
+    }
+
+    /* ── CTA FINAL ── */
+    #cta-final {
+      background: var(--tinta);
+      padding: 7rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(74,107,90,0.15) 0%, transparent 70%);
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-inner .display-title {
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-inner .lead-light {
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-photo-wrap { display: none; }
+      .cifras-grid { grid-template-columns: 1fr 1fr; }
+      .cifra-item { border-right: none; border-bottom: 1px solid var(--gris-claro); }
+      .servicios-header { grid-template-columns: 1fr; gap: 2rem; }
+      .servicios-cards { grid-template-columns: 1fr; }
+      .sobre-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .test-header { grid-template-columns: 1fr; gap: 2rem; }
+      .test-grid { grid-template-columns: 1fr; }
+      #hero, #servicios, #sobre, #testimonios, #cta-final { padding-top: 5rem; padding-bottom: 5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="proser/">ProSer</a></li>
+    <li><a href="academia/">Academia</a></li>
+    <li><a href="organizacional/">Organizacional</a></li>
+    <li><a href="contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">Psicólogo · Pereira, Colombia</div>
+        <h1 class="hero-title">
+          Harold Pérez
+          <em>Psicólogo</em>
+        </h1>
+        <p class="hero-tagline">Psicología basada en evidencia,<br>no en autoayuda.</p>
+        <div class="hero-perfiles">
+          <span class="perfil-tag">Clínico</span>
+          <span class="perfil-tag">Educativo</span>
+          <span class="perfil-tag">Social</span>
+          <span class="perfil-tag">ACT · DBT · TCC</span>
+        </div>
+        <div class="hero-actions">
+          <a href="https://wa.me/573054303746?text=Hola%20Harold,%20quiero%20agendar%20una%20consulta" class="btn-primary" target="_blank">Agenda tu consulta</a>
+          <a href="#sobre" class="btn-outline">Conoce más</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-frame">
+          <img src="harold.png" alt="Harold Pérez — Psicólogo" />
+        </div>
+        <div class="hero-photo-badge">
+          <p>16+</p>
+          <span>Años de experiencia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIFRAS -->
+<section id="cifras">
+  <div class="container">
+    <div class="cifras-grid">
+      <div class="cifra-item">
+        <div class="cifra-numero">16+</div>
+        <p class="cifra-label">Años de experiencia clínica y organizacional</p>
+      </div>
+      <div class="cifra-item">
+        <div class="cifra-numero">2</div>
+        <p class="cifra-label">Maestrías en Psicoterapia e Intervención Social</p>
+      </div>
+      <div class="cifra-item">
+        <div class="cifra-numero">3</div>
+        <p class="cifra-label">Perfiles profesionales: clínico, educativo y social</p>
+      </div>
+      <div class="cifra-item">
+        <div class="cifra-numero">ACT</div>
+        <p class="cifra-label">DBT · TCC — marcos con mayor respaldo empírico</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS OVERVIEW -->
+<section id="servicios">
+  <div class="container">
+    <div class="servicios-header">
+      <div>
+        <span class="eyebrow">Lo que ofrezco</span>
+        <h2 class="section-title">Tres líneas de<br>trabajo <em>especializadas</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">Cada línea opera con su propia metodología, pero comparten un principio común: intervención basada en evidencia, orientada a resultados concretos y medibles.</p>
+      </div>
+    </div>
+    <div class="servicios-cards">
+      <a href="proser/" class="servicio-card">
+        <p class="sc-num">01</p>
+        <h3 class="sc-title">ProSer — Clínico</h3>
+        <p class="sc-desc">Consulta psicológica individual, de pareja y familiar. Intervención en crisis, duelo, ansiedad y procesos de cambio. Presencial en Pereira y virtual.</p>
+        <span class="sc-link">Ver servicios</span>
+      </a>
+      <a href="academia/" class="servicio-card">
+        <p class="sc-num">02</p>
+        <h3 class="sc-title">Academia</h3>
+        <p class="sc-desc">Talleres, cursos y recursos formativos para personas que quieren entender cómo funciona su mente. Psicología aplicada a la vida cotidiana.</p>
+        <span class="sc-link">Ver oferta formativa</span>
+      </a>
+      <a href="organizacional/" class="servicio-card">
+        <p class="sc-num">03</p>
+        <h3 class="sc-title">Organizacional</h3>
+        <p class="sc-desc">Diagnóstico de riesgo psicosocial, talleres corporativos, programas de bienestar y membresía para empresas. Cumplimiento normativo y resultados medibles.</p>
+        <span class="sc-link">Ver servicios</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE HAROLD -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div>
+        <span class="eyebrow-light">Sobre mí</span>
+        <blockquote class="sobre-quote">No hago motivación vacía. Hago psicología que funciona y que se puede medir.</blockquote>
+        <p class="sobre-bio">Soy psicólogo con triple perfil profesional y más de 16 años de experiencia en contextos de alta complejidad — clínica, instituciones educativas, comunidades vulnerables y entornos de posconflicto.</p>
+        <p class="sobre-bio">Mi trabajo se basa en los marcos con mayor evidencia empírica disponible: Terapia de Aceptación y Compromiso (ACT), Terapia Dialéctico Conductual (DBT) y Terapia Cognitivo Conductual (TCC).</p>
+        <p class="sobre-bio">Con base en Pereira, Eje Cafetero. Atención presencial y virtual para toda Colombia.</p>
+        <br>
+        <a href="contacto/" class="btn-outline">Contactar</a>
+      </div>
+      <div>
+        <div class="sobre-perfiles">
+          <div class="sobre-perfil">
+            <p class="sp-titulo">Perfil Clínico</p>
+            <p class="sp-desc">Terapia individual, de pareja y familiar. ACT, DBT y mindfulness aplicado. Intervención en crisis, trauma, duelo y procesos de cambio.</p>
+          </div>
+          <div class="sobre-perfil">
+            <p class="sp-titulo">Perfil Educativo</p>
+            <p class="sp-desc">Orientación vocacional, bienestar socioemocional escolar, formación docente en salud mental y evaluación neuropsicológica.</p>
+          </div>
+          <div class="sobre-perfil">
+            <p class="sp-titulo">Perfil Social</p>
+            <p class="sp-desc">Intervención comunitaria, cooperación internacional, proyectos con poblaciones vulnerables y contextos de posconflicto.</p>
+          </div>
+          <div class="sobre-perfil">
+            <p class="sp-titulo">Formación</p>
+            <p class="sp-desc">Maestría en Psicoterapias de Tercera Generación. Maestría en Intervención Social. Tarjeta profesional COLPSIC vigente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios">
+  <div class="container">
+    <div class="test-header">
+      <div>
+        <span class="eyebrow">Testimonios</span>
+        <h2 class="section-title">Lo que dicen<br>quienes <em>ya lo vivieron</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">Resultados reales de procesos reales. Cada testimonio refleja un proceso de cambio genuino, acompañado con rigor y calidez.</p>
+      </div>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="test-marca">"</div>
+        <p class="test-texto">El equipo de ProSer nos dio herramientas concretas que cambiaron la forma en que nuestros colaboradores manejan el estrés. Los resultados fueron visibles desde el primer mes.</p>
+        <div class="test-sep"></div>
+        <p class="test-autor">Gerente de Talento Humano</p>
+        <p class="test-cargo">Empresa de servicios · Dosquebradas</p>
+      </div>
+      <div class="test-card">
+        <div class="test-marca">"</div>
+        <p class="test-texto">Lo que más me sorprendió de ProSer fue que no me dieron frases de motivación — me dieron herramientas reales que puedo usar en mi día a día. El proceso fue claro, honesto y efectivo.</p>
+        <div class="test-sep"></div>
+        <p class="test-autor">Paciente individual</p>
+        <p class="test-cargo">Proceso clínico · Pereira</p>
+      </div>
+      <div class="test-card">
+        <div class="test-marca">"</div>
+        <p class="test-texto">El diagnóstico de riesgo psicosocial que realizó ProSer fue riguroso y el informe fue accionable. Por primera vez tuvimos una imagen real de lo que estaba pasando en el equipo.</p>
+        <div class="test-sep"></div>
+        <p class="test-autor">Director de Operaciones</p>
+        <p class="test-cargo">Empresa industrial · Pereira</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="eyebrow-light">El primer paso</span>
+      <h2 class="display-title">¿Listo para<br><em>empezar?</em></h2>
+      <p class="lead-light">Una conversación de 20 minutos es suficiente para entender qué tipo de acompañamiento necesitas. Sin compromiso, sin presión.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20una%20conversación%20diagnóstica" class="btn-primary" target="_blank">Escribir por WhatsApp</a>
+        <a href="contacto/" class="btn-outline">Ver todas las opciones</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="proser/">ProSer — Clínico</a>
+        <a href="academia/">Academia</a>
+        <a href="organizacional/">Organizacional</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="contacto/">Formulario de contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>
