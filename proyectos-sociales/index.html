@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos Sociales — Harold Pérez</title>
+  <meta name="description" content="Proyectos sociales de ProSer: Salud Mental, Súper Pás y Más, Un Juguete Una Sonrisa, Unidos Somos Útiles. Sé voluntario o donante." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── INTRO ── */
+    #intro { background: var(--blanco); padding: 7rem 0; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
+    .participar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .participar-card { background: var(--arena); border: 1px solid var(--gris-claro); padding: 2.25rem; }
+    .pc-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--salvia); margin-bottom: 0.75rem; display: block; }
+    .pc-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.75rem; }
+    .pc-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.8; margin-bottom: 1.5rem; }
+
+    /* ── PROYECTOS ── */
+    .proyecto-bloque { padding: 7rem 0; }
+    .pb-blanco { background: var(--blanco); }
+    .pb-arena  { background: var(--arena); }
+    .pb-tinta  { background: var(--tinta); position: relative; overflow: hidden; }
+    .pb-tinta::before { content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(61,122,85,0.1) 0%, transparent 70%); pointer-events: none; }
+
+    .py-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+    .py-grid.reverse { direction: rtl; }
+    .py-grid.reverse > * { direction: ltr; }
+
+    .py-visual { padding: 3.5rem; min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+    .pv-salud  { background: var(--tinta); }
+    .pv-superpas { background: var(--tinta-soft); }
+    .pv-juguete { background: var(--salvia); }
+    .pv-unidos  { background: var(--tinta); }
+
+    /* Accent lines using Harold palette */
+    .pv-salud::after    { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--salvia-light); }
+    .pv-superpas::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--salvia); }
+    .pv-juguete::after  { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: rgba(255,255,255,0.4); }
+    .pv-unidos::after   { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--salvia-light); }
+
+    .py-visual-bg { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 24px 24px; }
+    .py-visual-num { font-family: var(--font-display); font-size: 9rem; font-weight: 600; color: rgba(255,255,255,0.04); position: absolute; top: 0; right: 1.5rem; line-height: 1; }
+    .py-visual-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,250,248,0.45); margin-bottom: 0.5rem; position: relative; z-index: 1; }
+    .pv-juguete .py-visual-label { color: rgba(255,255,255,0.6); }
+    .py-visual-title { font-family: var(--font-display); font-size: 2.25rem; font-weight: 600; color: var(--blanco); line-height: 1.1; position: relative; z-index: 1; }
+    .py-visual-title em { font-style: italic; font-weight: 300; color: var(--salvia-light); }
+    .pv-juguete .py-visual-title em { color: rgba(255,255,255,0.75); }
+
+    .py-content {}
+    .py-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--salvia); margin-bottom: 1rem; display: block; }
+    .py-eyebrow-light { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--salvia-light); margin-bottom: 1rem; display: block; }
+    .py-title { font-family: var(--font-display); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 600; color: var(--tinta); line-height: 1.1; margin-bottom: 1rem; }
+    .py-title em { font-style: italic; font-weight: 400; color: var(--salvia); }
+    .py-title-light { font-family: var(--font-display); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 600; color: var(--blanco); line-height: 1.1; margin-bottom: 1rem; }
+    .py-title-light em { font-style: italic; font-weight: 300; color: var(--salvia-light); }
+    .py-divider { width: 40px; height: 2px; background: var(--salvia); margin-bottom: 1.5rem; }
+    .py-divider-light { width: 40px; height: 2px; background: var(--salvia-light); margin-bottom: 1.5rem; }
+    .py-desc { font-size: 0.9rem; color: var(--gris); line-height: 1.9; margin-bottom: 1rem; }
+    .py-desc-light { font-size: 0.9rem; color: rgba(250,250,248,0.55); line-height: 1.9; margin-bottom: 1rem; }
+    .py-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+    /* ── DONACIONES ── */
+    #donaciones { background: var(--tinta); padding: 7rem 0; position: relative; overflow: hidden; }
+    #donaciones::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(61,122,85,0.1) 0%, transparent 70%); }
+    .don-inner { position: relative; z-index: 1; }
+    .don-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .don-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .don-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; }
+    .don-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--salvia-light); margin-bottom: 0.75rem; }
+    .don-desc { font-size: 0.84rem; color: rgba(250,250,248,0.5); line-height: 1.75; }
+
+    .py-visual::before { content:''; position:absolute; inset:0; background:rgba(26,26,46,0.65); z-index:0; }
+    .py-visual-bg, .py-visual-num, .py-visual-label, .py-visual-title { position:relative; z-index:1; }
+    .py-visual-bg { display:none; }
+    @media (max-width: 768px) {
+      .intro-grid, .participar-grid, .don-header, .don-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .py-grid, .py-grid.reverse { grid-template-columns: 1fr; gap: 3rem; direction: ltr; }
+    }
+  </style>
+  <link rel="canonical" href="https://haroldperez.com/proyectos-sociales/" />
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/proyectos-sociales/" style="color:var(--blanco)">Proyectos</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow-light">Proyectos sociales</span>
+    <h1 class="display-title">Con tu ayuda,<br><em>todo es posible</em></h1>
+    <div class="divider-light" style="margin-top:2rem;"></div>
+    <p class="lead-light" style="margin-top:1.5rem;">Con ProSer trabajamos proyectos de impacto comunitario que van más allá de la consulta. Puedes ser parte como voluntario o donante — tu aporte cambia vidas reales.</p>
+  </div>
+</section>
+
+<!-- INTRO PARTICIPAR -->
+<section id="intro">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="eyebrow">Cómo participar</span>
+        <h2 class="section-title">Voluntariado<br>y <em>donaciones</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">Tu participación como voluntario o donante es invaluable. Con tu ayuda seguimos trabajando en pro de la salud mental y el bienestar de las personas que más lo necesitan.</p>
+      </div>
+    </div>
+    <div class="participar-grid">
+      <div class="participar-card">
+        <span class="pc-label">Voluntariado</span>
+        <h3 class="pc-title">Dona tu tiempo y talento</h3>
+        <p class="pc-desc">Si deseas brindar tu tiempo, habilidades y conocimientos, puedes unirte a nuestro equipo de voluntarios. Acompañamiento terapéutico, apoyo en proyectos sociales, asistencia en capacitaciones y más.</p>
+        <a href="https://wa.me/573054303746?text=Quiero%20ser%20voluntario%20en%20los%20proyectos%20sociales" class="btn-dark" target="_blank">Quiero ser voluntario</a>
+      </div>
+      <div class="participar-card">
+        <span class="pc-label" style="color:var(--tinta)">Donaciones</span>
+        <h3 class="pc-title">Apoya económicamente</h3>
+        <p class="pc-desc">Recibimos dinero por transferencia bancaria, juguetes nuevos, implementos y útiles escolares nuevos. Por tu donación recibes un certificado como donante. Tu información siempre es tratada con confidencialidad.</p>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20hacer%20una%20donación%20a%20los%20proyectos%20sociales" class="btn-dark" target="_blank">Quiero donar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALUD MENTAL -->
+<section class="proyecto-bloque pb-arena" id="salud-mental">
+  <div class="container">
+    <div class="py-grid">
+      <div class="py-visual pv-salud" style="background-image:url(../img-salud-mental.jpg);background-size:cover;background-position:center;">
+        <div class="py-visual-bg"></div>
+        <div class="py-visual-num">01</div>
+        <p class="py-visual-label">Proyecto 01</p>
+        <h2 class="py-visual-title">Salud <em>Mental</em></h2>
+      </div>
+      <div class="py-content">
+        <span class="py-eyebrow">Proyecto de Salud Mental</span>
+        <h2 class="py-title">Acompañamiento para<br>quienes más <em>lo necesitan</em></h2>
+        <div class="py-divider"></div>
+        <p class="py-desc">Con tu aporte como psicólogo voluntario o como donante, brindamos acompañamiento psicosocial a niños, niñas y adolescentes de los estratos más bajos — a nivel individual y grupal.</p>
+        <p class="py-desc">Este proyecto garantiza acceso a atención psicológica de calidad para poblaciones que, por sus condiciones socioeconómicas, no podrían acceder a ella de otra manera.</p>
+        <div class="py-actions">
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20hacer%20parte%20del%20proyecto%20de%20Salud%20Mental" class="btn-dark" target="_blank">Hacer parte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SÚPER PÁS -->
+<section class="proyecto-bloque pb-blanco" id="superpas">
+  <div class="container">
+    <div class="py-grid reverse">
+      <div class="py-visual pv-superpas" style="background-image:url(../img-superpas.jpg);background-size:cover;background-position:center;">
+        <div class="py-visual-bg"></div>
+        <div class="py-visual-num">02</div>
+        <p class="py-visual-label">Proyecto 02</p>
+        <h2 class="py-visual-title">Súper Pás <em>y Más</em></h2>
+      </div>
+      <div class="py-content">
+        <span class="py-eyebrow">Proyecto Súper Pás y Más</span>
+        <h2 class="py-title">Apoyo para padres,<br>madres y <em>cuidadores</em></h2>
+        <div class="py-divider"></div>
+        <p class="py-desc">Un grupo de apoyo para padres, madres y cuidadores que facilita encuentros virtuales y presenciales. Un espacio para el diálogo, el compartir de experiencias y la formación práctica en crianza.</p>
+        <p class="py-desc">Explicaciones teóricas que aportan al ejercicio de la crianza, con respaldo científico y un tono cálido y cercano.</p>
+        <div class="py-actions">
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20hacer%20parte%20del%20proyecto%20Súper%20Pás%20y%20Más" class="btn-dark" target="_blank">Hacer parte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UN JUGUETE -->
+<section class="proyecto-bloque pb-arena" id="juguete">
+  <div class="container">
+    <div class="py-grid">
+      <div class="py-visual pv-juguete" style="background-image:url(../img-juguete.jpg);background-size:cover;background-position:center;">
+        <div class="py-visual-bg"></div>
+        <div class="py-visual-num">03</div>
+        <p class="py-visual-label">Proyecto 03</p>
+        <h2 class="py-visual-title">Un Juguete,<br><em>Una Sonrisa</em></h2>
+      </div>
+      <div class="py-content">
+        <span class="py-eyebrow">Proyecto Un Juguete, Una Sonrisa</span>
+        <h2 class="py-title">Cambiamos juguetes<br>por <em>sonrisas</em></h2>
+        <div class="py-divider"></div>
+        <p class="py-desc">Con tu aporte cambiamos juguetes por sonrisas en diferentes regiones del país. Puedes aportar uno o varios juguetes nuevos y contribuir a la felicidad de quien no los tiene.</p>
+        <p class="py-desc">El juego es un derecho fundamental de la infancia. Este proyecto llega a niños y niñas en zonas vulnerables llevando alegría y reconocimiento.</p>
+        <div class="py-actions">
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20hacer%20parte%20del%20proyecto%20Un%20Juguete%20Una%20Sonrisa" class="btn-dark" target="_blank">Hacer parte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIDOS SOMOS ÚTILES -->
+<section class="proyecto-bloque pb-tinta" id="unidos">
+  <div class="container">
+    <div class="py-grid reverse">
+      <div class="py-visual pv-unidos" style="background-image:url(../img-unidos.jpg);background-size:cover;background-position:center;">
+        <div class="py-visual-bg"></div>
+        <div class="py-visual-num">04</div>
+        <p class="py-visual-label">Proyecto 04</p>
+        <h2 class="py-visual-title">Unidos <em>Somos</em><br>Útiles</h2>
+      </div>
+      <div>
+        <span class="py-eyebrow-light">Proyecto Unidos Somos Útiles</span>
+        <h2 class="py-title-light">Implementos escolares<br>para quienes <em>más los necesitan</em></h2>
+        <div class="py-divider-light"></div>
+        <p class="py-desc-light">Con tu aporte llevamos motivación a niños, niñas y adolescentes de escasos recursos para que vayan a la escuela con los implementos necesarios para su aprendizaje.</p>
+        <p class="py-desc-light">La educación es la herramienta más poderosa de transformación social. Juntos garantizamos que ningún niño se quede sin estudiar por falta de útiles escolares.</p>
+        <div class="py-actions">
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20hacer%20parte%20del%20proyecto%20Unidos%20Somos%20Útiles" class="btn-outline" target="_blank">Hacer parte</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONACIONES -->
+<section id="donaciones">
+  <div class="container">
+    <div class="don-inner">
+      <div class="don-header">
+        <div>
+          <span class="eyebrow-light">Cómo donar</span>
+          <h2 class="section-title-light">Tu donación llega<br><em>a quien la necesita</em></h2>
+        </div>
+        <div>
+          <div class="divider-light"></div>
+          <p class="lead-light">Ser donante es muy sencillo y lo puedes hacer como persona natural o como empresa. Tu información siempre será tratada con la seguridad y el respeto que te mereces.</p>
+        </div>
+      </div>
+      <div class="don-grid">
+        <div class="don-card">
+          <p class="don-title">Tipos de donación</p>
+          <p class="don-desc">Recibimos dinero por transferencia bancaria, juguetes nuevos, implementos y útiles escolares nuevos. Puedes donar una o varias veces. Todas las donaciones en especie deben ser artículos nuevos.</p>
+        </div>
+        <div class="don-card">
+          <p class="don-title">Certificado de donante</p>
+          <p class="don-desc">Por tu donación recibes un certificado como donante. Estarás enterado de cómo se entrega tu donación a través de tu correo electrónico y nuestras redes sociales.</p>
+        </div>
+        <div class="don-card">
+          <p class="don-title">Contacto para donar</p>
+          <p class="don-desc">Escríbenos por WhatsApp al +57 310 370 0817 o al correo info@prosercps.org y te explicamos el proceso paso a paso.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="https://wa.me/573103700817?text=Hola,%20quiero%20hacer%20una%20donación%20a%20los%20proyectos%20sociales" class="btn-primary" target="_blank">Contactar para donar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Proyectos</h4>
+        <a href="#salud-mental">Salud Mental</a>
+        <a href="#superpas">Súper Pás y Más</a>
+        <a href="#juguete">Un Juguete, Una Sonrisa</a>
+        <a href="#unidos">Unidos Somos Útiles</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="/contacto/">Formulario de contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

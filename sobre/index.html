@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre mí — Harold Pérez, Psicólogo</title>
+  <meta name="description" content="Harold Pérez, psicólogo clínico, educativo y social. 16+ años de experiencia. ACT, DBT y TCC. Pereira, Colombia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── BIO ── */
+    #bio { background: var(--blanco); padding: 7rem 0; }
+    .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+
+    .bio-foto-wrap { position: relative; }
+    .bio-foto-frame {
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: var(--arena);
+    }
+    .bio-foto-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .bio-foto-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--salvia);
+      padding: 1.25rem 1.5rem;
+      border-radius: 4px;
+    }
+    .bio-foto-badge p { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--blanco); line-height: 1; }
+    .bio-foto-badge span { font-size: 0.7rem; color: rgba(250,250,248,0.75); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .bio-content { padding-top: 1rem; }
+    .bio-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--tinta);
+      line-height: 1.4;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--salvia);
+    }
+    .bio-texto { font-size: 0.92rem; color: var(--gris); line-height: 1.9; margin-bottom: 1rem; }
+
+    /* ── PERFILES ── */
+    #perfiles { background: var(--arena); padding: 7rem 0; }
+    .perf-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .perf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--gris-claro); border: 1.5px solid var(--gris-claro); }
+    .perf-card { background: var(--blanco); padding: 2.5rem; transition: background 0.25s; }
+    .perf-card:hover { background: var(--tinta); }
+    .perf-card:hover .pc-num { color: var(--salvia-light); }
+    .perf-card:hover .pc-title { color: var(--blanco); }
+    .perf-card:hover .pc-desc { color: rgba(250,250,248,0.5); }
+    .perf-card:hover .pc-tags span { border-color: rgba(255,255,255,0.2); color: rgba(250,250,248,0.5); }
+    .pc-num { font-family: var(--font-display); font-size: 0.85rem; color: var(--gris-claro); font-weight: 600; margin-bottom: 1.5rem; transition: color 0.25s; }
+    .pc-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.75rem; line-height: 1.2; transition: color 0.25s; }
+    .pc-desc { font-size: 0.85rem; color: var(--gris); line-height: 1.75; margin-bottom: 1.5rem; transition: color 0.25s; }
+    .pc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .pc-tags span { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--salvia); border: 1px solid rgba(61,122,85,0.3); padding: 0.25rem 0.6rem; border-radius: 2px; transition: all 0.25s; }
+
+    /* ── FORMACIÓN ── */
+    #formacion { background: var(--tinta); padding: 7rem 0; position: relative; overflow: hidden; }
+    #formacion::before { content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(61,122,85,0.1) 0%, transparent 70%); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; position: relative; z-index: 1; }
+    .form-lista { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(255,255,255,0.08); }
+    .form-item { padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; gap: 1.5rem; align-items: flex-start; transition: background 0.2s; }
+    .form-item:last-child { border-bottom: none; }
+    .form-item:hover { background: rgba(255,255,255,0.03); }
+    .fi-año { font-size: 0.72rem; font-weight: 600; color: var(--salvia-light); letter-spacing: 0.08em; flex-shrink: 0; width: 48px; padding-top: 2px; }
+    .fi-titulo { font-size: 0.85rem; font-weight: 600; color: var(--blanco); margin-bottom: 0.2rem; }
+    .fi-inst { font-size: 0.78rem; color: rgba(250,250,248,0.45); }
+    .cifras-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .cifra-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; border-radius: 4px; }
+    .cifra-box p { font-family: var(--font-display); font-size: 3rem; font-weight: 600; color: var(--blanco); line-height: 1; margin-bottom: 0.4rem; }
+    .cifra-box span { font-size: 0.75rem; color: rgba(250,250,248,0.45); line-height: 1.5; }
+
+    /* ── ENFOQUES ── */
+    #enfoques { background: var(--blanco); padding: 7rem 0; }
+    .enf-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .enf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .enf-card { border: 1px solid var(--gris-claro); padding: 2.25rem; border-radius: 4px; position: relative; overflow: hidden; transition: all 0.25s; }
+    .enf-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--salvia); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .enf-card:hover { border-color: var(--salvia); box-shadow: 0 8px 32px rgba(26,26,46,0.07); }
+    .enf-card:hover::before { transform: scaleX(1); }
+    .enf-sigla { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--salvia); opacity: 0.2; line-height: 1; margin-bottom: 0.75rem; }
+    .enf-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.75rem; line-height: 1.3; }
+    .enf-desc { font-size: 0.83rem; color: var(--gris); line-height: 1.75; }
+
+    /* ── EXPLORA PROSER ── */
+    #explora-proser {
+      background: var(--blanco);
+      padding: 7rem 0;
+      border-top: 1px solid var(--gris-claro);
+    }
+    .ep-header { text-align: center; margin-bottom: 3.5rem; }
+    .ep-titulo { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; color: var(--tinta); line-height: 1.1; margin-bottom: 0.75rem; }
+    .ep-titulo em { font-style: italic; font-weight: 400; color: var(--salvia); }
+    .ep-sub { font-size: 0.92rem; color: var(--gris); max-width: 520px; margin: 0 auto; line-height: 1.75; }
+    .ep-logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 720px; margin: 0 auto 3rem; }
+    .ep-logo-card { background: var(--arena); border: 1px solid var(--gris-claro); border-radius: 10px; padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; text-decoration: none; transition: all 0.25s; min-height: 160px; position: relative; overflow: hidden; }
+    .ep-logo-card:hover { border-color: var(--salvia); box-shadow: 0 8px 32px rgba(26,26,46,0.08); transform: translateY(-3px); }
+    .ep-logo-card img { height: 44px; object-fit: contain; margin-bottom: 0.75rem; }
+    .ep-logo-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gris); }
+    .ep-logo-desc { font-size: 0.75rem; color: var(--gris); line-height: 1.5; margin-top: 0.4rem; }
+    .ep-servicios { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+    .ep-srv { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gris); border: 1px solid var(--gris-claro); padding: 0.35rem 0.85rem; border-radius: 100px; }
+    .ep-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      .bio-grid, .perf-header, .form-grid, .enf-header, .proser-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .bio-foto-wrap { display: none; }
+      .perf-grid { grid-template-columns: 1fr; }
+      .enf-grid { grid-template-columns: 1fr; }
+      .proser-servicios { grid-template-columns: 1fr; }
+      .cifras-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <link rel="canonical" href="https://haroldperez.com/sobre/" />
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/" style="color:var(--blanco)">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow-light">Sobre mí</span>
+    <h1 class="display-title">Harold Pérez<br><em>Psicólogo</em></h1>
+    <div class="divider-light" style="margin-top:2rem;"></div>
+    <p class="lead-light" style="margin-top:1.5rem;">Psicólogo clínico, educativo y social. Más de 16 años acompañando personas, familias, comunidades y organizaciones con psicología basada en evidencia.</p>
+  </div>
+</section>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="container">
+    <div class="bio-grid">
+      <div class="bio-foto-wrap">
+        <div class="bio-foto-frame">
+          <img src="../harold.png" alt="Harold Pérez — Psicólogo" />
+        </div>
+        <div class="bio-foto-badge">
+          <p>16+</p>
+          <span>Años de experiencia</span>
+        </div>
+      </div>
+      <div class="bio-content">
+        <span class="eyebrow">Mi historia</span>
+        <blockquote class="bio-quote">"Psicología basada en evidencia, aplicada a situaciones reales."</blockquote>
+        <p class="bio-texto">Soy psicólogo con formación en tres áreas complementarias y más de 16 años de experiencia en contextos de alta complejidad — clínica, instituciones educativas, comunidades vulnerables y entornos de posconflicto.</p>
+        <p class="bio-texto">Mi trabajo se basa en los marcos con mayor evidencia empírica disponible: Terapia de Aceptación y Compromiso (ACT), Terapia Dialéctico Conductual (DBT) y Terapia Cognitivo Conductual (TCC). No aplico protocolos de manual — diseño procesos según las necesidades reales de cada persona u organización.</p>
+        <p class="bio-texto">Soy también Director de ProSer, desde donde trabajo con empresas, instituciones educativas y comunidades en proyectos de impacto colectivo.</p>
+        <p class="bio-texto">Con base en Pereira, Eje Cafetero. Atención presencial y virtual para cualquier parte del mundo y Latinoamérica.</p>
+        <br>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20agendar%20una%20consulta" class="btn-dark" target="_blank">Agendar consulta</a>
+          <a href="/contacto/" class="btn-salvia">Contactar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERFILES -->
+<section id="perfiles">
+  <div class="container">
+    <div class="perf-header">
+      <div>
+        <span class="eyebrow">Triple perfil</span>
+        <h2 class="section-title">Tres dimensiones<br>de <em>intervención</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">No soy un especialista de una sola área. Mi formación y experiencia atraviesan tres campos que se retroalimentan constantemente y me permiten leer cada situación desde múltiples perspectivas.</p>
+      </div>
+    </div>
+    <div class="perf-grid">
+      <div class="perf-card">
+        <p class="pc-num">01</p>
+        <h3 class="pc-title">Perfil Clínico</h3>
+        <p class="pc-desc">Terapia individual, de pareja y familiar. Intervención en crisis, duelo, ansiedad, depresión y procesos de cambio. ACT, DBT y mindfulness aplicado. Primera respuesta psicológica en situaciones de emergencia.</p>
+        <div class="pc-tags"><span>ACT</span><span>DBT</span><span>TCC</span><span>Crisis</span><span>Duelo</span></div>
+      </div>
+      <div class="perf-card">
+        <p class="pc-num">02</p>
+        <h3 class="pc-title">Perfil Educativo</h3>
+        <p class="pc-desc">Orientación vocacional, bienestar socioemocional escolar, formación docente en salud mental y evaluación neuropsicológica. Experiencia en instituciones educativas de alta complejidad.</p>
+        <div class="pc-tags"><span>Orientación</span><span>NEE</span><span>Docentes</span><span>WISC</span></div>
+      </div>
+      <div class="perf-card">
+        <p class="pc-num">03</p>
+        <h3 class="pc-title">Perfil Social</h3>
+        <p class="pc-desc">Intervención comunitaria, cooperación internacional, proyectos con poblaciones vulnerables y contextos de posconflicto. Diseño y ejecución de proyectos psicosociales de impacto colectivo.</p>
+        <div class="pc-tags"><span>Comunidad</span><span>Posconflicto</span><span>Cooperación</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion">
+  <div class="container">
+    <div class="form-grid">
+      <div>
+        <span class="eyebrow-light">Formación académica</span>
+        <h2 class="section-title-light" style="margin-bottom:2.5rem;">Credenciales que<br><em>respaldan el trabajo</em></h2>
+        <div class="form-lista">
+          <div class="form-item">
+            <span class="fi-año">2024</span>
+            <div>
+              <p class="fi-titulo">Maestría en Psicoterapias de Tercera Generación</p>
+              <p class="fi-inst">Especialización en ACT, DBT y enfoques contextuales</p>
+            </div>
+          </div>
+          <div class="form-item">
+            <span class="fi-año">2020</span>
+            <div>
+              <p class="fi-titulo">Maestría en Intervención Social</p>
+              <p class="fi-inst">Diseño y evaluación de proyectos psicosociales</p>
+            </div>
+          </div>
+          <div class="form-item">
+            <span class="fi-año">2008</span>
+            <div>
+              <p class="fi-titulo">Psicólogo</p>
+              <p class="fi-inst">Tarjeta profesional COLPSIC vigente</p>
+            </div>
+          </div>
+          <div class="form-item">
+            <span class="fi-año">Cont.</span>
+            <div>
+              <p class="fi-titulo">Formación continua en ACT, DBT y Neuropsicología</p>
+              <p class="fi-inst">Certificaciones internacionales activas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="eyebrow-light">En números</span>
+        <h2 class="section-title-light" style="margin-bottom:2.5rem;">Lo que dice<br><em>la experiencia</em></h2>
+        <div class="cifras-row">
+          <div class="cifra-box"><p>16+</p><span>Años de experiencia clínica, educativa y social</span></div>
+          <div class="cifra-box"><p>2</p><span>Maestrías en Psicoterapia e Intervención Social</span></div>
+          <div class="cifra-box"><p>3</p><span>Perfiles profesionales complementarios</span></div>
+          <div class="cifra-box"><p>ACT</p><span>DBT · TCC — marcos con mayor evidencia empírica</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENFOQUES -->
+<section id="enfoques">
+  <div class="container">
+    <div class="enf-header">
+      <div>
+        <span class="eyebrow">Marcos de trabajo</span>
+        <h2 class="section-title">Psicología con<br><em>respaldo científico</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">No trabajo con intuición ni con motivación vacía. Cada intervención se fundamenta en los enfoques psicológicos con mayor evidencia empírica disponible a nivel mundial.</p>
+      </div>
+    </div>
+    <div class="enf-grid">
+      <div class="enf-card">
+        <div class="enf-sigla">ACT</div>
+        <h3 class="enf-title">Terapia de Aceptación y Compromiso</h3>
+        <p class="enf-desc">Aprender a relacionarse diferente con los pensamientos y emociones para que dejen de controlar las decisiones. No es sobre eliminar el malestar — es sobre vivir con él sin que te paralice.</p>
+      </div>
+      <div class="enf-card">
+        <div class="enf-sigla">DBT</div>
+        <h3 class="enf-title">Terapia Dialéctico Conductual</h3>
+        <p class="enf-desc">Habilidades concretas de regulación emocional, tolerancia al malestar, mindfulness e interpersonalidad. Desarrollada originalmente para los casos más complejos — hoy aplicada con eficacia en múltiples contextos.</p>
+      </div>
+      <div class="enf-card">
+        <div class="enf-sigla">TCC</div>
+        <h3 class="enf-title">Terapia Cognitivo Conductual</h3>
+        <p class="enf-desc">El enfoque más estudiado de la historia de la psicología. Intervención estructurada en pensamientos, emociones y comportamientos con objetivos claros y resultados medibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLORA PROSER -->
+<section id="explora-proser">
+  <div class="container">
+    <div class="ep-header">
+      <span class="eyebrow">Explora mi mundo</span>
+      <h2 class="ep-titulo">Más allá de la consulta:<br><em>ProSer</em></h2>
+      <p class="ep-sub">El proyecto desde el que trabajo el impacto colectivo — con empresas, instituciones educativas y comunidades.</p>
+    </div>
+    <div class="ep-logo-grid">
+      <a href="https://prosercps.org" class="ep-logo-card" target="_blank">
+        <img src="/proser/proser-logo.png" alt="ProSer" style="height:48px;object-fit:contain;margin-bottom:0.75rem;" />
+        <span class="ep-logo-label">prosercps.org</span>
+        <span class="ep-logo-desc">Consultoría Psicosocial Integral</span>
+      </a>
+      <a href="https://prosercps.org/servicios/" class="ep-logo-card" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36" style="color:var(--salvia);margin-bottom:0.75rem;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span class="ep-logo-label">Servicios</span>
+        <span class="ep-logo-desc">Terapéutico · Pedagógico · Social · Empresarial</span>
+      </a>
+      <a href="https://prosercps.org/proyectos/" class="ep-logo-card" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="36" height="36" style="color:var(--salvia);margin-bottom:0.75rem;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="ep-logo-label">Proyectos sociales</span>
+        <span class="ep-logo-desc">Salud Mental · Súper Pás · Juguete · Unidos</span>
+      </a>
+    </div>
+    <div class="ep-servicios">
+      <span class="ep-srv">Acompañamiento Terapéutico</span>
+      <span class="ep-srv">Apoyo Pedagógico</span>
+      <span class="ep-srv">Consultoría Social</span>
+      <span class="ep-srv">Consultoría Empresarial</span>
+      <span class="ep-srv">Membresía de Bienestar</span>
+    </div>
+    <div class="ep-actions">
+      <a href="https://prosercps.org" class="btn-dark" target="_blank">Visitar ProSer</a>
+      <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20ProSer" class="btn-salvia" target="_blank">Solicitar información</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="/proser/">ProSer</a>
+        <a href="/academia/">Academia</a>
+        <a href="/recursos/">Recursos digitales</a>
+        <a href="/proyectos/">Proyectos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

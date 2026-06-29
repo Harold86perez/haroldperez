@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /links/
+Disallow: /proser/
+
+Sitemap: https://haroldperez.com/sitemap.xml

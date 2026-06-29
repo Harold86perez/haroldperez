@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membresía de Bienestar — Harold Pérez</title>
+  <meta name="description" content="Membresía de Bienestar Organizacional. Un aliado permanente para el bienestar de tu equipo, por menos de lo que cuesta una incapacidad. Pereira, Colombia." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── POR QUÉ ── */
+    #porque { background: var(--blanco); padding: 7rem 0; }
+    .porq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .porq-quote { font-family: var(--font-display); font-size: clamp(1.4rem,2.5vw,1.9rem); font-style: italic; font-weight: 300; color: var(--tinta); line-height: 1.4; padding-left: 1.5rem; border-left: 2px solid var(--salvia); margin-bottom: 2rem; }
+    .porq-texto { font-size: 0.9rem; color: var(--gris); line-height: 1.9; margin-bottom: 1rem; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-card { background: var(--arena); border: 1px solid var(--gris-claro); border-radius: 4px; padding: 1.75rem; border-top: 2px solid var(--salvia); }
+    .stat-card:nth-child(2) { border-top-color: var(--tinta); }
+    .stat-card:nth-child(3) { border-top-color: var(--salvia-light); }
+    .stat-card:nth-child(4) { border-top-color: var(--gris); }
+    .stat-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--tinta); line-height: 1; margin-bottom: 0.4rem; }
+    .stat-label { font-size: 0.78rem; color: var(--gris); line-height: 1.5; }
+
+    /* ── BENEFICIOS ── */
+    #beneficios { background: var(--arena); padding: 7rem 0; }
+    .ben-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .ben-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .ben-card { background: var(--blanco); border: 1px solid var(--gris-claro); padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: box-shadow 0.2s; }
+    .ben-card:hover { box-shadow: 0 6px 24px rgba(26,26,46,0.07); }
+    .ben-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--salvia); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: 2px; min-width: 28px; }
+    .ben-titulo { font-size: 0.82rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.35rem; }
+    .ben-desc { font-size: 0.8rem; color: var(--gris); line-height: 1.7; }
+
+    /* ── PRECIOS ── */
+    #precios { background: var(--tinta); padding: 7rem 0; position: relative; overflow: hidden; }
+    #precios::before { content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(61,122,85,0.1) 0%, transparent 70%); pointer-events: none; }
+    .prec-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; position: relative; z-index: 1; }
+    .prec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2rem; position: relative; z-index: 1; }
+    .prec-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; text-align: center; transition: background 0.25s; }
+    .prec-card:hover { background: rgba(255,255,255,0.09); }
+    .prec-card.featured { background: var(--salvia); border-color: var(--salvia); }
+    .prec-card.featured:hover { background: var(--salvia-light); }
+    .prec-plazo { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(250,250,248,0.5); margin-bottom: 0.75rem; display: block; }
+    .prec-card.featured .prec-plazo { color: rgba(250,250,248,0.8); }
+    .prec-descuento { display: inline-block; font-size: 0.68rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 2px; background: rgba(255,255,255,0.1); color: rgba(250,250,248,0.7); margin-bottom: 1rem; }
+    .prec-card.featured .prec-descuento { background: rgba(255,255,255,0.2); color: var(--blanco); }
+    .prec-valor { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--blanco); line-height: 1; margin-bottom: 0.25rem; }
+    .prec-iva { font-size: 0.72rem; color: rgba(250,250,248,0.4); margin-bottom: 0.25rem; }
+    .prec-total { font-size: 0.78rem; font-weight: 600; color: rgba(250,250,248,0.7); }
+    .prec-nota { font-size: 0.78rem; color: rgba(250,250,248,0.35); text-align: center; position: relative; z-index: 1; }
+
+    /* ── MODALIDADES ── */
+    #modalidades { background: var(--blanco); padding: 7rem 0; }
+    .mod-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .mod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .mod-card { border: 1.5px solid var(--gris-claro); overflow: hidden; }
+    .mod-hero { min-height: 160px; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; background: var(--tinta); position: relative; overflow: hidden; }
+    .mod-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 20%, rgba(61,122,85,0.15) 0%, transparent 60%); }
+    .mod-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,250,248,0.5); margin-bottom: 0.4rem; position: relative; z-index: 1; }
+    .mod-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; color: var(--blanco); line-height: 1.1; position: relative; z-index: 1; }
+    .mod-title em { font-style: italic; font-weight: 300; color: var(--salvia-light); }
+    .mod-body { background: var(--blanco); padding: 2rem; border-top: 1.5px solid var(--gris-claro); }
+    .mod-desc { font-size: 0.86rem; color: var(--gris); line-height: 1.85; margin-bottom: 1.5rem; }
+    .mod-cond { font-size: 0.75rem; color: var(--gris); line-height: 1.7; padding: 1rem; background: var(--arena); border-left: 2px solid var(--salvia); margin-bottom: 1.5rem; }
+    .mod-cond strong { color: var(--tinta); }
+
+    /* ── PROCESO ── */
+    #proceso { background: var(--arena); padding: 7rem 0; }
+    .proc-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .proc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1.5px solid var(--gris-claro); background: var(--gris-claro); }
+    .proc-step { background: var(--blanco); padding: 2.5rem; transition: background 0.2s; }
+    .proc-step:hover { background: var(--tinta); }
+    .proc-step:hover .proc-num { color: rgba(250,250,248,0.08); }
+    .proc-step:hover .proc-title { color: var(--salvia-light); }
+    .proc-step:hover .proc-desc { color: rgba(250,250,248,0.5); }
+    .proc-num { font-family: var(--font-display); font-size: 3rem; font-weight: 600; color: var(--gris-claro); line-height: 1; margin-bottom: 1rem; transition: color 0.2s; }
+    .proc-title { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--salvia); margin-bottom: 0.6rem; transition: color 0.2s; }
+    .proc-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.7; transition: color 0.2s; }
+
+    /* ── CTA ── */
+    #cta-mem { background: var(--blanco); padding: 5rem 0; }
+    .cta-box { background: var(--tinta); padding: 4rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+    .cta-box h2 { font-family: var(--font-display); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 600; color: var(--blanco); line-height: 1.2; margin-bottom: 0.75rem; }
+    .cta-box h2 em { font-style: italic; font-weight: 300; color: var(--salvia-light); }
+    .cta-box p { font-size: 0.88rem; color: rgba(250,250,248,0.5); line-height: 1.7; }
+    .cta-btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 220px; }
+
+    @media (max-width: 768px) {
+      .porq-grid, .ben-header, .prec-header, .mod-header, .proc-header { grid-template-columns: 1fr; gap: 2.5rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .ben-grid { grid-template-columns: 1fr; }
+      .prec-grid { grid-template-columns: 1fr 1fr; }
+      .mod-grid { grid-template-columns: 1fr; }
+      .proc-steps { grid-template-columns: 1fr; }
+      .cta-box { grid-template-columns: 1fr; padding: 2.5rem; }
+    }
+  </style>
+  <link rel="canonical" href="https://haroldperez.com/membresia/" />
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/membresia/" style="color:var(--blanco)">Membresía</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow-light">Membresía de Bienestar</span>
+    <h1 class="display-title">Un aliado permanente<br><em>para tu equipo</em></h1>
+    <div class="divider-light" style="margin-top:2rem;"></div>
+    <p class="lead-light" style="margin-top:1.5rem;">La membresía no es una intervención de emergencia ni una capacitación aislada. Es la decisión de hacer del bienestar psicológico una práctica permanente dentro de tu organización — con respaldo profesional, datos y resultados medibles.</p>
+  </div>
+</section>
+
+<!-- POR QUÉ -->
+<section id="porque">
+  <div class="container">
+    <div class="porq-grid">
+      <div>
+        <span class="eyebrow">¿Por qué invertir en las personas?</span>
+        <h2 class="section-title" style="margin-bottom:2rem;">Trabajar la salud mental<br>es una <em>decisión estratégica</em></h2>
+        <blockquote class="porq-quote">"Un aliado permanente para el bienestar de su equipo, por menos de lo que cuesta una incapacidad."</blockquote>
+        <p class="porq-texto">El estrés laboral es la segunda causa de ausentismo en Colombia. Un empleado en proceso de crisis emocional rinde entre un 30% y 60% menos. La rotación de personal generada por malestar psicológico o por procesos de selección inadecuados le cuesta dinero a una empresa.</p>
+        <p class="porq-texto">Las organizaciones que no gestionan el talento con criterio técnico toman decisiones de personas basadas en intuición, con todos los riesgos que eso implica.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">2ª</div>
+          <p class="stat-label">causa de ausentismo en Colombia es el estrés laboral</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">-30%</div>
+          <p class="stat-label">de rendimiento mínimo en un empleado con crisis emocional</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">-60%</div>
+          <p class="stat-label">de rendimiento máximo en casos de malestar psicológico severo</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">$0</div>
+          <p class="stat-label">en decisiones de talento basadas en intuición sin criterio técnico</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="container">
+    <div class="ben-header">
+      <div>
+        <span class="eyebrow">¿Qué incluye?</span>
+        <h2 class="section-title">10 beneficios<br><em>desde el primer mes</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">La membresía activa un conjunto de beneficios reales y sostenidos para tu equipo y sus familias. No es un paquete genérico — es un vínculo de acompañamiento continuo.</p>
+      </div>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card"><div class="ben-num">01</div><div><p class="ben-titulo">Acceso al convenio de tarifas preferenciales</p><p class="ben-desc">Empleados, contratistas y sus grupos familiares acceden a atención psicológica individual, de pareja y familiar con descuentos del 25% — presencial en Pereira o teleconsulta a nivel nacional e internacional.</p></div></div>
+      <div class="ben-card"><div class="ben-num">02</div><div><p class="ben-titulo">Acceso para excolaboradores en transición</p><p class="ben-desc">Durante los 3 meses posteriores a una desvinculación, el excolaborador puede seguir accediendo al convenio de tarifas preferenciales. Un gesto humano que habla muy bien de la cultura organizacional.</p></div></div>
+      <div class="ben-card"><div class="ben-num">03</div><div><p class="ben-titulo">Evaluación inicial del clima emocional</p><p class="ben-desc">Al activar la membresía aplicamos una evaluación del estado emocional del equipo. Se repite cada 6 meses. La empresa recibe informe ejecutivo con resultados y recomendaciones, garantizando confidencialidad.</p></div></div>
+      <div class="ben-card"><div class="ben-num">04</div><div><p class="ben-titulo">Reporte trimestral de bienestar</p><p class="ben-desc">Al cierre de cada trimestre la empresa recibe un informe con los indicadores de uso del convenio y las tendencias observadas en el equipo. Información útil para la toma de decisiones.</p></div></div>
+      <div class="ben-card"><div class="ben-num">05</div><div><p class="ben-titulo">Canal directo de asesoría para RRHH</p><p class="ben-desc">Canal de consulta directa con respuesta lo antes posible hábiles para situaciones específicas: un colaborador en crisis, un conflicto entre áreas, una comunicación difícil.</p></div></div>
+      <div class="ben-card"><div class="ben-num">06</div><div><p class="ben-titulo">Píldora de contenido mensual</p><p class="ben-desc">Un recurso de salud mental laboral elaborado con criterio clínico y lenguaje accesible, listo para compartir con el equipo por los canales internos que prefiera la empresa.</p></div></div>
+      <div class="ben-card"><div class="ben-num">07</div><div><p class="ben-titulo">Prioridad en agenda y tarifa preferencial</p><p class="ben-desc">Las empresas con membresía activa tienen acceso preferencial para agendar talleres, capacitaciones y diferentes servicios, con descuento sobre el precio estándar.</p></div></div>
+      <div class="ben-card"><div class="ben-num">08</div><div><p class="ben-titulo">Crédito acumulable en talleres</p><p class="ben-desc">Por cada 6 meses de membresía activa y continua, la empresa acumula un crédito equivalente a un taller de 1 hora y 30 minutos sin costo adicional.</p></div></div>
+      <div class="ben-card"><div class="ben-num">09</div><div><p class="ben-titulo">Kit de comunicación interna</p><p class="ben-desc">Al activar la membresía, la empresa recibe plantillas listas para anunciar el convenio a sus colaboradores: correo interno, mensaje para WhatsApp y pieza gráfica para cartelera.</p></div></div>
+      <div class="ben-card"><div class="ben-num">10</div><div><p class="ben-titulo">Capacitación de bienvenida sin costo adicional</p><p class="ben-desc">Una sesión de 1 hora y 30 minutos sobre el tema de salud mental o bienestar laboral que la empresa considere más relevante al momento de activar la membresía.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="container">
+    <div class="prec-header">
+      <div>
+        <span class="eyebrow-light">Inversión</span>
+        <h2 class="section-title-light">Un precio justo<br><em>para cada plazo</em></h2>
+      </div>
+      <div>
+        <div class="divider-light"></div>
+        <p class="lead-light">Mayor compromiso, mayor descuento. El plan anual ofrece un 20% de ahorro — y garantiza continuidad real en el bienestar de tu equipo.</p>
+      </div>
+    </div>
+    <div class="prec-grid">
+      <div class="prec-card">
+        <span class="prec-plazo">Mensual</span>
+        <span class="prec-descuento">Sin descuento</span>
+        <div class="prec-valor">$180.000</div>
+        <div class="prec-iva">+ IVA $34.200</div>
+        <div class="prec-total">Total: $214.200 / mes</div>
+      </div>
+      <div class="prec-card">
+        <span class="prec-plazo">Trimestral</span>
+        <span class="prec-descuento">10% de descuento</span>
+        <div class="prec-valor">$486.000</div>
+        <div class="prec-iva">+ IVA $92.340</div>
+        <div class="prec-total">Total: $578.340</div>
+      </div>
+      <div class="prec-card featured">
+        <span class="prec-plazo">Semestral</span>
+        <span class="prec-descuento">15% de descuento</span>
+        <div class="prec-valor">$918.000</div>
+        <div class="prec-iva">+ IVA $174.420</div>
+        <div class="prec-total">Total: $1.092.420</div>
+      </div>
+      <div class="prec-card">
+        <span class="prec-plazo">Anual</span>
+        <span class="prec-descuento">20% de descuento</span>
+        <div class="prec-valor">$1.728.000</div>
+        <div class="prec-iva">+ IVA $328.320</div>
+        <div class="prec-total">Total: $2.056.320</div>
+      </div>
+    </div>
+    <p class="prec-nota">Valores en pesos colombianos (COP). Precio base por empresa, independiente del número de colaboradores.</p>
+  </div>
+</section>
+
+<!-- MODALIDADES -->
+<section id="modalidades">
+  <div class="container">
+    <div class="mod-header">
+      <div>
+        <span class="eyebrow">Dos modalidades</span>
+        <h2 class="section-title">Empresas e<br><em>instituciones educativas</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">La membresía aplica tanto para empresas como para centros educativos. En ambos casos, toda la comunidad accede a los beneficios desde el primer día.</p>
+      </div>
+    </div>
+    <div class="mod-grid">
+      <div class="mod-card">
+        <div class="mod-hero">
+          <p class="mod-label">Membresía empresarial</p>
+          <h3 class="mod-title">Tu <em>empresa</em><br>y sus familias</h3>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">Todos los empleados, contratistas y sus grupos familiares (conyugue, hijos, padres y hermanos) acceden a los beneficios. La empresa también obtiene tarifas preferenciales en todos los servicios y propuestas ajustadas a sus necesidades.</p>
+          <div class="mod-cond"><strong>Condiciones:</strong> 12 meses de duración. Beneficios aplican desde la firma. El beneficiario presenta certificado laboral; los familiares, documento de parentesco.</div>
+          <a href="https://wa.me/573103700817?text=Hola,%20quiero%20información%20sobre%20la%20membresía%20empresarial" class="btn-dark" target="_blank">Solicitar membresía empresarial</a>
+        </div>
+      </div>
+      <div class="mod-card">
+        <div class="mod-hero">
+          <p class="mod-label">Membresía educativa</p>
+          <h3 class="mod-title">Tu <em>institución</em><br>y su comunidad</h3>
+        </div>
+        <div class="mod-body">
+          <p class="mod-desc">Todos los miembros de la comunidad educativa — colegio, instituto o universidad — acceden a los beneficios. La institución también obtiene tarifas preferenciales en servicios de intervención pedagógica y programas de bienestar escolar.</p>
+          <div class="mod-cond"><strong>Condiciones:</strong> 12 meses de duración. Beneficios aplican desde la firma. El beneficiario presenta certificado de estudio vigente.</div>
+          <a href="https://wa.me/573103700817?text=Hola,%20quiero%20información%20sobre%20la%20membresía%20educativa" class="btn-salvia" target="_blank">Solicitar membresía educativa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="container">
+    <div class="proc-header">
+      <div>
+        <span class="eyebrow">Cómo activar la membresía</span>
+        <h2 class="section-title">En tres pasos,<br><em>tu equipo empieza a cuidarse</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">Asignaremos un coordinador que se encargará de todo el proceso. La activación tarda menos de una semana desde el primer contacto.</p>
+      </div>
+    </div>
+    <div class="proc-steps">
+      <div class="proc-step">
+        <div class="proc-num">01</div>
+        <p class="proc-title">Contacto inicial</p>
+        <p class="proc-desc">Escríbenos por WhatsApp o correo. Coordinamos una conversación para conocer tu empresa y entender qué necesita tu equipo.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">02</div>
+        <p class="proc-title">Firma y activación</p>
+        <p class="proc-desc">Firmamos el convenio y tus colaboradores pueden acceder a los beneficios de inmediato.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">03</div>
+        <p class="proc-title">Kit de bienvenida</p>
+        <p class="proc-desc">Recibes el kit de comunicación interna y la capacitación de bienvenida de 1 hora y 30 minutos se agenda en el primer mes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-mem">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <h2>¿Listo para dar<br><em>el primer paso?</em></h2>
+        <p>Escríbenos y te contamos cómo la membresía puede adaptarse a tu organización.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="https://wa.me/573103700817?text=Hola,%20quiero%20información%20sobre%20la%20membresía%20de%20bienestar" class="btn-salvia" target="_blank">Agendar por WhatsApp</a>
+        <a href="mailto:harold.perez@prosercps.org" class="btn-outline">Escribir por correo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="/sobre/">Sobre mí</a>
+        <a href="/academia/">Academia</a>
+        <a href="/recursos/">Recursos</a>
+        <a href="/proyectos-sociales/">Proyectos sociales</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

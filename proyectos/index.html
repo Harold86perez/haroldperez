@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos — Harold Pérez</title>
+  <meta name="description" content="Proyectos personales de Harold Pérez: ProSer y Migrar Hacia Ti. Impacto colectivo desde la psicología." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── PROYECTO BLOQUE ── */
+    .proyecto-bloque { padding: 7rem 0; }
+    .pb-blanco { background: var(--blanco); }
+    .pb-arena  { background: var(--arena); }
+    .pb-tinta  { background: var(--tinta); }
+
+    .py-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .py-grid.reverse { direction: rtl; }
+    .py-grid.reverse > * { direction: ltr; }
+
+    /* Visual block */
+    .py-visual {
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.5rem;
+    }
+    .py-proser { background: linear-gradient(135deg, #1478B4 0%, #0E5A8A 100%); }
+    .py-migrar { background: linear-gradient(135deg, var(--salvia) 0%, #2A5A3A 100%); }
+
+    .py-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; }
+    .py-visual-num { font-family: var(--font-display); font-size: 10rem; font-weight: 600; color: rgba(255,255,255,0.04); position: absolute; top: 0; right: 1rem; line-height: 1; }
+    .py-visual-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.5rem; position: relative; z-index: 1; }
+    .py-visual-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: white; line-height: 1.1; position: relative; z-index: 1; }
+    .py-visual-title em { font-style: italic; font-weight: 300; }
+
+    /* Content */
+    .py-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--salvia); margin-bottom: 1rem; display: block; }
+    .py-eyebrow-light { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--salvia-light); margin-bottom: 1rem; display: block; }
+    .py-title { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; color: var(--tinta); line-height: 1.1; margin-bottom: 1rem; }
+    .py-title em { font-style: italic; font-weight: 400; color: var(--salvia); }
+    .py-title-light { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 600; color: var(--blanco); line-height: 1.1; margin-bottom: 1rem; }
+    .py-title-light em { font-style: italic; font-weight: 300; color: var(--salvia-light); }
+    .py-divider { width: 40px; height: 2px; background: var(--salvia); margin-bottom: 1.5rem; border-radius: 2px; }
+    .py-divider-light { width: 40px; height: 2px; background: var(--salvia-light); margin-bottom: 1.5rem; border-radius: 2px; }
+    .py-desc { font-size: 0.92rem; color: var(--gris); line-height: 1.9; margin-bottom: 1rem; }
+    .py-desc-light { font-size: 0.92rem; color: rgba(250,250,248,0.55); line-height: 1.9; margin-bottom: 1rem; }
+    .py-features { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--gris-claro); border-radius: 4px; overflow: hidden; margin: 2rem 0; }
+    .py-features-dark { display: flex; flex-direction: column; gap: 0; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin: 2rem 0; }
+    .py-feat { padding: 1rem 1.5rem; border-bottom: 1px solid var(--gris-claro); font-size: 0.84rem; color: var(--gris); display: flex; gap: 0.75rem; align-items: flex-start; }
+    .py-feat:last-child { border-bottom: none; }
+    .py-feat-dark { padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.84rem; color: rgba(250,250,248,0.5); display: flex; gap: 0.75rem; align-items: flex-start; }
+    .py-feat-dark:last-child { border-bottom: none; }
+    .py-feat::before, .py-feat-dark::before { content: '—'; color: var(--salvia); flex-shrink: 0; }
+    .py-feat-dark::before { color: var(--salvia-light); }
+    .py-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ProSer subproyectos */
+    #proser-proyectos { background: var(--arena); padding: 5rem 0; border-top: 1px solid var(--gris-claro); }
+    .sub-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
+    .sub-card { border-radius: 8px; padding: 1.75rem; min-height: 220px; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; transition: transform 0.25s; text-decoration: none; }
+    .sub-card:hover { transform: translateY(-4px); }
+    .sc1 { background: linear-gradient(135deg, #36AAD9 0%, #1478B4 100%); }
+    .sc2 { background: linear-gradient(135deg, #D63A9B 0%, #AF327D 100%); }
+    .sc3 { background: linear-gradient(135deg, #AFC832 0%, #4B964B 100%); }
+    .sc4 { background: linear-gradient(135deg, #3264AF 0%, #1A2E6E 100%); }
+    .sub-pat { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 20px 20px; }
+    .sub-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.4rem; position: relative; z-index: 1; }
+    .sub-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: white; line-height: 1.2; position: relative; z-index: 1; }
+
+    @media (max-width: 768px) {
+      .py-grid, .py-grid.reverse { grid-template-columns: 1fr; gap: 3rem; direction: ltr; }
+      .sub-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <link rel="canonical" href="https://haroldperez.com/proyectos/" />
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow-light">Proyectos</span>
+    <h1 class="display-title">Donde la psicología<br><em>genera impacto colectivo</em></h1>
+    <div class="divider-light" style="margin-top:2rem;"></div>
+    <p class="lead-light" style="margin-top:1.5rem;">Más allá de la consulta individual, estos son los proyectos desde los cuales trabajo el cambio a escala — con comunidades, organizaciones y poblaciones con necesidades específicas.</p>
+  </div>
+</section>
+
+<!-- PROSER -->
+<section class="proyecto-bloque pb-blanco" id="proser">
+  <div class="container">
+    <div class="py-grid">
+      <div class="py-visual py-proser">
+        <div class="py-pattern"></div>
+        <div class="py-visual-num">01</div>
+        <p class="py-visual-label">Proyecto 01</p>
+        <h2 class="py-visual-title">ProSer — <em>Consultores<br>Psicosociales</em></h2>
+      </div>
+      <div>
+        <span class="py-eyebrow">Proyecto 01</span>
+        <h2 class="py-title">Consultoría psicosocial<br><em>que genera impacto real</em></h2>
+        <div class="py-divider"></div>
+        <p class="py-desc">ProSer es el proyecto que dirijo desde 2010, dedicada a la Consultoría Psicosocial Integral. Trabajamos con empresas, instituciones educativas, comunidades y familias desde cuatro líneas de intervención articuladas.</p>
+        <p class="py-desc">Lo que diferencia a ProSer de otras consultoras es la triple formación del equipo — clínica, educativa y social — que nos permite leer cada contexto desde múltiples perspectivas y diseñar intervenciones que realmente tienen sentido para lo que vive cada organización.</p>
+        <div class="py-features">
+          <div class="py-feat">Acompañamiento Terapéutico individual, de pareja y familiar</div>
+          <div class="py-feat">Apoyo Pedagógico para estudiantes, docentes e instituciones</div>
+          <div class="py-feat">Consultoría Social Comunitaria con enfoque de transformación</div>
+          <div class="py-feat">Consultoría Empresarial y Membresía de Bienestar Organizacional</div>
+          <div class="py-feat">4 proyectos sociales activos de impacto comunitario</div>
+        </div>
+        <div class="py-actions">
+          <a href="https://prosercps.org" class="btn-dark" target="_blank">Visitar prosercps.org</a>
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20ProSer" class="btn-salvia" target="_blank">Solicitar información</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROSER SUBPROYECTOS -->
+<section id="proser-proyectos">
+  <div class="container">
+    <span class="eyebrow">Proyectos sociales de ProSer</span>
+    <h2 class="section-title">Con tu ayuda,<br><em>todo es posible</em></h2>
+    <div class="sub-grid">
+      <a href="https://prosercps.org/proyectos/#salud-mental" class="sub-card sc1" target="_blank">
+        <div class="sub-pat"></div>
+        <p class="sub-label">Proyecto 01</p>
+        <p class="sub-title">Salud Mental</p>
+      </a>
+      <a href="https://prosercps.org/proyectos/#superpas" class="sub-card sc2" target="_blank">
+        <div class="sub-pat"></div>
+        <p class="sub-label">Proyecto 02</p>
+        <p class="sub-title">Súper Pás y Más</p>
+      </a>
+      <a href="https://prosercps.org/proyectos/#juguete" class="sub-card sc3" target="_blank">
+        <div class="sub-pat"></div>
+        <p class="sub-label">Proyecto 03</p>
+        <p class="sub-title">Un Juguete, Una Sonrisa</p>
+      </a>
+      <a href="https://prosercps.org/proyectos/#unidos" class="sub-card sc4" target="_blank">
+        <div class="sub-pat"></div>
+        <p class="sub-label">Proyecto 04</p>
+        <p class="sub-title">Unidos Somos Útiles</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MIGRAR HACIA TI -->
+<section class="proyecto-bloque pb-tinta" id="migrar">
+  <div class="container">
+    <div class="py-grid reverse">
+      <div class="py-visual py-migrar">
+        <div class="py-pattern"></div>
+        <div class="py-visual-num">02</div>
+        <p class="py-visual-label">Proyecto 02</p>
+        <h2 class="py-visual-title">Migrar<br><em>Hacia Ti</em></h2>
+      </div>
+      <div>
+        <span class="py-eyebrow-light">Proyecto 02</span>
+        <h2 class="py-title-light">Acompañamiento psicológico<br><em>para migrantes</em></h2>
+        <div class="py-divider-light"></div>
+        <p class="py-desc-light">Migrar es uno de los procesos más exigentes que puede vivir una persona. No solo implica cambiar de país — implica reconstruir la identidad, las relaciones, las rutinas y el sentido de pertenencia desde cero, en un entorno desconocido y muchas veces hostil.</p>
+        <p class="py-desc-light">Migrar Hacia Ti es un programa de acompañamiento psicológico diseñado específicamente para personas en proceso de migración o que han migrado recientemente. Desde un enfoque ACT, trabajamos la flexibilidad psicológica, el duelo migratorio y la construcción de una vida con sentido en el nuevo contexto.</p>
+        <div class="py-features-dark">
+          <div class="py-feat-dark">Acompañamiento individual para migrantes en cualquier etapa del proceso</div>
+          <div class="py-feat-dark">Trabajo con duelo migratorio: pérdida de vínculos, cultura e identidad</div>
+          <div class="py-feat-dark">Grupos de apoyo virtuales para colombianos en el exterior</div>
+          <div class="py-feat-dark">Herramientas ACT para adaptarse sin perder quién eres</div>
+          <div class="py-feat-dark">Sesiones virtuales para toda Latinoamérica, Europa y Norteamérica</div>
+        </div>
+        <div class="py-actions">
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20programa%20Migrar%20Hacia%20Ti" class="btn-outline" target="_blank">Solicitar información</a>
+          <a href="/contacto/" class="btn-salvia">Contactar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Proyectos</h4>
+        <a href="https://prosercps.org" target="_blank">ProSer Consultores</a>
+        <a href="#migrar">Migrar Hacia Ti</a>
+        <a href="/academia/">Academia</a>
+        <a href="/recursos/">Recursos Digitales</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="/contacto/">Formulario de contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

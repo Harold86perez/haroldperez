@@ -287,7 +287,7 @@
 
     /* ── SOBRE HAROLD ── */
     #sobre {
-      background: var(--tinta);
+      background: var(--blanco);
       padding: 7rem 0;
       position: relative;
       overflow: hidden;
@@ -295,10 +295,7 @@
 
     #sobre::before {
       content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse 50% 80% at 0% 50%, rgba(74,107,90,0.1) 0%, transparent 60%);
-      pointer-events: none;
+      display: none;
     }
 
     .sobre-grid {
@@ -315,12 +312,12 @@
       display: flex;
       flex-direction: column;
       gap: 0;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid var(--gris-claro);
     }
 
     .sobre-perfil {
       padding: 1.5rem 2rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid var(--gris-claro);
       transition: background 0.2s;
     }
 
@@ -338,7 +335,7 @@
 
     .sp-desc {
       font-size: 0.88rem;
-      color: rgba(250,250,248,0.5);
+      color: var(--gris);
       line-height: 1.7;
     }
 
@@ -347,7 +344,7 @@
       font-size: clamp(1.5rem, 2.5vw, 2rem);
       font-style: italic;
       font-weight: 300;
-      color: var(--blanco);
+      color: var(--tinta);
       line-height: 1.4;
       margin-bottom: 2.5rem;
       padding-left: 1.5rem;
@@ -356,7 +353,7 @@
 
     .sobre-bio {
       font-size: 0.92rem;
-      color: rgba(250,250,248,0.55);
+      color: var(--gris);
       line-height: 1.9;
       margin-bottom: 1rem;
     }
@@ -429,7 +426,7 @@
 
     /* ── CTA FINAL ── */
     #cta-final {
-      background: var(--tinta);
+      background: var(--arena);
       padding: 7rem 0;
       text-align: center;
       position: relative;
@@ -440,7 +437,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(74,107,90,0.15) 0%, transparent 70%);
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(61,122,85,0.08) 0%, transparent 70%);
     }
 
     .cta-inner {
@@ -466,6 +463,54 @@
       flex-wrap: wrap;
     }
 
+
+    /* ── SLIDER TESTIMONIOS ── */
+    .test-slider { overflow: hidden; margin-top: 0; }
+    .test-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.4s ease;
+    }
+    .test-card {
+      background: var(--blanco);
+      padding: 2.5rem;
+      border-radius: 2px;
+      position: relative;
+      min-width: calc(33.333% - 1rem);
+      flex-shrink: 0;
+      border: 1px solid var(--gris-claro);
+    }
+    .test-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .test-btn {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--gris-claro);
+      background: var(--blanco);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+      color: var(--tinta);
+    }
+    .test-btn:hover { background: var(--tinta); color: var(--blanco); border-color: var(--tinta); }
+    .test-dots { display: flex; gap: 0.4rem; }
+    .test-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gris-claro);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+      padding: 0;
+    }
+    .test-dot.active { background: var(--salvia); }
+    @media (max-width: 768px) {
+      .test-card { min-width: calc(100% - 0rem); }
+    }
     /* ── MOBILE ── */
     @media (max-width: 768px) {
       .hero-grid { grid-template-columns: 1fr; }
@@ -480,21 +525,21 @@
       #hero, #servicios, #sobre, #testimonios, #cta-final { padding-top: 5rem; padding-bottom: 5rem; }
     }
   </style>
+  <link rel="canonical" href="https://haroldperez.com/" />
 </head>
 <body>
 
 <nav>
   <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#sobre">Sobre mí</a></li>
-    <li><a href="proser/">ProSer</a></li>
-    <li><a href="academia/">Academia</a></li>
-    <li><a href="organizacional/">Organizacional</a></li>
-    <li><a href="contacto/" class="nav-cta">Contacto</a></li>
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
@@ -516,8 +561,8 @@
           <span class="perfil-tag">ACT · DBT · TCC</span>
         </div>
         <div class="hero-actions">
-          <a href="https://wa.me/573054303746?text=Hola%20Harold,%20quiero%20agendar%20una%20consulta" class="btn-primary" target="_blank">Agenda tu consulta</a>
-          <a href="#sobre" class="btn-outline">Conoce más</a>
+          <a href="https://wa.me/573054303746?text=Hola,%20quiero%20agendar%20una%20consulta" class="btn-primary" target="_blank">Agenda tu consulta</a>
+          <a href="/sobre/" class="btn-outline">Conoce más</a>
         </div>
       </div>
       <div class="hero-photo-wrap">
@@ -571,23 +616,23 @@
       </div>
     </div>
     <div class="servicios-cards">
-      <a href="proser/" class="servicio-card">
+      <a href="/proser/" class="servicio-card">
         <p class="sc-num">01</p>
-        <h3 class="sc-title">ProSer — Clínico</h3>
+        <h3 class="sc-title">Acompañamiento Psicológico</h3>
         <p class="sc-desc">Consulta psicológica individual, de pareja y familiar. Intervención en crisis, duelo, ansiedad y procesos de cambio. Presencial en Pereira y virtual.</p>
         <span class="sc-link">Ver servicios</span>
       </a>
-      <a href="academia/" class="servicio-card">
+      <a href="/academia/" class="servicio-card">
         <p class="sc-num">02</p>
         <h3 class="sc-title">Academia</h3>
         <p class="sc-desc">Talleres, cursos y recursos formativos para personas que quieren entender cómo funciona su mente. Psicología aplicada a la vida cotidiana.</p>
         <span class="sc-link">Ver oferta formativa</span>
       </a>
-      <a href="organizacional/" class="servicio-card">
+      <a href="/proser/" class="servicio-card">
         <p class="sc-num">03</p>
-        <h3 class="sc-title">Organizacional</h3>
-        <p class="sc-desc">Diagnóstico de riesgo psicosocial, talleres corporativos, programas de bienestar y membresía para empresas. Cumplimiento normativo y resultados medibles.</p>
-        <span class="sc-link">Ver servicios</span>
+        <h3 class="sc-title">Recursos digitales</h3>
+        <p class="sc-desc">Guías, ebooks y materiales descargables basados en ACT y DBT. Psicología aplicada con respaldo científico, lista para usar desde el primer día.</p>
+        <span class="sc-link">Ver recursos</span>
       </a>
     </div>
   </div>
@@ -602,9 +647,9 @@
         <blockquote class="sobre-quote">No hago motivación vacía. Hago psicología que funciona y que se puede medir.</blockquote>
         <p class="sobre-bio">Soy psicólogo con triple perfil profesional y más de 16 años de experiencia en contextos de alta complejidad — clínica, instituciones educativas, comunidades vulnerables y entornos de posconflicto.</p>
         <p class="sobre-bio">Mi trabajo se basa en los marcos con mayor evidencia empírica disponible: Terapia de Aceptación y Compromiso (ACT), Terapia Dialéctico Conductual (DBT) y Terapia Cognitivo Conductual (TCC).</p>
-        <p class="sobre-bio">Con base en Pereira, Eje Cafetero. Atención presencial y virtual para toda Colombia.</p>
+        <p class="sobre-bio">Con base en Pereira, Eje Cafetero. Atención presencial y virtual para cualquier persona en el mundo.</p>
         <br>
-        <a href="contacto/" class="btn-outline">Contactar</a>
+        <a href="/contacto/" class="btn-dark">Contactar</a>
       </div>
       <div>
         <div class="sobre-perfiles">
@@ -640,31 +685,91 @@
       </div>
       <div>
         <div class="divider"></div>
-        <p class="lead">Resultados reales de procesos reales. Cada testimonio refleja un proceso de cambio genuino, acompañado con rigor y calidez.</p>
+        <p class="lead">Resultados reales de procesos reales. Cada testimonio refleja un cambio genuino acompañado con rigor y calidez.</p>
       </div>
     </div>
-    <div class="test-grid">
-      <div class="test-card">
-        <div class="test-marca">"</div>
-        <p class="test-texto">El equipo de ProSer nos dio herramientas concretas que cambiaron la forma en que nuestros colaboradores manejan el estrés. Los resultados fueron visibles desde el primer mes.</p>
-        <div class="test-sep"></div>
-        <p class="test-autor">Gerente de Talento Humano</p>
-        <p class="test-cargo">Empresa de servicios · Dosquebradas</p>
+    <div class="test-slider" id="testSlider">
+      <div class="test-track" id="testTrack">
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Gracias a la orientación vocacional que recibí pude descubrir mis fortalezas e intereses. El proceso fue muy completo y me ayudó a tomar una decisión, y ahora me siento seguro del camino que quiero continuar.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Joven — Orientación vocacional</p>
+          <p class="test-cargo">Proceso educativo · Pereira</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Participar del taller para padres fue una gran experiencia. Aprendí que es bueno escuchar y comprender mejor a mis hijos, a manejar sus emociones, a validarlas y a establecer límites con amor. Este espacio me brindó herramientas que agradezco.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Madre de familia</p>
+          <p class="test-cargo">Taller Súper Pás y Más · Pereira</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Trabajar con ProSer ha sido un acierto para nuestra empresa. Hemos implementado estrategias para fomentar un ambiente laboral más saludable y productivo. Son un equipo muy profesional y empático.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Gerente de Talento Humano</p>
+          <p class="test-cargo">Empresa de servicios · Dosquebradas</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">La capacitación que recibimos fue muy enriquecedora. Como docentes enfrentamos retos a diario, pero esta experiencia me brindó herramientas para mejorar la comunicación con mis estudiantes y fortalecer el ambiente escolar.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Docente</p>
+          <p class="test-cargo">Institución educativa · Pereira</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Desde que tenemos la membresía con ProSer hemos visto un impacto muy positivo en toda nuestra comunidad educativa. Su profesionalismo y compromiso ha superado nuestras expectativas. Sin duda son un aliado estratégico para el crecimiento de nuestra institución.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Rectora</p>
+          <p class="test-cargo">Institución educativa · Risaralda</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Quiero darle las gracias por devolverme la esperanza como paciente. Le estaré eternamente agradecido por su compromiso y su calidez humana.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Paciente individual</p>
+          <p class="test-cargo">Proceso clínico · Pereira</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Gracias por ser parte de nuestro camino de vida, por su tiempo, su dedicación, por la paciencia y por los momentos vividos en el proceso.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Familia</p>
+          <p class="test-cargo">Proceso terapéutico familiar · Pereira</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Gracias por tanto. Estoy feliz y agradecida con los cambios de mi hija, por la dedicación y el apoyo. Lo vamos a llevar toda la vida en nuestros corazones.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Madre de familia</p>
+          <p class="test-cargo">Proceso infantil · Pereira</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Felicitaciones por ejercer excelentemente su labor. Dios lo bendiga siempre y pueda continuar ayudando a tantos seres que lo necesitamos.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Paciente individual</p>
+          <p class="test-cargo">Proceso clínico · Pereira</p>
+        </div>
+        <div class="test-card">
+          <div class="test-marca">"</div>
+          <p class="test-texto">Muchas gracias por el proceso que han llevado con mi hijo; es evidente el cambio que ha tenido con su acompañamiento.</p>
+          <div class="test-sep"></div>
+          <p class="test-autor">Padre de familia</p>
+          <p class="test-cargo">Proceso infantil · Pereira</p>
+        </div>
       </div>
-      <div class="test-card">
-        <div class="test-marca">"</div>
-        <p class="test-texto">Lo que más me sorprendió de ProSer fue que no me dieron frases de motivación — me dieron herramientas reales que puedo usar en mi día a día. El proceso fue claro, honesto y efectivo.</p>
-        <div class="test-sep"></div>
-        <p class="test-autor">Paciente individual</p>
-        <p class="test-cargo">Proceso clínico · Pereira</p>
-      </div>
-      <div class="test-card">
-        <div class="test-marca">"</div>
-        <p class="test-texto">El diagnóstico de riesgo psicosocial que realizó ProSer fue riguroso y el informe fue accionable. Por primera vez tuvimos una imagen real de lo que estaba pasando en el equipo.</p>
-        <div class="test-sep"></div>
-        <p class="test-autor">Director de Operaciones</p>
-        <p class="test-cargo">Empresa industrial · Pereira</p>
-      </div>
+    </div>
+    <div class="test-controls">
+      <button class="test-btn" id="testPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="test-dots" id="testDots"></div>
+      <button class="test-btn" id="testNext" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
   </div>
 </section>
@@ -673,12 +778,12 @@
 <section id="cta-final">
   <div class="container">
     <div class="cta-inner">
-      <span class="eyebrow-light">El primer paso</span>
-      <h2 class="display-title">¿Listo para<br><em>empezar?</em></h2>
-      <p class="lead-light">Una conversación de 20 minutos es suficiente para entender qué tipo de acompañamiento necesitas. Sin compromiso, sin presión.</p>
+      <span class="eyebrow">El primer paso</span>
+      <h2 class="section-title">¿Listo para<br><em>empezar?</em></h2>
+      <p class="lead">Una conversación de 20 minutos es suficiente para entender qué tipo de acompañamiento necesitas. Sin compromiso, sin presión.</p>
       <div class="cta-actions">
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20una%20conversación%20diagnóstica" class="btn-primary" target="_blank">Escribir por WhatsApp</a>
-        <a href="contacto/" class="btn-outline">Ver todas las opciones</a>
+        <a href="/contacto/" class="btn-dark">Ver todas las opciones</a>
       </div>
     </div>
   </div>
@@ -694,15 +799,15 @@
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
-        <a href="proser/">ProSer — Clínico</a>
-        <a href="academia/">Academia</a>
-        <a href="organizacional/">Organizacional</a>
+        <a href="/proser/">ProSer — Clínico</a>
+        <a href="/academia/">Academia</a>
+        <a href="/proyectos/">Organizacional</a>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
         <a href="mailto:info@prosercps.org">info@prosercps.org</a>
-        <a href="contacto/">Formulario de contacto</a>
+        <a href="/contacto/">Contacto</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -717,6 +822,38 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Testimonios slider
+  (function() {
+    const track = document.getElementById('testTrack');
+    const dotsContainer = document.getElementById('testDots');
+    if (!track) return;
+    const cards = track.querySelectorAll('.test-card');
+    const perView = window.innerWidth <= 768 ? 1 : 3;
+    const total = cards.length;
+    const pages = Math.ceil(total / perView);
+    let current = 0;
+
+    // Create dots
+    for (let i = 0; i < pages; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'test-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    function goTo(page) {
+      current = page;
+      const cardW = cards[0].offsetWidth + 24; // gap
+      track.style.transform = `translateX(-${current * perView * cardW}px)`;
+      dotsContainer.querySelectorAll('.test-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    document.getElementById('testPrev').addEventListener('click', () => goTo((current - 1 + pages) % pages));
+    document.getElementById('testNext').addEventListener('click', () => goTo((current + 1) % pages));
+  })();
 </script>
 </body>
 </html>

@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProSer — Servicios Clínicos · Harold Pérez</title>
+  <title>Acompañamiento Psicológico · Harold Pérez</title>
+  <meta name="robots" content="noindex, nofollow" />
   <meta name="description" content="Servicios psicológicos clínicos basados en evidencia. Consulta individual, terapia de pareja, intervención en crisis, evaluación neuropsicológica." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -64,7 +65,7 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--salvia);
-      border: 1px solid rgba(74,107,90,0.3);
+      border: 1px solid rgba(61,122,85,0.3);
       padding: 0.3rem 0.7rem;
       border-radius: 2px;
     }
@@ -84,34 +85,33 @@
 
     .si-cta:hover { color: var(--salvia); }
 
-    /* ── PROCESO ── */
     #proceso {
-      background: var(--tinta);
+      background: var(--arena);
       padding: 7rem 0;
     }
 
     .proceso-steps {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 0;
       margin-top: 4rem;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid var(--gris-claro);
     }
 
     .paso {
       padding: 2.5rem;
-      border-right: 1px solid rgba(255,255,255,0.06);
+      border-right: 1px solid var(--gris-claro);
       transition: background 0.2s;
     }
 
     .paso:last-child { border-right: none; }
-    .paso:hover { background: rgba(255,255,255,0.03); }
+    .paso:hover { background: var(--blanco); }
 
     .paso-num {
       font-family: var(--font-display);
       font-size: 3rem;
       font-weight: 600;
-      color: rgba(255,255,255,0.06);
+      color: var(--gris-claro);
       line-height: 1;
       margin-bottom: 1.25rem;
     }
@@ -121,17 +121,16 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--salvia-light);
+      color: var(--salvia);
       margin-bottom: 0.75rem;
     }
 
     .paso-desc {
       font-size: 0.85rem;
-      color: rgba(250,250,248,0.45);
+      color: var(--gris);
       line-height: 1.7;
     }
 
-    /* ── CTA ── */
     #cta {
       background: var(--arena);
       padding: 7rem 0;
@@ -187,28 +186,25 @@
 <nav>
   <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="/#sobre">Sobre mí</a></li>
-    <li><a href="/proser/" style="color:var(--blanco)">ProSer</a></li>
+    <li><a href="/sobre/">Sobre mí</a></li>
     <li><a href="/academia/">Academia</a></li>
-    <li><a href="/organizacional/">Organizacional</a></li>
+    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
     <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="container">
-    <span class="eyebrow-light">ProSer — Servicios Clínicos</span>
-    <h1 class="display-title">Psicología que<br><em>acompaña de verdad</em></h1>
+    <span class="eyebrow-light">Acompañamiento Psicológico</span>
+    <h1 class="display-title">Acompañamiento<br><em>psicológico</em></h1>
     <div class="divider-light" style="margin-top:2rem;"></div>
-    <p class="lead-light" style="margin-top:1.5rem;">Atención psicológica individual, de pareja y familiar. Presencial en Pereira y virtual para toda Colombia. Sin listas de espera interminables, sin frases vacías.</p>
+    <p class="lead-light" style="margin-top:1.5rem;">Atención psicológica individual, de pareja y familiar. Presencial en Pereira y virtual para cualquier parte del mundo. Sin listas de espera interminables, sin frases vacías.</p>
   </div>
 </section>
 
-<!-- SERVICIOS -->
 <section style="background: var(--blanco); padding: 7rem 0;">
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:1rem;">
@@ -258,8 +254,19 @@
       </div>
       <div class="servicio-item">
         <p class="si-num">04</p>
+        <h3 class="si-title">Acompañamiento en Duelo</h3>
+        <p class="si-desc">Proceso especializado para personas que atraviesan pérdidas significativas — de personas, relaciones, roles o proyectos de vida. Basado en ACT y en el modelo de procesamiento del duelo con evidencia empírica.</p>
+        <div class="si-tags">
+          <span class="si-tag">ACT para el duelo</span>
+          <span class="si-tag">Pérdida</span>
+          <span class="si-tag">Proceso</span>
+        </div>
+        <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20acompañamiento%20en%20duelo" class="si-cta" target="_blank">Solicitar información</a>
+      </div>
+      <div class="servicio-item" style="border-top:2px solid var(--salvia-light);">
+        <p class="si-num" style="color:var(--salvia);">Habilidad</p>
         <h3 class="si-title">Intervención en Crisis y PAP</h3>
-        <p class="si-desc">Primeros Auxilios Psicológicos y atención especializada en situaciones de crisis aguda. Respuesta rápida, contenedora y profesional. Disponible en modalidad presencial y virtual urgente.</p>
+        <p class="si-desc">Primeros Auxilios Psicológicos y atención especializada en situaciones de crisis aguda. Una habilidad transversal que aplica en todos los procesos de acompañamiento, disponible de forma presencial o virtual urgente.</p>
         <div class="si-tags">
           <span class="si-tag">Crisis aguda</span>
           <span class="si-tag">PAP</span>
@@ -292,7 +299,7 @@
       </div>
       <div class="servicio-item">
         <p class="si-num">07</p>
-        <h3 class="si-title">Orientación Vocacional</h3>
+        <h3 class="si-title">Orientación Socio Ocupacional</h3>
         <p class="si-desc">Proceso estructurado para jóvenes y adultos en la toma de decisiones vocacionales y de vida. Individual o grupal. Evaluación psicométrica e intervención con evidencia en orientación.</p>
         <div class="si-tags">
           <span class="si-tag">Individual</span>
@@ -316,29 +323,33 @@
   </div>
 </section>
 
-<!-- PROCESO -->
 <section id="proceso">
   <div class="container">
-    <span class="eyebrow-light">Cómo funciona</span>
-    <h2 class="section-title-light">El proceso de<br><em>inicio a fin</em></h2>
+    <span class="eyebrow">Cómo funciona</span>
+    <h2 class="section-title">El proceso de<br><em>inicio a fin</em></h2>
     <div class="proceso-steps">
       <div class="paso">
         <div class="paso-num">01</div>
         <p class="paso-title">Contacto inicial</p>
-        <p class="paso-desc">Escribes por WhatsApp o correo. En menos de 24 horas coordinamos una primera conversación sin costo para entender qué necesitas.</p>
+        <p class="paso-desc">Escribes por WhatsApp o correo. Coordinamos lo antes posible una primera conversación sin costo para entender qué necesitas.</p>
       </div>
       <div class="paso">
         <div class="paso-num">02</div>
-        <p class="paso-title">Sesión de evaluación</p>
-        <p class="paso-desc">Primera sesión de evaluación y diagnóstico. Entendemos el motivo de consulta y diseñamos juntos el proceso más adecuado.</p>
+        <p class="paso-title">Sesiones de evaluación</p>
+        <p class="paso-desc">2 o 3 sesiones de evaluación y diagnóstico, dependiendo del proceso. Entendemos el motivo de consulta en profundidad.</p>
       </div>
       <div class="paso">
         <div class="paso-num">03</div>
-        <p class="paso-title">Proceso terapéutico</p>
-        <p class="paso-desc">Sesiones periódicas con objetivos claros y medibles. Usamos los marcos con mayor evidencia — ACT, DBT o TCC — según tu situación.</p>
+        <p class="paso-title">Devolución al paciente</p>
+        <p class="paso-desc">Compartimos los hallazgos de la evaluación y diseñamos juntos el proceso más adecuado, con objetivos claros y medibles.</p>
       </div>
       <div class="paso">
         <div class="paso-num">04</div>
+        <p class="paso-title">Proceso terapéutico</p>
+        <p class="paso-desc">Sesiones periódicas con los marcos de mayor evidencia — ACT, DBT o TCC — según tu situación específica.</p>
+      </div>
+      <div class="paso" style="border-right:none;">
+        <div class="paso-num">05</div>
         <p class="paso-title">Seguimiento y cierre</p>
         <p class="paso-desc">Evaluamos el avance, consolidamos los aprendizajes y definimos juntos cuándo y cómo cerrar el proceso de forma saludable.</p>
       </div>
@@ -346,13 +357,12 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section id="cta">
   <div class="container">
     <div class="cta-box">
       <div>
         <h2>¿Listo para dar<br><em>el primer paso?</em></h2>
-        <p>Una conversación de 20 minutos es suficiente para saber si ProSer es el lugar indicado para tu proceso. Sin compromiso, sin presión.</p>
+        
       </div>
       <div class="cta-btns">
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20agendar%20una%20primera%20consulta%20en%20ProSer" class="btn-salvia" target="_blank">Agendar por WhatsApp</a>
@@ -362,7 +372,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
@@ -380,7 +389,7 @@
         <h4>Contacto</h4>
         <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
         <a href="mailto:info@prosercps.org">info@prosercps.org</a>
-        <a href="/contacto/">Formulario de contacto</a>
+        <a href="/contacto/">Contacto</a>
       </div>
     </div>
     <div class="footer-bottom">

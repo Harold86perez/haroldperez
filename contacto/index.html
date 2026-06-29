@@ -4,16 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto — Harold Pérez</title>
-  <meta name="description" content="Agenda tu consulta, solicita una propuesta o escríbenos. Respondemos en menos de 24 horas." />
+  <meta name="description" content="Agenda tu consulta, solicita una propuesta o escríbenos. Respondemos lo antes posible." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <style>
-    #contacto-main {
-      background: var(--blanco);
-      padding: 7rem 0;
-    }
+    #contacto-main { background: var(--blanco); padding: 7rem 0; }
 
     .contacto-grid {
       display: grid;
@@ -23,11 +20,7 @@
       margin-top: 4rem;
     }
 
-    .contacto-opciones {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .contacto-opciones { display: flex; flex-direction: column; gap: 1rem; }
 
     .contacto-card {
       display: flex;
@@ -40,11 +33,7 @@
       transition: all 0.25s;
     }
 
-    .contacto-card:hover {
-      border-color: var(--salvia);
-      background: var(--arena);
-      transform: translateX(4px);
-    }
+    .contacto-card:hover { border-color: var(--salvia); background: var(--arena); transform: translateX(4px); }
 
     .cc-icon {
       width: 2.75rem;
@@ -58,18 +47,8 @@
       font-size: 1.1rem;
     }
 
-    .cc-titulo {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--tinta);
-      margin-bottom: 0.25rem;
-    }
-
-    .cc-sub {
-      font-size: 0.78rem;
-      color: var(--gris);
-      line-height: 1.5;
-    }
+    .cc-titulo { font-size: 0.88rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.25rem; }
+    .cc-sub { font-size: 0.78rem; color: var(--gris); line-height: 1.5; }
 
     .cc-tag {
       display: inline-block;
@@ -78,24 +57,15 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--salvia);
-      background: rgba(74,107,90,0.08);
+      background: rgba(61,122,85,0.08);
       padding: 0.2rem 0.6rem;
       border-radius: 2px;
       margin-top: 0.4rem;
     }
 
-    .contacto-info {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border: 1px solid var(--gris-claro);
-    }
+    .contacto-info { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--gris-claro); }
 
-    .ci-item {
-      padding: 1.75rem 2rem;
-      border-bottom: 1px solid var(--gris-claro);
-    }
-
+    .ci-item { padding: 1.75rem 2rem; border-bottom: 1px solid var(--gris-claro); }
     .ci-item:last-child { border-bottom: none; }
 
     .ci-label {
@@ -107,51 +77,40 @@
       margin-bottom: 0.5rem;
     }
 
-    .ci-value {
-      font-size: 0.9rem;
-      color: var(--tinta);
-      line-height: 1.65;
-    }
-
-    .ci-value a {
-      color: var(--salvia);
-      text-decoration: none;
-    }
-
+    .ci-value { font-size: 0.9rem; color: var(--tinta); line-height: 1.65; }
+    .ci-value a { color: var(--salvia); text-decoration: none; }
     .ci-value a:hover { text-decoration: underline; }
 
     @media (max-width: 768px) {
       .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
   </style>
+  <link rel="canonical" href="https://haroldperez.com/contacto/" />
 </head>
 <body>
 
 <nav>
   <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="/#sobre">Sobre mí</a></li>
-    <li><a href="/proser/">ProSer</a></li>
+    <li><a href="/sobre/">Sobre mí</a></li>
     <li><a href="/academia/">Academia</a></li>
-    <li><a href="/organizacional/">Organizacional</a></li>
-    <li><a href="/contacto/" class="nav-cta" style="color:var(--blanco)!important">Contacto</a></li>
+    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
   </ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
 <section class="page-hero">
   <div class="container">
     <span class="eyebrow-light">Contacto</span>
     <h1 class="display-title">El primer paso<br><em>es escribir</em></h1>
     <div class="divider-light" style="margin-top:2rem;"></div>
-    <p class="lead-light" style="margin-top:1.5rem;">Respondemos en menos de 24 horas. Sin formularios complicados, sin listas de espera interminables. Solo escríbenos y empezamos.</p>
+    <p class="lead-light" style="margin-top:1.5rem;">Respondemos lo antes posible. Sin formularios complicados, sin listas de espera interminables. Solo escríbenos y empezamos.</p>
   </div>
 </section>
 
-<!-- CONTACTO -->
 <section id="contacto-main">
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end;">
@@ -171,7 +130,7 @@
           <div>
             <p class="cc-titulo">Consulta psicológica individual</p>
             <p class="cc-sub">Para agendar una primera sesión, resolver dudas sobre el proceso o saber si ProSer es el lugar indicado para ti.</p>
-            <span class="cc-tag">WhatsApp · Respuesta en 2h</span>
+            <span class="cc-tag">WhatsApp · Respuesta rápida</span>
           </div>
         </a>
         <a href="https://wa.me/573054303746?text=Hola,%20soy%20de%20una%20empresa%20y%20quiero%20información%20sobre%20servicios%20organizacionales" class="contacto-card" target="_blank">
@@ -179,7 +138,7 @@
           <div>
             <p class="cc-titulo">Servicios para empresas</p>
             <p class="cc-sub">Para diagnóstico de riesgo psicosocial, talleres corporativos, programas anuales o membresía de bienestar organizacional.</p>
-            <span class="cc-tag">WhatsApp · Diagnóstico gratuito</span>
+            <span class="cc-tag">WhatsApp · Respuesta rápida</span>
           </div>
         </a>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20los%20talleres%20y%20cursos%20de%20la%20Academia" class="contacto-card" target="_blank">
@@ -187,7 +146,7 @@
           <div>
             <p class="cc-titulo">Academia — talleres y cursos</p>
             <p class="cc-sub">Para información sobre talleres de ACT y DBT, membresía ProSer o recursos formativos disponibles.</p>
-            <span class="cc-tag">WhatsApp · Respuesta el mismo día</span>
+            <span class="cc-tag">WhatsApp · Respuesta rápida</span>
           </div>
         </a>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20servicios%20para%20instituciones%20educativas%20u%20ONGs" class="contacto-card" target="_blank">
@@ -203,7 +162,7 @@
           <div>
             <p class="cc-titulo">Correo electrónico</p>
             <p class="cc-sub">Para consultas formales, solicitud de propuestas por escrito o temas que requieran documentación adjunta.</p>
-            <span class="cc-tag">info@prosercps.org · Respuesta en 24h</span>
+            <span class="cc-tag">info@prosercps.org · Respuesta rápida</span>
           </div>
         </a>
       </div>
@@ -222,7 +181,7 @@
         </div>
         <div class="ci-item">
           <p class="ci-label">Modalidad de atención</p>
-          <p class="ci-value">Presencial en Pereira<br>Virtual para toda Colombia y Latinoamérica</p>
+          <p class="ci-value">Presencial en Pereira<br>Virtual para cualquier parte del mundo</p>
         </div>
         <div class="ci-item">
           <p class="ci-label">Horario</p>
@@ -233,7 +192,8 @@
           <p class="ci-value">
             <a href="https://instagram.com/prosercps" target="_blank">@prosercps</a> · Instagram ProSer<br>
             <a href="https://instagram.com/haroldperez_" target="_blank">@haroldperez_</a> · Instagram personal<br>
-            <a href="https://linkedin.com/in/harold86perez" target="_blank">linkedin.com/in/harold86perez</a>
+            <a href="https://linkedin.com/in/harold86perez" target="_blank">linkedin.com/in/harold86perez</a> · Harold Pérez<br>
+            <a href="https://linkedin.com/in/prosercps" target="_blank">linkedin.com/in/prosercps</a> · ProSer
           </p>
         </div>
       </div>
@@ -241,7 +201,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
