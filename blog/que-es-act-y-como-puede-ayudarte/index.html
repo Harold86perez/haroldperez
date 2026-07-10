@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Qué es ACT y cómo puede ayudarte? — Harold Pérez</title>
+  <meta name="description" content="La Terapia de Aceptación y Compromiso (ACT) propone dejar de luchar contra lo que sientes y empezar a vivir en dirección a lo que valoras. Así funciona." />
+  <link rel="canonical" href="https://haroldperez.com/blog/que-es-act-y-como-puede-ayudarte/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .article-hero { background: var(--tinta); padding: 10rem 0 4rem; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(61,122,85,0.15) 0%, transparent 70%); pointer-events: none; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .article-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--salvia-light); background: rgba(82,168,110,0.15); padding: 0.3rem 0.7rem; border-radius: 2px; }
+    .article-date { font-size: 0.75rem; color: rgba(250,250,248,0.4); }
+    .article-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 600; color: var(--blanco); line-height: 1.12; max-width: 720px; }
+    .article-title em { font-style: italic; font-weight: 400; color: var(--salvia-light); }
+    .article-subtitle { font-size: 1.05rem; color: rgba(250,250,248,0.55); line-height: 1.75; margin-top: 1.5rem; max-width: 620px; }
+    .article-content { background: var(--blanco); padding: 5rem 0 6rem; }
+    .article-body { max-width: 680px; margin: 0 auto; }
+    .article-body h2 { font-family: var(--font-display); font-size: 1.65rem; font-weight: 600; color: var(--tinta); line-height: 1.2; margin-top: 3rem; margin-bottom: 1rem; }
+    .article-body h2 em { font-style: italic; font-weight: 400; color: var(--salvia); }
+    .article-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--tinta); line-height: 1.3; margin-top: 2.25rem; margin-bottom: 0.75rem; }
+    .article-body p { font-size: 0.95rem; color: var(--tinta); line-height: 1.9; margin-bottom: 1.25rem; }
+    .article-body blockquote { border-left: 3px solid var(--salvia); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(61,122,85,0.04); border-radius: 0 4px 4px 0; }
+    .article-body blockquote p { font-size: 0.92rem; color: var(--gris); font-style: italic; margin-bottom: 0; }
+    .article-body .article-ref { font-size: 0.8rem; color: var(--gris); line-height: 1.7; }
+    .article-author { border-top: 1px solid var(--gris-claro); margin-top: 3rem; padding-top: 2.5rem; display: flex; gap: 1.5rem; align-items: center; }
+    .article-author-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .article-author-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.2rem; }
+    .article-author-bio { font-size: 0.8rem; color: var(--gris); line-height: 1.6; }
+    .article-cta { background: var(--arena); border-radius: 6px; padding: 2.25rem 2.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 2rem; }
+    .article-cta-text { flex-grow: 1; }
+    .article-cta-text h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.4rem; margin-top: 0; }
+    .article-cta-text p { font-size: 0.82rem; color: var(--gris); line-height: 1.6; margin-bottom: 0; }
+    .article-nav { background: var(--blanco); padding: 0 0 5rem; }
+    .article-nav-inner { max-width: 680px; margin: 0 auto; border-top: 1px solid var(--gris-claro); padding-top: 2rem; display: flex; justify-content: space-between; }
+    .article-nav a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--salvia); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+    .article-nav a:hover { color: var(--salvia-light); }
+    @media (max-width: 768px) { .article-cta { flex-direction: column; align-items: flex-start; gap: 1.25rem; } .article-body { padding: 0 0.5rem; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">ACT</span>
+      <span class="article-date">Julio 2026 · 7 min de lectura</span>
+    </div>
+    <h1 class="article-title">¿Qué es ACT y cómo puede <em>ayudarte?</em></h1>
+    <p class="article-subtitle">La Terapia de Aceptación y Compromiso no te pide que pienses en positivo ni que controles lo que sientes. Te propone algo más útil: aprender a vivir en dirección a lo que valoras, incluso cuando las emociones difíciles estén presentes.</p>
+  </div>
+</section>
+
+<section class="article-content">
+  <div class="container">
+    <div class="article-body">
+
+      <p>Si alguna vez te dijeron "no pienses en eso", "sé fuerte" o "supéralo", probablemente descubriste que esos consejos no funcionan. No porque seas débil o estés haciendo algo mal, sino porque la mente humana no funciona así. Intentar suprimir un pensamiento no lo elimina — lo amplifica. Y tratar de controlar una emoción suele generar una segunda capa de sufrimiento: la frustración de no lograrlo.</p>
+
+      <p>La Terapia de Aceptación y Compromiso (ACT, pronunciada como una sola palabra, "act") parte de una premisa diferente: el sufrimiento psicológico no viene de tener pensamientos o emociones difíciles — viene de quedar atrapado en ellos, de fusionarse con sus contenidos y de dejar que dicten lo que hacemos o dejamos de hacer (Hayes, Strosahl & Wilson, 2012).</p>
+
+      <h2>El problema no es lo que <em>sientes</em></h2>
+
+      <p>La psicología clásica invirtió décadas tratando de reducir síntomas: menos ansiedad, menos tristeza, menos pensamientos negativos. ACT no niega que esos síntomas generan malestar. Lo que cuestiona es si la reducción del síntoma es el objetivo correcto. Porque a veces, perseguir la ausencia de malestar es precisamente lo que nos mantiene atrapados.</p>
+
+      <p>Un ejemplo cotidiano: alguien evita hablar en público porque siente ansiedad. Cada vez que evita, la ansiedad disminuye temporalmente — pero el mundo se hace más pequeño. La persona deja de dar su opinión en reuniones, rechaza oportunidades de crecimiento, se aleja de lo que valora profesionalmente. La ansiedad se fue en el momento, pero el costo fue alto.</p>
+
+      <blockquote>
+        <p>ACT no te pide que dejes de sentir ansiedad para actuar. Te propone actuar en dirección a tus valores incluso con la ansiedad presente. Esa distinción cambia todo.</p>
+      </blockquote>
+
+      <h2>Los seis procesos de la <em>flexibilidad psicológica</em></h2>
+
+      <p>ACT trabaja a través de seis procesos interconectados que, en conjunto, desarrollan lo que se llama flexibilidad psicológica: la capacidad de estar en contacto con el momento presente, abierto a la experiencia interna, y actuar en función de lo que te importa.</p>
+
+      <h3>1. Aceptación</h3>
+      <p>No es resignación ni conformismo. Es la disposición activa de experimentar pensamientos y emociones tal como son, sin intentar cambiarlos, evitarlos o suprimirlos. Es dejar que la ola pase sin pelear contra ella.</p>
+
+      <h3>2. Defusión cognitiva</h3>
+      <p>La mente produce pensamientos constantemente, y muchos de ellos son dolorosos. La defusión no intenta cambiar el contenido del pensamiento, sino la relación que tenemos con él. "Soy un fracaso" se convierte en "noto que mi mente me dice que soy un fracaso". El pensamiento sigue ahí, pero pierde su poder de gobernar la conducta.</p>
+
+      <h3>3. Contacto con el momento presente</h3>
+      <p>La capacidad de estar aquí, ahora — no en el pasado rumiando ni en el futuro anticipando. No como ejercicio de relajación, sino como base para tomar decisiones conscientes en lugar de automáticas.</p>
+
+      <h3>4. Yo como contexto</h3>
+      <p>Hay una diferencia entre ser tus pensamientos y observarlos. El "yo observador" de ACT es el lugar desde el cual puedes notar tus experiencias internas sin identificarte completamente con ellas. Eres el cielo, no las nubes que pasan.</p>
+
+      <h3>5. Valores</h3>
+      <p>Los valores no son metas que se alcanzan — son direcciones en las que se camina. "Ser un padre presente" no se cumple en un momento; se vive todos los días. ACT usa los valores como brújula: cuando no sabes qué hacer, pregúntate qué haría la versión de ti que vive según lo que le importa.</p>
+
+      <h3>6. Acción comprometida</h3>
+      <p>Sin acción, los valores son solo ideas bonitas. ACT insiste en que el cambio ocurre en la conducta: dar pasos concretos, aunque sean pequeños, en dirección a lo que valoras. Y cuando te desvías (porque todos lo hacemos), volver a empezar sin autocastigo.</p>
+
+      <h2>¿Para quién funciona <em>ACT?</em></h2>
+
+      <p>ACT tiene respaldo empírico para una gama amplia de condiciones: ansiedad, depresión, dolor crónico, estrés laboral, adicciones, trastornos de alimentación, y más (A-Tjak et al., 2015). Pero más allá del diagnóstico, ACT es especialmente útil para personas que sienten que están "atoradas" — que saben lo que quieren pero no logran moverse hacia allá, o que llevan tiempo peleando contra lo que sienten sin resultados.</p>
+
+      <p>No es la única terapia que funciona, y no es para todo el mundo. Pero para quienes resonan con la idea de que la vida no empieza cuando el malestar termina, puede ser profundamente liberadora.</p>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>5 herramientas ACT para el día a día</h3>
+          <p>Descarga gratis la guía práctica con cinco ejercicios de Terapia de Aceptación y Compromiso para usar en momentos cotidianos. 17 páginas, sin jerga clínica.</p>
+        </div>
+        <a href="/recurso-act5/" class="btn-salvia">Descargar gratis</a>
+      </div>
+
+      <h2>Referencias</h2>
+      <p class="article-ref">A-Tjak, J. G. L., Davis, M. L., Morina, N., Powers, M. B., Smits, J. A. J., & Emmelkamp, P. M. G. (2015). A meta-analysis of the efficacy of acceptance and commitment therapy for clinically relevant mental and physical health problems. <em>Psychotherapy and Psychosomatics</em>, 84(1), 30-36.</p>
+      <p class="article-ref">Hayes, S. C., Strosahl, K. D., & Wilson, K. G. (2012). <em>Acceptance and commitment therapy: The process and practice of mindful change</em> (2nd ed.). Guilford Press.</p>
+
+      <div class="article-author">
+        <img src="/harold.png" alt="Harold Pérez" class="article-author-img" />
+        <div>
+          <p class="article-author-name">Harold David Pérez Ramírez</p>
+          <p class="article-author-bio">Psicólogo · Mg. en Psicoterapia · Mg. en Intervención Social · Ubicado en Pereira, Risaralda</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article-nav"><div class="container"><div class="article-nav-inner">
+  <a href="/blog/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Volver al blog</a>
+</div></div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo">Harold <span>Pérez</span></a><p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p></div><div class="footer-col"><h4>Navegación</h4><a href="/proser/">ProSer</a><a href="/academia/">Academia</a><a href="/ebooks/">Recursos digitales</a><a href="/blog/">Blog</a></div><div class="footer-col"><h4>Contacto</h4><a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a><a href="mailto:info@haroldperez.com">info@haroldperez.com</a><a href="mailto:info@prosercps.org">info@prosercps.org</a><a href="/contacto/">Contacto</a></div></div><div class="footer-bottom"><p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p><p>Psicología basada en evidencia, no en autoayuda.</p></div></div></footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

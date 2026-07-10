@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aprender diferente no es aprender menos — Harold Pérez</title>
+  <meta name="description" content="No todos los niños aprenden de la misma manera, y eso no es un problema. Es una oportunidad que requiere otro tipo de acompañamiento. ¿Qué dice la evidencia?" />
+  <link rel="canonical" href="https://haroldperez.com/blog/aprender-diferente-no-es-aprender-menos/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .article-hero { background: var(--tinta); padding: 10rem 0 4rem; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(61,122,85,0.15) 0%, transparent 70%); pointer-events: none; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .article-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--salvia-light); background: rgba(82,168,110,0.15); padding: 0.3rem 0.7rem; border-radius: 2px; }
+    .article-date { font-size: 0.75rem; color: rgba(250,250,248,0.4); }
+    .article-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 600; color: var(--blanco); line-height: 1.12; max-width: 720px; }
+    .article-title em { font-style: italic; font-weight: 400; color: var(--salvia-light); }
+    .article-subtitle { font-size: 1.05rem; color: rgba(250,250,248,0.55); line-height: 1.75; margin-top: 1.5rem; max-width: 620px; }
+    .article-content { background: var(--blanco); padding: 5rem 0 6rem; }
+    .article-body { max-width: 680px; margin: 0 auto; }
+    .article-body h2 { font-family: var(--font-display); font-size: 1.65rem; font-weight: 600; color: var(--tinta); line-height: 1.2; margin-top: 3rem; margin-bottom: 1rem; }
+    .article-body h2 em { font-style: italic; font-weight: 400; color: var(--salvia); }
+    .article-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--tinta); line-height: 1.3; margin-top: 2.25rem; margin-bottom: 0.75rem; }
+    .article-body p { font-size: 0.95rem; color: var(--tinta); line-height: 1.9; margin-bottom: 1.25rem; }
+    .article-body blockquote { border-left: 3px solid var(--salvia); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(61,122,85,0.04); border-radius: 0 4px 4px 0; }
+    .article-body blockquote p { font-size: 0.92rem; color: var(--gris); font-style: italic; margin-bottom: 0; }
+    .article-body .article-ref { font-size: 0.8rem; color: var(--gris); line-height: 1.7; }
+    .article-author { border-top: 1px solid var(--gris-claro); margin-top: 3rem; padding-top: 2.5rem; display: flex; gap: 1.5rem; align-items: center; }
+    .article-author-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .article-author-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.2rem; }
+    .article-author-bio { font-size: 0.8rem; color: var(--gris); line-height: 1.6; }
+    .article-cta { background: var(--arena); border-radius: 6px; padding: 2.25rem 2.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 2rem; }
+    .article-cta-text { flex-grow: 1; }
+    .article-cta-text h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.4rem; margin-top: 0; }
+    .article-cta-text p { font-size: 0.82rem; color: var(--gris); line-height: 1.6; margin-bottom: 0; }
+    .article-nav { background: var(--blanco); padding: 0 0 5rem; }
+    .article-nav-inner { max-width: 680px; margin: 0 auto; border-top: 1px solid var(--gris-claro); padding-top: 2rem; display: flex; justify-content: space-between; }
+    .article-nav a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--salvia); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+    .article-nav a:hover { color: var(--salvia-light); }
+    @media (max-width: 768px) { .article-cta { flex-direction: column; align-items: flex-start; gap: 1.25rem; } .article-body { padding: 0 0.5rem; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">Educación</span>
+      <span class="article-date">Julio 2026 · 6 min de lectura</span>
+    </div>
+    <h1 class="article-title">Aprender diferente no es <em>aprender menos</em></h1>
+    <p class="article-subtitle">Cuando un niño no responde al modelo educativo estándar, el problema rara vez es el niño. A veces es el modelo el que necesita adaptarse. ¿Qué dice la evidencia sobre acompañar el aprendizaje desde casa?</p>
+  </div>
+</section>
+
+<section class="article-content">
+  <div class="container">
+    <div class="article-body">
+
+      <p>En las reuniones de padres, la frase suele repetirse con variaciones: "su hijo es inteligente, pero no se concentra", "podría rendir más si se esforzara", "tiene capacidades pero no las aplica". Detrás de esas frases hay una suposición implícita: que el niño sabe cómo aprender pero elige no hacerlo. Que es un problema de motivación, de disciplina, de ganas.</p>
+
+      <p>La neurociencia del aprendizaje cuenta otra historia. No todos los cerebros procesan la información de la misma manera. Las diferencias en atención, memoria de trabajo, velocidad de procesamiento y funciones ejecutivas hacen que un mismo contenido presentado de una misma forma sea accesible para algunos niños y completamente inaccesible para otros (Dehaene, 2020). No es un tema de voluntad — es un tema de diseño.</p>
+
+      <h2>El mito del niño que <em>"no quiere"</em></h2>
+
+      <p>Cuando un niño muestra dificultades académicas persistentes, lo primero que suele hacerse es aumentar la presión: más tarea, más repaso, más exigencia, menos tiempo libre. El mensaje implícito es "si te esfuerzas más, lo lograrás". Pero si el niño ya se está esforzando y el método no se ajusta a cómo su cerebro procesa la información, más presión solo genera más frustración — y eventualmente, desconexión.</p>
+
+      <p>La investigación en psicología educativa es clara: la motivación no es el punto de partida del aprendizaje, sino una consecuencia de experiencias de éxito (Dweck, 2006). Un niño que experimenta repetidamente el fracaso académico no necesita más motivación — necesita una experiencia diferente de aprendizaje donde pueda experimentar logro.</p>
+
+      <blockquote>
+        <p>La pregunta correcta no es "¿por qué mi hijo no aprende?", sino "¿cómo aprende mi hijo?". Y esa pregunta cambia todo: el enfoque pasa del déficit a la adaptación.</p>
+      </blockquote>
+
+      <h2>¿Qué pueden hacer los padres <em>desde casa?</em></h2>
+
+      <p>No se trata de reemplazar al colegio ni de convertir la casa en una extensión del aula. Se trata de crear condiciones que complementen el proceso educativo formal, respetando el ritmo y las características del niño.</p>
+
+      <h3>Observar antes de intervenir</h3>
+      <p>Antes de aplicar cualquier estrategia, vale la pena observar: en qué momentos del día el niño muestra más disposición, qué tipo de actividades captura su atención naturalmente, cómo responde a la frustración, qué lo regula y qué lo desregula. Esa observación da información más valiosa que cualquier reporte académico.</p>
+
+      <h3>Estructura sin rigidez</h3>
+      <p>Los niños con dificultades de aprendizaje suelen beneficiarse de rutinas predecibles pero no inflexibles. Saber qué viene después reduce la ansiedad anticipatoria. Pero la rutina tiene que dejar espacio para pausas, para el juego, para el descanso. Un niño agotado no aprende — solo sobrevive.</p>
+
+      <h3>Emociones primero, contenido después</h3>
+      <p>Si un niño llega frustrado del colegio, sentarlo a hacer tareas inmediatamente no es la mejor estrategia. Primero necesita regularse emocionalmente. Eso puede significar tiempo libre, movimiento físico, una conversación corta, o simplemente silencio. La neurociencia confirma que el cerebro no puede procesar información nueva cuando está en estado de amenaza o estrés (Immordino-Yang & Damasio, 2007).</p>
+
+      <h3>Celebrar el proceso, no solo el resultado</h3>
+      <p>La investigación de Carol Dweck sobre mentalidad de crecimiento muestra que los niños que reciben retroalimentación sobre su esfuerzo y estrategia ("trabajaste duro en eso", "probaste un camino diferente") desarrollan más resiliencia que los que reciben retroalimentación sobre su talento ("eres muy inteligente"). El primero enseña que el aprendizaje es un proceso; el segundo enseña que es un rasgo fijo.</p>
+
+      <h2>¿Cuándo buscar <em>apoyo profesional?</em></h2>
+
+      <p>Las estrategias desde casa son valiosas, pero tienen límites. Si las dificultades persisten a pesar de la adaptación del entorno, si hay un deterioro emocional significativo (ansiedad escolar, evitación, somatización), o si el rendimiento académico está consistentemente por debajo de las capacidades observadas del niño, vale la pena una evaluación psicológica o neuropsicológica que identifique con precisión qué está ocurriendo y cómo abordarlo.</p>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Aprender diferente en casa</h3>
+          <p>Ebook con estrategias prácticas para padres y cuidadores que acompañan niños con estilos de aprendizaje diversos. Basado en evidencia, sin fórmulas mágicas.</p>
+        </div>
+        <a href="/ebooks/" class="btn-salvia">Ver ebook · $12.99 USD</a>
+      </div>
+
+      <h2>Referencias</h2>
+      <p class="article-ref">Dehaene, S. (2020). <em>How we learn: Why brains learn better than any machine... for now</em>. Viking.</p>
+      <p class="article-ref">Dweck, C. S. (2006). <em>Mindset: The new psychology of success</em>. Random House.</p>
+      <p class="article-ref">Immordino-Yang, M. H., & Damasio, A. (2007). We feel, therefore we learn: The relevance of affective and social neuroscience to education. <em>Mind, Brain, and Education</em>, 1(1), 3-10.</p>
+
+      <div class="article-author">
+        <img src="/harold.png" alt="Harold Pérez" class="article-author-img" />
+        <div>
+          <p class="article-author-name">Harold David Pérez Ramírez</p>
+          <p class="article-author-bio">Psicólogo · Mg. en Psicoterapia · Mg. en Intervención Social · Ubicado en Pereira, Risaralda</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article-nav"><div class="container"><div class="article-nav-inner">
+  <a href="/blog/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Volver al blog</a>
+</div></div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo">Harold <span>Pérez</span></a><p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p></div><div class="footer-col"><h4>Navegación</h4><a href="/proser/">ProSer</a><a href="/academia/">Academia</a><a href="/ebooks/">Recursos digitales</a><a href="/blog/">Blog</a></div><div class="footer-col"><h4>Contacto</h4><a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a><a href="mailto:info@haroldperez.com">info@haroldperez.com</a><a href="mailto:info@prosercps.org">info@prosercps.org</a><a href="/contacto/">Contacto</a></div></div><div class="footer-bottom"><p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p><p>Psicología basada en evidencia, no en autoayuda.</p></div></div></footer>
+
+<script>const toggle=document.getElementById('navToggle');const links=document.getElementById('navLinks');toggle.addEventListener('click',()=>links.classList.toggle('open'));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));</script>
+</body>
+</html>

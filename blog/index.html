@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Harold Pérez, Psicólogo</title>
+  <meta name="description" content="Artículos sobre psicología basada en evidencia: regulación emocional, terapias contextuales, bienestar y herramientas prácticas. Por Harold Pérez, psicólogo." />
+  <link rel="canonical" href="https://haroldperez.com/blog/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── BLOG INDEX ── */
+    #blog-list {
+      background: var(--blanco);
+      padding: 5rem 0 7rem;
+    }
+
+    .blog-intro {
+      max-width: 620px;
+      margin-bottom: 4rem;
+    }
+
+    .blog-intro p {
+      font-size: 0.95rem;
+      color: var(--gris);
+      line-height: 1.85;
+      margin-top: 1.25rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    .blog-card {
+      border: 1px solid var(--gris-claro);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      border-color: var(--salvia);
+      box-shadow: 0 8px 32px rgba(26,26,46,0.06);
+    }
+
+    .blog-card-body {
+      padding: 2rem 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .blog-card-tag {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--salvia);
+      background: rgba(61,122,85,0.08);
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+    }
+
+    .blog-card-date {
+      font-size: 0.72rem;
+      color: var(--gris);
+    }
+
+    .blog-card-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--tinta);
+      line-height: 1.25;
+      margin-bottom: 0.85rem;
+    }
+
+    .blog-card-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--salvia);
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.85rem;
+      color: var(--gris);
+      line-height: 1.75;
+      flex-grow: 1;
+    }
+
+    .blog-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--salvia);
+      text-decoration: none;
+      margin-top: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    .blog-card-link:hover { color: var(--salvia-light); }
+
+    @media (max-width: 768px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/#sobre">Sobre mí</a></li>
+    <li><a href="/proser/">ProSer</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow-light">Blog</span>
+    <h1 class="display-title">Psicología basada en<br><em>evidencia</em></h1>
+    <div class="divider-light" style="margin-top:2rem;"></div>
+    <p class="lead-light" style="margin-top:1.5rem;">Artículos sobre regulación emocional, terapias contextuales, bienestar y herramientas prácticas para la vida cotidiana. Sin recetas mágicas, sin frases de autoayuda.</p>
+  </div>
+</section>
+
+<!-- LISTADO -->
+<section id="blog-list">
+  <div class="container">
+
+    <div class="blog-grid">
+
+      <a href="/blog/regulacion-emocional-que-es-y-por-que-cuesta/" class="blog-card" style="text-decoration:none;">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Regulación emocional</span>
+            <span class="blog-card-date">Julio 2026</span>
+          </div>
+          <h2 class="blog-card-title">Regulación emocional: ¿qué es y por qué <em>cuesta tanto?</em></h2>
+          <p class="blog-card-excerpt">Las emociones no son errores del sistema. Son respuestas complejas que cumplen funciones adaptativas. El problema aparece cuando su intensidad o duración interfiere con la vida que queremos llevar.</p>
+          <span class="blog-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/blog/que-es-act-y-como-puede-ayudarte/" class="blog-card" style="text-decoration:none;">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">ACT</span>
+            <span class="blog-card-date">Julio 2026</span>
+          </div>
+          <h2 class="blog-card-title">¿Qué es ACT y cómo puede <em>ayudarte?</em></h2>
+          <p class="blog-card-excerpt">La Terapia de Aceptación y Compromiso no te pide que pienses en positivo. Te propone vivir en dirección a lo que valoras, incluso cuando las emociones difíciles estén presentes.</p>
+          <span class="blog-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/blog/ansiedad-no-es-tu-enemiga/" class="blog-card" style="text-decoration:none;">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Ansiedad</span>
+            <span class="blog-card-date">Julio 2026</span>
+          </div>
+          <h2 class="blog-card-title">La ansiedad no es <em>tu enemiga</em></h2>
+          <p class="blog-card-excerpt">Sentir ansiedad no significa que algo esté mal en ti. Es una respuesta biológica que cumple una función. El problema aparece cuando se convierte en un modo permanente de estar en el mundo.</p>
+          <span class="blog-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/blog/por-que-las-relaciones-de-pareja-se-desgastan/" class="blog-card" style="text-decoration:none;">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Parejas</span>
+            <span class="blog-card-date">Julio 2026</span>
+          </div>
+          <h2 class="blog-card-title">¿Por qué las relaciones de pareja <em>se desgastan?</em></h2>
+          <p class="blog-card-excerpt">Las relaciones no se rompen por una gran pelea. Se desgastan por la acumulación de desconexiones pequeñas y necesidades que dejan de comunicarse.</p>
+          <span class="blog-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+      <a href="/blog/aprender-diferente-no-es-aprender-menos/" class="blog-card" style="text-decoration:none;">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-card-tag">Educación</span>
+            <span class="blog-card-date">Julio 2026</span>
+          </div>
+          <h2 class="blog-card-title">Aprender diferente no es <em>aprender menos</em></h2>
+          <p class="blog-card-excerpt">Cuando un niño no responde al modelo educativo estándar, el problema rara vez es el niño. A veces es el modelo el que necesita adaptarse.</p>
+          <span class="blog-card-link">Leer artículo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="/proser/">ProSer</a>
+        <a href="/academia/">Academia</a>
+        <a href="/ebooks/">Recursos digitales</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

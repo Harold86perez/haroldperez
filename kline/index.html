@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kliné — Gestión de Historias Clínicas para Psicólogos</title>
+  <meta name="description" content="Kliné es una plataforma de gestión de historias clínicas diseñada por y para psicólogos. Membresías accesibles, interfaz clara, funcionalidad real." />
+  <link rel="canonical" href="https://haroldperez.com/kline/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── HERO ── */
+    #hero-kline {
+      background: var(--tinta);
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero-kline::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,107,90,0.12) 0%, transparent 70%);
+    }
+    .kline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--salvia-light);
+      border: 1px solid rgba(107,155,122,0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+    }
+    .kline-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--salvia-light);
+      border-radius: 50%;
+    }
+    .kline-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .kline-mockup {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+    }
+    .kline-mockup-bar {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .kline-mockup-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+    .kline-mockup-row {
+      height: 10px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
+    }
+    .kline-mockup-row.w80 { width: 80%; }
+    .kline-mockup-row.w60 { width: 60%; }
+    .kline-mockup-row.w90 { width: 90%; }
+    .kline-mockup-row.w45 { width: 45%; }
+    .kline-mockup-section {
+      background: rgba(74,107,90,0.12);
+      border: 1px solid rgba(74,107,90,0.2);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-top: 1.25rem;
+    }
+    .kline-mockup-section .kline-mockup-row {
+      background: rgba(107,155,122,0.2);
+    }
+    .kline-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--salvia-light);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* ── PRÓXIMAMENTE BANNER ── */
+    .proximamente-banner {
+      background: var(--salvia);
+      padding: 1rem 0;
+      text-align: center;
+    }
+    .proximamente-banner p {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── QUÉ ES ── */
+    #que-es { background: var(--blanco); padding: 7rem 0; }
+    .que-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .que-texto { font-size: 0.92rem; color: var(--gris); line-height: 1.9; margin-bottom: 1rem; }
+    .que-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem,2.5vw,1.9rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--tinta);
+      line-height: 1.4;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--salvia);
+      margin-bottom: 2rem;
+    }
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--gris-claro);
+    }
+    .feature-item {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--gris-claro);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .feature-item:last-child { border-bottom: none; }
+    .feature-item:hover { background: var(--arena); }
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--arena);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--salvia);
+    }
+    .feature-titulo { font-size: 0.82rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.25rem; }
+    .feature-desc { font-size: 0.8rem; color: var(--gris); line-height: 1.6; }
+
+    /* ── PARA QUIÉN ── */
+    #para-quien { background: var(--arena); padding: 7rem 0; }
+    .pq-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+    .pq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--gris-claro); border: 1.5px solid var(--gris-claro); }
+    .pq-card { background: var(--blanco); padding: 2.25rem; transition: background 0.25s; }
+    .pq-card:hover { background: var(--tinta); }
+    .pq-card:hover .pq-num { color: var(--salvia-light); }
+    .pq-card:hover .pq-titulo { color: var(--blanco); }
+    .pq-card:hover .pq-desc { color: rgba(250,250,248,0.5); }
+    .pq-num { font-family: var(--font-display); font-size: 0.85rem; color: var(--gris-claro); font-weight: 600; margin-bottom: 1.25rem; transition: color 0.25s; }
+    .pq-titulo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.6rem; transition: color 0.25s; }
+    .pq-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.75; transition: color 0.25s; }
+
+    /* ── MEMBRESÍAS ── */
+    #membresias { background: var(--tinta); padding: 7rem 0; position: relative; overflow: hidden; }
+    #membresias::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 20%, rgba(74,107,90,0.1) 0%, transparent 70%); }
+    .mem-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; position: relative; z-index: 1; }
+    .mem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(255,255,255,0.06); position: relative; z-index: 1; }
+    .mem-card { background: var(--tinta); padding: 2.25rem; border: 1px solid rgba(255,255,255,0.06); transition: background 0.25s; display: flex; flex-direction: column; }
+    .mem-card:hover { background: var(--tinta-soft); }
+    .mem-card.featured { background: var(--salvia); border-color: var(--salvia); }
+    .mem-card.featured:hover { background: var(--salvia-light); }
+    .mem-tier { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--salvia-light); margin-bottom: 0.75rem; }
+    .mem-card.featured .mem-tier { color: rgba(250,250,248,0.7); }
+    .mem-price { font-family: var(--font-display); font-size: 2.2rem; font-weight: 600; color: var(--blanco); line-height: 1; margin-bottom: 0.25rem; }
+    .mem-price span { font-size: 1rem; font-weight: 400; }
+    .mem-period { font-size: 0.78rem; color: rgba(250,250,248,0.4); margin-bottom: 0.75rem; }
+    .mem-card.featured .mem-period { color: rgba(250,250,248,0.6); }
+    .mem-users { font-size: 0.78rem; color: rgba(250,250,248,0.55); margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); line-height: 1.5; }
+    .mem-card.featured .mem-users { color: rgba(250,250,248,0.8); border-color: rgba(255,255,255,0.15); }
+    .mem-features { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
+    .mem-features li { font-size: 0.8rem; color: rgba(250,250,248,0.55); padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 0.6rem; line-height: 1.5; }
+    .mem-features li::before { content: '—'; color: var(--salvia-light); flex-shrink: 0; }
+    .mem-card.featured .mem-features li { color: rgba(250,250,248,0.85); border-color: rgba(255,255,255,0.1); }
+    .mem-card.featured .mem-features li::before { color: rgba(250,250,248,0.6); }
+    .mem-card .btn-outline,
+    .mem-card .btn-primary { width: 100%; justify-content: center; font-size: 0.75rem; padding: 0.8rem 1.5rem; }
+    .mem-nota { position: relative; z-index: 1; margin-top: 2.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 2rem 2.5rem; }
+    .mem-nota h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--salvia-light); margin-bottom: 1rem; }
+    .mem-nota p { font-size: 0.82rem; color: rgba(250,250,248,0.5); line-height: 1.75; margin-bottom: 0.75rem; }
+    .mem-nota p:last-child { margin-bottom: 0; }
+    .mem-nota strong { color: rgba(250,250,248,0.7); }
+
+    /* ── CTA ── */
+    #cta-kline { background: var(--blanco); padding: 6rem 0; }
+    .cta-box { background: var(--tinta); padding: 4rem; display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: center; }
+    .cta-box h2 { font-family: var(--font-display); font-size: clamp(1.75rem,3vw,2.5rem); font-weight: 600; color: var(--blanco); line-height: 1.2; margin-bottom: 0.75rem; }
+    .cta-box h2 em { font-style: italic; font-weight: 300; color: var(--salvia-light); }
+    .cta-box p { font-size: 0.88rem; color: rgba(250,250,248,0.5); line-height: 1.7; }
+    .cta-btns { display: flex; flex-direction: column; gap: 0.75rem; min-width: 220px; }
+
+    @media (max-width: 768px) {
+      .kline-hero-grid, .que-grid, .pq-header, .mem-header { grid-template-columns: 1fr; gap: 3rem; }
+      .kline-mockup { display: none; }
+      .pq-grid { grid-template-columns: 1fr; }
+      .mem-grid { grid-template-columns: 1fr; }
+      .cta-box { grid-template-columns: 1fr; padding: 2.5rem; }
+      .mem-nota { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/" style="color:var(--blanco)">Kliné</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- BANNER PRÓXIMAMENTE -->
+<div class="proximamente-banner" style="margin-top:70px;">
+  <p>Kliné · En desarrollo · Próximamente disponible</p>
+</div>
+
+<!-- HERO -->
+<section id="hero-kline" style="padding-top:0;">
+  <div class="container">
+    <div class="kline-hero-grid">
+      <div>
+        <div class="kline-badge">Plataforma para psicólogos</div>
+        <h1 class="display-title">Kliné<br><em>Gestión clínica,<br>sin complicaciones</em></h1>
+        <div class="divider-light" style="margin-top:2rem;"></div>
+        <p class="lead-light" style="margin-top:1.5rem;">Una plataforma diseñada por y para psicólogos. Gestiona tus historias clínicas, sesiones y pacientes en un solo lugar — con la seguridad, la simpleza y la ética que tu práctica profesional merece.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;">
+          <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné" class="btn-primary" target="_blank">Quiero saber más</a>
+          <a href="#membresias" class="btn-outline">Ver planes</a>
+        </div>
+      </div>
+      <div class="kline-mockup">
+        <div class="kline-mockup-bar">
+          <div class="kline-mockup-dot"></div>
+          <div class="kline-mockup-dot"></div>
+          <div class="kline-mockup-dot"></div>
+        </div>
+        <span class="kline-label">Historia clínica · Sesión 4</span>
+        <div class="kline-mockup-row w80"></div>
+        <div class="kline-mockup-row w60"></div>
+        <div class="kline-mockup-row w90"></div>
+        <div class="kline-mockup-row w45"></div>
+        <div class="kline-mockup-section">
+          <span class="kline-label">Evolución · ACT</span>
+          <div class="kline-mockup-row w80"></div>
+          <div class="kline-mockup-row w60"></div>
+          <div class="kline-mockup-row w70"></div>
+        </div>
+        <div style="display:flex;gap:0.75rem;margin-top:1.25rem;">
+          <div style="flex:1;height:32px;background:rgba(74,107,90,0.3);border-radius:4px;"></div>
+          <div style="flex:1;height:32px;background:rgba(255,255,255,0.05);border-radius:4px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<section id="que-es">
+  <div class="container">
+    <div class="que-grid">
+      <div>
+        <span class="eyebrow">¿Qué es Kliné?</span>
+        <h2 class="section-title" style="margin-bottom:2rem;">Historia clínica digital<br>hecha con <em>criterio clínico</em></h2>
+        <blockquote class="que-quote">Una herramienta que entiende cómo piensa un psicólogo, no cómo piensa un programador.</blockquote>
+        <p class="que-texto">Kliné es una plataforma de gestión de historias clínicas desarrollada desde la experiencia real de la práctica psicológica. No es un software genérico adaptado — es una herramienta diseñada específicamente para psicólogos que quieren gestionar su práctica con rigor, orden y seguridad.</p>
+        <p class="que-texto">Registra sesiones, evoluciones, diagnósticos, objetivos terapéuticos y notas de proceso en una interfaz clara, rápida y pensada para el trabajo clínico cotidiano. Con total confidencialidad y cumplimiento de estándares éticos y legales.</p>
+        <div style="margin-top:2rem;">
+          <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné" class="btn-dark" target="_blank">Solicitar acceso anticipado</a>
+        </div>
+      </div>
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <p class="feature-titulo">Historias clínicas estructuradas</p>
+            <p class="feature-desc">Registro de sesiones, evoluciones, diagnósticos y objetivos terapéuticos en un formato claro y profesional.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <p class="feature-titulo">Gestión de sesiones y agenda</p>
+            <p class="feature-desc">Control de citas, frecuencia de sesiones y seguimiento del proceso terapéutico de cada paciente.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="feature-titulo">Confidencialidad y seguridad</p>
+            <p class="feature-desc">Almacenamiento seguro con cifrado. Cumplimiento de estándares éticos y legales para la protección de datos clínicos.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <p class="feature-titulo">Seguimiento del proceso</p>
+            <p class="feature-desc">Visualiza la evolución del paciente, los objetivos terapéuticos alcanzados y los pendientes en un solo lugar.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div>
+            <p class="feature-titulo">Acceso desde cualquier dispositivo</p>
+            <p class="feature-desc">Plataforma web responsiva. Consulta y registra desde tu computador, tablet o celular en cualquier momento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="para-quien">
+  <div class="container">
+    <div class="pq-header">
+      <div>
+        <span class="eyebrow">¿Para quién es Kliné?</span>
+        <h2 class="section-title">Diseñada para<br><em>el trabajo clínico real</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">Kliné está pensada para cualquier psicólogo que quiera gestionar su práctica con orden, sin perder tiempo en procesos administrativos que no agregan valor terapéutico.</p>
+      </div>
+    </div>
+    <div class="pq-grid">
+      <div class="pq-card">
+        <p class="pq-num">01</p>
+        <h3 class="pq-titulo">Psicólogos en práctica privada</h3>
+        <p class="pq-desc">Para quienes atienden de forma independiente y necesitan un sistema profesional sin la complejidad ni el costo de un software corporativo.</p>
+      </div>
+      <div class="pq-card">
+        <p class="pq-num">02</p>
+        <h3 class="pq-titulo">Equipos y consultorios</h3>
+        <p class="pq-desc">Para grupos de psicólogos que necesitan compartir registros, coordinar pacientes y mantener estándares comunes de documentación clínica.</p>
+      </div>
+      <div class="pq-card">
+        <p class="pq-num">03</p>
+        <h3 class="pq-titulo">Psicólogos en formación</h3>
+        <p class="pq-desc">Para estudiantes en práctica y recién egresados que quieren establecer desde el principio hábitos de registro clínico rigurosos y profesionales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBRESÍAS -->
+<section id="membresias">
+  <div class="container">
+    <div class="mem-header">
+      <div>
+        <span class="eyebrow-light">Planes</span>
+        <h2 class="section-title-light">Acceso a Kliné<br><em>según tu práctica</em></h2>
+      </div>
+      <div>
+        <div class="divider-light"></div>
+        <p class="lead-light">Seis planes pensados para diferentes momentos y tamaños de práctica clínica. Sin contratos de largo plazo, sin costos ocultos. Todos incluyen pacientes y atenciones ilimitadas.</p>
+      </div>
+    </div>
+
+    <!-- FILA 1: Inicial, Básico, Profesional -->
+    <div class="mem-grid">
+      <div class="mem-card">
+        <p class="mem-tier">Inicial</p>
+        <p class="mem-price">$65.000 <span>COP</span></p>
+        <p class="mem-period">por mes</p>
+        <p class="mem-users">1 profesional + 1 asistente (solo agenda, cobros y contacto)</p>
+        <ul class="mem-features">
+          <li>Pacientes y atenciones ilimitadas</li>
+          <li>2 modelos de historia clínica personalizables</li>
+          <li>Agenda en línea con enlace personalizable</li>
+          <li>Diagnóstico diferencial con IA y CIE-11</li>
+          <li>Generación de RIPS JSON básico</li>
+          <li>Consentimiento informado digital</li>
+          <li>Notificaciones vía WhatsApp</li>
+          <li>Interoperabilidad en salud</li>
+          <li>1 sede</li>
+          <li>Soporte por email</li>
+        </ul>
+        <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné%20plan%20Inicial" class="btn-outline" target="_blank">Solicitar información</a>
+      </div>
+
+      <div class="mem-card">
+        <p class="mem-tier">Básico</p>
+        <p class="mem-price">$99.000 <span>COP</span></p>
+        <p class="mem-period">por mes</p>
+        <p class="mem-users">1 profesional + 1 asistente</p>
+        <ul class="mem-features">
+          <li>Todo lo del plan Inicial</li>
+          <li>10 sesiones con captura y análisis con IA</li>
+        </ul>
+        <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné%20plan%20Básico" class="btn-outline" target="_blank">Solicitar información</a>
+      </div>
+
+      <div class="mem-card featured">
+        <p class="mem-tier">Profesional — Recomendado</p>
+        <p class="mem-price">$169.000 <span>COP</span></p>
+        <p class="mem-period">por mes</p>
+        <p class="mem-users">1 profesional + 1 asistente</p>
+        <ul class="mem-features">
+          <li>Todo lo del plan Básico</li>
+          <li>5 modelos de historia clínica</li>
+          <li>20 sesiones con captura y análisis con IA</li>
+          <li>RIPS JSON + facturación electrónica (50/mes)</li>
+          <li>Telemedicina básica (videoconsulta)</li>
+        </ul>
+        <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné%20plan%20Profesional" class="btn-primary" target="_blank">Solicitar información</a>
+      </div>
+    </div>
+
+    <!-- FILA 2: Consultorio, Clínica, Premium -->
+    <div class="mem-grid" style="margin-top: 1.5px;">
+      <div class="mem-card">
+        <p class="mem-tier">Consultorio</p>
+        <p class="mem-price">$219.000 <span>COP</span></p>
+        <p class="mem-period">por mes</p>
+        <p class="mem-users">2 profesionales + 1 asistente</p>
+        <ul class="mem-features">
+          <li>Todo lo del plan Profesional</li>
+          <li>36 sesiones con captura y análisis con IA</li>
+          <li>Facturación electrónica (100/mes)</li>
+          <li>Telemedicina ilimitada</li>
+          <li>Portal de pacientes básico</li>
+          <li>Soporte por email y chat</li>
+        </ul>
+        <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné%20plan%20Consultorio" class="btn-outline" target="_blank">Solicitar información</a>
+      </div>
+
+      <div class="mem-card">
+        <p class="mem-tier">Clínica</p>
+        <p class="mem-price">$329.000 <span>COP</span></p>
+        <p class="mem-period">por mes</p>
+        <p class="mem-users">3 profesionales + 2 asistentes · 2 sedes</p>
+        <ul class="mem-features">
+          <li>Todo lo del plan Consultorio</li>
+          <li>54 sesiones con captura y análisis con IA</li>
+          <li>Facturación electrónica ilimitada</li>
+          <li>Portal de pacientes completo</li>
+          <li>Reportes básicos de gestión y productividad</li>
+        </ul>
+        <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné%20plan%20Clínica" class="btn-outline" target="_blank">Solicitar información</a>
+      </div>
+
+      <div class="mem-card">
+        <p class="mem-tier">Premium</p>
+        <p class="mem-price">$399.000 <span>COP</span></p>
+        <p class="mem-period">por mes</p>
+        <p class="mem-users">5 profesionales + 2 asistentes · Sedes ilimitadas</p>
+        <ul class="mem-features">
+          <li>Todo lo del plan Clínica</li>
+          <li>80 sesiones con captura y análisis con IA</li>
+          <li>10 modelos de historia clínica</li>
+          <li>Reportes avanzados de gestión</li>
+          <li>API básica de integraciones</li>
+          <li>Almacenamiento ilimitado</li>
+          <li>Soporte prioritario</li>
+        </ul>
+        <a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20Kliné%20plan%20Premium" class="btn-outline" target="_blank">Solicitar información</a>
+      </div>
+    </div>
+
+    <!-- NOTAS GENERALES -->
+    <div class="mem-nota">
+      <h4>Aplica a todos los planes</h4>
+      <p><strong>Sesiones de IA compartidas:</strong> las sesiones de captura y análisis con IA incluidas en cada plan son una bolsa compartida entre todos los profesionales de la cuenta. Cada profesional puede usar las que necesite, sin cuota individual. Cuando se agote la bolsa del mes, se pueden adquirir sesiones adicionales a <strong>$7.000 COP</strong> cada una, sin necesidad de cambiar de plan.</p>
+      <p><strong>Usuarios profesionales adicionales:</strong> puedes agregar profesionales a tu cuenta por <strong>$35.000 COP/mes</strong> cada uno. El usuario adicional tiene acceso completo a historias clínicas, agenda y las demás funcionalidades del plan, pero no suma sesiones de IA a la bolsa — estas pueden comprarse por separado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta-kline">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <h2>¿Quieres ser de los<br><em>primeros en acceder?</em></h2>
+        <p>Kliné está en desarrollo. Regístrate ahora para recibir información de lanzamiento, acceso anticipado y condiciones especiales para los primeros usuarios.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="https://wa.me/573054303746?text=Quiero%20acceso%20anticipado%20a%20Kliné" class="btn-salvia" target="_blank">Acceso anticipado</a>
+        <a href="mailto:harold@haroldperez.com" class="btn-outline">Escribir por correo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Risaralda.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <a href="/sobre/">Sobre mí</a>
+        <a href="/academia/">Academia</a>
+        <a href="/ebooks/">Ebooks</a>
+        <a href="/membresia/">Membresía</a>
+        <a href="/kline/">Kliné</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Risaralda</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

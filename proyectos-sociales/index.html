@@ -14,7 +14,7 @@
     #intro { background: var(--blanco); padding: 7rem 0; }
     .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 4rem; }
     .participar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .participar-card { background: var(--arena); border: 1px solid var(--gris-claro); padding: 2.25rem; }
+    .participar-card { background: var(--arena); border: 1px solid var(--gris-claro); padding: 2.25rem; display: flex; flex-direction: column; }
     .pc-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--salvia); margin-bottom: 0.75rem; display: block; }
     .pc-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.75rem; }
     .pc-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.8; margin-bottom: 1.5rem; }
@@ -90,9 +90,11 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="/sobre/">Sobre mí</a></li>
     <li><a href="/academia/">Academia</a></li>
-    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
     <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
     <li><a href="/proyectos-sociales/" style="color:var(--blanco)">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -125,13 +127,13 @@
         <span class="pc-label">Voluntariado</span>
         <h3 class="pc-title">Dona tu tiempo y talento</h3>
         <p class="pc-desc">Si deseas brindar tu tiempo, habilidades y conocimientos, puedes unirte a nuestro equipo de voluntarios. Acompañamiento terapéutico, apoyo en proyectos sociales, asistencia en capacitaciones y más.</p>
-        <a href="https://wa.me/573054303746?text=Quiero%20ser%20voluntario%20en%20los%20proyectos%20sociales" class="btn-dark" target="_blank">Quiero ser voluntario</a>
+        <a href="https://wa.me/573054303746?text=Quiero%20ser%20voluntario%20en%20los%20proyectos%20sociales" class="btn-dark" target="_blank" style="margin-top:auto;">Quiero ser voluntario</a>
       </div>
       <div class="participar-card">
         <span class="pc-label" style="color:var(--tinta)">Donaciones</span>
         <h3 class="pc-title">Apoya económicamente</h3>
         <p class="pc-desc">Recibimos dinero por transferencia bancaria, juguetes nuevos, implementos y útiles escolares nuevos. Por tu donación recibes un certificado como donante. Tu información siempre es tratada con confidencialidad.</p>
-        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20hacer%20una%20donación%20a%20los%20proyectos%20sociales" class="btn-dark" target="_blank">Quiero donar</a>
+        <a href="https://wa.me/573054303746?text=Quiero%20hacer%20una%20donación%20a%20los%20proyectos%20sociales" class="btn-dark" target="_blank" style="margin-top:auto;">Quiero donar</a>
       </div>
     </div>
   </div>
@@ -285,7 +287,8 @@
       <div class="footer-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
-        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+            <a href="mailto:info@prosercps.org">info@prosercps.org</a>
         <a href="/contacto/">Formulario de contacto</a>
       </div>
     </div>

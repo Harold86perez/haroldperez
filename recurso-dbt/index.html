@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía de regulación emocional DBT — Harold Pérez</title>
+  <meta name="description" content="Descarga gratis la guía: Regulación emocional DBT. 6 habilidades prácticas de Terapia Dialéctico-Conductual para manejar tus emociones en la vida cotidiana." />
+  <link rel="canonical" href="https://haroldperez.com/recurso-dbt/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    #descarga {
+      background: var(--blanco);
+      padding: 7rem 0;
+      min-height: 80vh;
+    }
+
+    .descarga-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ── PREVIEW DEL RECURSO ── */
+    .recurso-preview {
+      position: sticky;
+      top: 100px;
+    }
+
+    .recurso-portada {
+      aspect-ratio: 3/4;
+      border-radius: 8px;
+      background: linear-gradient(160deg, var(--tinta) 0%, #2E3E5A 50%, #3D6B7A 130%);
+      position: relative;
+      overflow: hidden;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 60px rgba(26,26,46,0.18);
+    }
+
+    .recurso-portada-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .recurso-portada-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .recurso-portada-logo {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .recurso-portada-meta {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .recurso-portada-bottom {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+    }
+
+    .recurso-portada-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--salvia-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .recurso-portada-eyebrow::before {
+      content: '';
+      width: 16px;
+      height: 1.5px;
+      background: var(--salvia-light);
+    }
+
+    .recurso-portada-titulo {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .recurso-portada-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .recurso-portada-tag {
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.12);
+      padding: 0.3rem 0.6rem;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .recurso-portada-tag-num {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--salvia-light);
+      color: var(--tinta);
+      font-size: 0.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .recurso-portada-autor {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.45);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1rem;
+    }
+
+    .recurso-info {
+      margin-top: 2rem;
+    }
+
+    .recurso-info-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      margin-bottom: 1.1rem;
+    }
+
+    .recurso-info-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--arena);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--salvia);
+    }
+
+    .recurso-info-text {
+      font-size: 0.85rem;
+      color: var(--gris);
+      line-height: 1.6;
+      padding-top: 0.3rem;
+    }
+
+    .recurso-info-text strong {
+      color: var(--tinta);
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.1rem;
+    }
+
+    /* ── FORMULARIO ── */
+    .form-card {
+      background: var(--arena);
+      border-radius: 8px;
+      padding: 2.75rem;
+    }
+
+    .form-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--tinta);
+      line-height: 1.25;
+      margin-bottom: 0.6rem;
+    }
+
+    .form-card h2 em {
+      font-style: italic;
+      color: var(--salvia);
+      font-weight: 400;
+    }
+
+    .form-card > p {
+      font-size: 0.88rem;
+      color: var(--gris);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--tinta);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--tinta);
+      background: var(--blanco);
+      border: 1px solid var(--gris-claro);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--salvia);
+    }
+
+    .form-group input::placeholder {
+      color: #B0AEA6;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    #otro-grupo {
+      display: none;
+    }
+
+    .form-disclaimer {
+      font-size: 0.72rem;
+      color: var(--gris);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--salvia);
+      color: var(--blanco);
+      padding: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: var(--salvia-light); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .form-spinner {
+      display: none;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .form-error {
+      display: none;
+      background: #FEE2E2;
+      color: #991B1B;
+      font-size: 0.82rem;
+      padding: 0.85rem 1rem;
+      border-radius: 4px;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .form-success-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--salvia);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--tinta);
+      margin-bottom: 0.75rem;
+    }
+
+    .form-success p {
+      font-size: 0.88rem;
+      color: var(--gris);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .descarga-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .recurso-preview { position: static; max-width: 320px; margin: 0 auto; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow-light">Recurso gratuito · DBT</span>
+    <h1 class="display-title">Guía de regulación<br><em>emocional DBT</em></h1>
+    <div class="divider-light" style="margin-top:2rem;"></div>
+    <p class="lead-light" style="margin-top:1.5rem;">6 habilidades prácticas de la Terapia Dialéctico-Conductual para entender y manejar tus emociones en la vida cotidiana, con herramientas que puedes aplicar hoy mismo.</p>
+  </div>
+</section>
+
+<!-- DESCARGA -->
+<section id="descarga">
+  <div class="container">
+    <div class="descarga-grid">
+
+      <!-- PORTADA -->
+      <div class="recurso-preview">
+        <div class="recurso-portada">
+          <div class="recurso-portada-pattern"></div>
+          <div class="recurso-portada-top">
+            <span class="recurso-portada-logo">Pro<em style="color:var(--salvia-light); font-style:normal;">Ser</em></span>
+            <span class="recurso-portada-meta">Guía práctica<br>ProSer · DBT + ACT</span>
+          </div>
+          <div class="recurso-portada-bottom">
+            <span class="recurso-portada-eyebrow">DBT · Regulación emocional</span>
+            <h1 class="recurso-portada-titulo">Guía de regulación emocional DBT</h1>
+            <div class="recurso-portada-tags">
+              <span class="recurso-portada-tag"><span class="recurso-portada-tag-num">1</span>Entender la emoción</span>
+              <span class="recurso-portada-tag"><span class="recurso-portada-tag-num">2</span>PLEASE</span>
+              <span class="recurso-portada-tag"><span class="recurso-portada-tag-num">3</span>Acción opuesta</span>
+              <span class="recurso-portada-tag"><span class="recurso-portada-tag-num">4</span>TIPP</span>
+              <span class="recurso-portada-tag"><span class="recurso-portada-tag-num">5</span>Check the facts</span>
+              <span class="recurso-portada-tag"><span class="recurso-portada-tag-num">6</span>Ola de mindfulness</span>
+            </div>
+            <p class="recurso-portada-autor">Harold David Pérez Ramírez · Psicólogo</p>
+          </div>
+        </div>
+
+        <div class="recurso-info">
+          <div class="recurso-info-item">
+            <div class="recurso-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="recurso-info-text"><strong>3 a 10 minutos por ejercicio</strong>Cada habilidad incluye un ejercicio práctico pensado para aplicar en el momento.</div>
+          </div>
+          <div class="recurso-info-item">
+            <div class="recurso-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="recurso-info-text"><strong>Basada en evidencia</strong>Fundamentada en DBT y ACT, con referencias científicas incluidas (Linehan, Hayes et al.).</div>
+          </div>
+          <div class="recurso-info-item">
+            <div class="recurso-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div class="recurso-info-text"><strong>20 páginas · PDF</strong>Incluye ejemplos reales, plantillas para completar, diagramas y referencias bibliográficas.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div>
+        <div class="form-card">
+
+          <div id="formWrapper">
+            <h2>Descarga la guía<br><em>sin costo</em></h2>
+            <p>Completa tus datos y recibe el enlace de descarga inmediatamente. Solo te tomará un minuto.</p>
+
+            <div class="form-error" id="formError"></div>
+
+            <form id="descargaForm">
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ciudad">Ciudad</label>
+                  <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" required />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="comoNosConociste">¿Cómo nos conociste?</label>
+                <select id="comoNosConociste" name="comoNosConociste">
+                  <option value="">Selecciona una opción</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Google">Google</option>
+                  <option value="Recomendación">Recomendación de alguien</option>
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="LinkedIn">LinkedIn</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="otro-grupo">
+                <label for="otroTexto">Cuéntanos cómo</label>
+                <input type="text" id="otroTexto" name="otroTexto" placeholder="Escribe aquí" />
+              </div>
+
+              <p class="form-disclaimer">Al enviar este formulario aceptas recibir el enlace de descarga y comunicaciones ocasionales de ProSer relacionadas con recursos de psicología. No compartimos tus datos con terceros.</p>
+
+              <button type="submit" class="form-submit" id="submitBtn">
+                <span id="submitText">Descargar guía gratis</span>
+                <span class="form-spinner" id="submitSpinner"></span>
+              </button>
+            </form>
+          </div>
+
+          <!-- ÉXITO -->
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" width="28" height="28"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>Tu guía está lista</h3>
+            <p>Haz clic en el botón para descargar el PDF. El enlace es válido por 1 hora.</p>
+            <a href="#" id="downloadLink" class="btn-salvia" target="_blank" style="width:100%; justify-content:center;">Descargar PDF ahora</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="/proser/">ProSer — Clínico</a>
+        <a href="/academia/">Academia</a>
+        <a href="/ebooks/">Ebooks</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p>Psicología basada en evidencia, no en autoayuda.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Mostrar campo "Otro" cuando se selecciona
+  const comoNosConociste = document.getElementById('comoNosConociste');
+  const otroGrupo = document.getElementById('otro-grupo');
+  comoNosConociste.addEventListener('change', () => {
+    otroGrupo.style.display = comoNosConociste.value === 'Otro' ? 'block' : 'none';
+  });
+
+  // Envío del formulario
+  const WORKER_URL = 'https://haroldperez-formularios.hd-perezramirez.workers.dev';
+  const NOMBRE_ARCHIVO_R2 = 'Guía de regulación emocional DBT — ProSer.pdf';
+  const NOMBRE_RECURSO = 'Guía de regulación emocional DBT';
+
+  const form = document.getElementById('descargaForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitText = document.getElementById('submitText');
+  const submitSpinner = document.getElementById('submitSpinner');
+  const formError = document.getElementById('formError');
+  const formWrapper = document.getElementById('formWrapper');
+  const formSuccess = document.getElementById('formSuccess');
+  const downloadLink = document.getElementById('downloadLink');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formError.style.display = 'none';
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const ciudad = document.getElementById('ciudad').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const email = document.getElementById('email').value.trim();
+    let comoConociste = comoNosConociste.value;
+    const otroTexto = document.getElementById('otroTexto').value.trim();
+
+    if (comoConociste === 'Otro' && otroTexto) {
+      comoConociste = `Otro: ${otroTexto}`;
+    }
+
+    submitBtn.disabled = true;
+    submitText.textContent = 'Enviando...';
+    submitSpinner.style.display = 'inline-block';
+
+    try {
+      const response = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre,
+          ciudad,
+          email,
+          telefono,
+          comoNosConociste: comoConociste,
+          recurso: NOMBRE_RECURSO,
+          archivo: NOMBRE_ARCHIVO_R2,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Ocurrió un error. Intenta de nuevo.');
+      }
+
+      // Mostrar éxito
+      downloadLink.href = data.downloadUrl;
+      formWrapper.style.display = 'none';
+      formSuccess.style.display = 'block';
+
+      // Iniciar descarga automáticamente
+      window.open(data.downloadUrl, '_blank');
+
+    } catch (err) {
+      formError.textContent = err.message || 'No pudimos procesar tu solicitud. Intenta de nuevo o escríbenos por WhatsApp.';
+      formError.style.display = 'block';
+      submitBtn.disabled = false;
+      submitText.textContent = 'Descargar guía gratis';
+      submitSpinner.style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>

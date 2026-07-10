@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La ansiedad no es tu enemiga — Harold Pérez</title>
+  <meta name="description" content="La ansiedad cumple una función. El problema no es sentirla, sino cuando se instala como modo predeterminado. Qué dice la evidencia y qué puedes hacer." />
+  <link rel="canonical" href="https://haroldperez.com/blog/ansiedad-no-es-tu-enemiga/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .article-hero { background: var(--tinta); padding: 10rem 0 4rem; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(61,122,85,0.15) 0%, transparent 70%); pointer-events: none; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .article-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--salvia-light); background: rgba(82,168,110,0.15); padding: 0.3rem 0.7rem; border-radius: 2px; }
+    .article-date { font-size: 0.75rem; color: rgba(250,250,248,0.4); }
+    .article-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 600; color: var(--blanco); line-height: 1.12; max-width: 720px; }
+    .article-title em { font-style: italic; font-weight: 400; color: var(--salvia-light); }
+    .article-subtitle { font-size: 1.05rem; color: rgba(250,250,248,0.55); line-height: 1.75; margin-top: 1.5rem; max-width: 620px; }
+    .article-content { background: var(--blanco); padding: 5rem 0 6rem; }
+    .article-body { max-width: 680px; margin: 0 auto; }
+    .article-body h2 { font-family: var(--font-display); font-size: 1.65rem; font-weight: 600; color: var(--tinta); line-height: 1.2; margin-top: 3rem; margin-bottom: 1rem; }
+    .article-body h2 em { font-style: italic; font-weight: 400; color: var(--salvia); }
+    .article-body h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--tinta); line-height: 1.3; margin-top: 2.25rem; margin-bottom: 0.75rem; }
+    .article-body p { font-size: 0.95rem; color: var(--tinta); line-height: 1.9; margin-bottom: 1.25rem; }
+    .article-body blockquote { border-left: 3px solid var(--salvia); padding: 1rem 1.5rem; margin: 2rem 0; background: rgba(61,122,85,0.04); border-radius: 0 4px 4px 0; }
+    .article-body blockquote p { font-size: 0.92rem; color: var(--gris); font-style: italic; margin-bottom: 0; }
+    .article-body .article-ref { font-size: 0.8rem; color: var(--gris); line-height: 1.7; }
+    .article-author { border-top: 1px solid var(--gris-claro); margin-top: 3rem; padding-top: 2.5rem; display: flex; gap: 1.5rem; align-items: center; }
+    .article-author-img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .article-author-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.2rem; }
+    .article-author-bio { font-size: 0.8rem; color: var(--gris); line-height: 1.6; }
+    .article-cta { background: var(--arena); border-radius: 6px; padding: 2.25rem 2.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 2rem; }
+    .article-cta-text { flex-grow: 1; }
+    .article-cta-text h3 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.4rem; margin-top: 0; }
+    .article-cta-text p { font-size: 0.82rem; color: var(--gris); line-height: 1.6; margin-bottom: 0; }
+    .article-nav { background: var(--blanco); padding: 0 0 5rem; }
+    .article-nav-inner { max-width: 680px; margin: 0 auto; border-top: 1px solid var(--gris-claro); padding-top: 2rem; display: flex; justify-content: space-between; }
+    .article-nav a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--salvia); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+    .article-nav a:hover { color: var(--salvia-light); }
+    @media (max-width: 768px) { .article-cta { flex-direction: column; align-items: flex-start; gap: 1.25rem; } .article-body { padding: 0 0.5rem; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
+    <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="article-hero">
+  <div class="container">
+    <div class="article-meta">
+      <span class="article-tag">Ansiedad</span>
+      <span class="article-date">Julio 2026 · 7 min de lectura</span>
+    </div>
+    <h1 class="article-title">La ansiedad no es <em>tu enemiga</em></h1>
+    <p class="article-subtitle">Sentir ansiedad no significa que algo esté mal en ti. Es una respuesta biológica que cumple una función. El problema aparece cuando deja de ser una alarma puntual y se convierte en un modo permanente de estar en el mundo.</p>
+  </div>
+</section>
+
+<section class="article-content">
+  <div class="container">
+    <div class="article-body">
+
+      <p>Hay pocas palabras tan usadas y tan mal entendidas como "ansiedad". Se usa para describir desde una leve inquietud antes de un examen hasta un ataque de pánico en el que una persona cree genuinamente que va a morir. Se dice "tengo ansiedad" como quien dice "tengo hambre" — pero la ansiedad no es un estado homogéneo ni una etiqueta que explique nada por sí sola.</p>
+
+      <p>La ansiedad, en su forma básica, es una respuesta adaptativa del sistema nervioso. Es el sistema de alarma que evolucionó para anticipar amenazas y preparar al organismo para actuar: los músculos se tensan, la respiración se acelera, la atención se agudiza (Barlow, 2002). En dosis adecuadas, la ansiedad nos protege. Sin ella, cruzaríamos la calle sin mirar.</p>
+
+      <h2>¿Cuándo la ansiedad deja de <em>ser útil?</em></h2>
+
+      <p>El problema comienza cuando el sistema de alarma se activa en ausencia de amenaza real, cuando la intensidad es desproporcionada al estímulo, o cuando la duración se extiende mucho más allá del evento que la provocó. Cuando la ansiedad se cronifica, deja de funcionar como protección y empieza a funcionar como prisión.</p>
+
+      <p>Lo que la investigación muestra es que la ansiedad problemática no viene tanto de la emoción en sí, sino de cómo respondemos a ella (Craske, 2003). Las estrategias que usamos para "controlarla" — evitar situaciones, buscar reasseguramiento constante, rumiar sobre el peor escenario — son precisamente las que la mantienen. La evitación reduce el malestar a corto plazo, pero enseña al cerebro que la situación evitada era realmente peligrosa. Y así el ciclo se perpetúa.</p>
+
+      <blockquote>
+        <p>No es la ansiedad la que te limita. Es lo que haces con ella. Cada evitación confirma al cerebro que tenía razón al activar la alarma — y la próxima vez, la alarma suena más fuerte.</p>
+      </blockquote>
+
+      <h2>Lo que la evidencia propone <em>que sí funciona</em></h2>
+
+      <p>Las terapias con mayor respaldo empírico para la ansiedad (la Terapia Cognitivo-Conductual, ACT y DBT) comparten un principio: el camino no es eliminar la ansiedad, sino cambiar la relación que tenemos con ella. Esto incluye aprender a tolerar la incertidumbre, exponerse gradualmente a lo temido, y desarrollar la capacidad de actuar en presencia de malestar emocional.</p>
+
+      <h3>La exposición no es "enfrentar tus miedos" a lo bruto</h3>
+      <p>La exposición terapéutica no consiste en tirarse al vacío. Es un proceso gradual, estructurado, con acompañamiento profesional, donde la persona aprende que puede experimentar la emoción sin que ocurra la catástrofe anticipada. No se trata de dejar de sentir miedo — se trata de aprender que el miedo no es una evidencia confiable de peligro (Craske et al., 2014).</p>
+
+      <h3>La regulación emocional como base</h3>
+      <p>Antes de poder enfrentar situaciones temidas, muchas personas necesitan desarrollar habilidades básicas de regulación emocional: identificar qué sienten, reducir la activación fisiológica cuando es extrema, y responder desde la reflexión en lugar de desde el impulso. Estas habilidades se entrenan — no vienen de nacimiento.</p>
+
+      <h2>Un punto de <em>partida</em></h2>
+
+      <p>Si la ansiedad está interfiriendo con tu vida cotidiana — si evitas situaciones, si el sueño se ve afectado, si la preocupación constante ocupa más espacio del que debería — hay algo concreto que puedes hacer: dejar de pelear contra la ansiedad y empezar a entenderla. Qué la dispara, cómo se manifiesta en tu cuerpo, qué impulsos trae consigo, y qué patrones de evitación has construido alrededor de ella.</p>
+
+      <p>Ese entendimiento es el primer paso. No el último.</p>
+
+      <div class="article-cta">
+        <div class="article-cta-text">
+          <h3>Ansiedad: entiéndela, manéjala, supérala</h3>
+          <p>Ebook con herramientas prácticas basadas en evidencia para entender tu ansiedad y desarrollar estrategias que realmente funcionen. Disponible para descarga inmediata.</p>
+        </div>
+        <a href="/ebooks/" class="btn-salvia">Ver ebook · $9.99 USD</a>
+      </div>
+
+      <h2>Referencias</h2>
+      <p class="article-ref">Barlow, D. H. (2002). <em>Anxiety and its disorders: The nature and treatment of anxiety and panic</em> (2nd ed.). Guilford Press.</p>
+      <p class="article-ref">Craske, M. G. (2003). <em>Origins of phobias and anxiety disorders: Why more women than men?</em> Elsevier.</p>
+      <p class="article-ref">Craske, M. G., Treanor, M., Conway, C. C., Zbozinek, T., & Vervliet, B. (2014). Maximizing exposure therapy: An inhibitory learning approach. <em>Behaviour Research and Therapy</em>, 58, 10-23.</p>
+
+      <div class="article-author">
+        <img src="/harold.png" alt="Harold Pérez" class="article-author-img" />
+        <div>
+          <p class="article-author-name">Harold David Pérez Ramírez</p>
+          <p class="article-author-bio">Psicólogo · Mg. en Psicoterapia · Mg. en Intervención Social · Ubicado en Pereira, Risaralda</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="article-nav"><div class="container"><div class="article-nav-inner">
+  <a href="/blog/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Volver al blog</a>
+</div></div></section>
+
+<footer><div class="container"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo">Harold <span>Pérez</span></a><p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p></div><div class="footer-col"><h4>Navegación</h4><a href="/proser/">ProSer</a><a href="/academia/">Academia</a><a href="/ebooks/">Recursos digitales</a><a href="/blog/">Blog</a></div><div class="footer-col"><h4>Contacto</h4><a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a><a href="mailto:info@haroldperez.com">info@haroldperez.com</a><a href="mailto:info@prosercps.org">info@prosercps.org</a><a href="/contacto/">Contacto</a></div></div><div class="footer-bottom"><p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p><p>Psicología basada en evidencia, no en autoayuda.</p></div></div></footer>
+
+<script>const toggle=document.getElementById('navToggle');const links=document.getElementById('navLinks');toggle.addEventListener('click',()=>links.classList.toggle('open'));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));</script>
+</body>
+</html>

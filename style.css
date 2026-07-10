@@ -312,8 +312,6 @@ footer {
 
 .footer-col a:hover { color: var(--blanco); }
 
-.footer-col br { display: none; }
-
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.06);
   padding-top: 1.5rem;

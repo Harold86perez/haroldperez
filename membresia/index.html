@@ -55,14 +55,15 @@
     #modalidades { background: var(--blanco); padding: 7rem 0; }
     .mod-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
     .mod-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-    .mod-card { border: 1.5px solid var(--gris-claro); overflow: hidden; }
+    .mod-card { border: 1.5px solid var(--gris-claro); overflow: hidden; display: flex; flex-direction: column; }
     .mod-hero { min-height: 160px; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; background: var(--tinta); position: relative; overflow: hidden; }
     .mod-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 80% 20%, rgba(61,122,85,0.15) 0%, transparent 60%); }
     .mod-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(250,250,248,0.5); margin-bottom: 0.4rem; position: relative; z-index: 1; }
     .mod-title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; color: var(--blanco); line-height: 1.1; position: relative; z-index: 1; }
     .mod-title em { font-style: italic; font-weight: 300; color: var(--salvia-light); }
-    .mod-body { background: var(--blanco); padding: 2rem; border-top: 1.5px solid var(--gris-claro); }
+    .mod-body { background: var(--blanco); padding: 2rem; border-top: 1.5px solid var(--gris-claro); display: flex; flex-direction: column; flex: 1; }
     .mod-desc { font-size: 0.86rem; color: var(--gris); line-height: 1.85; margin-bottom: 1.5rem; }
+    .mod-btn-wrap { margin-top: auto; }
     .mod-cond { font-size: 0.75rem; color: var(--gris); line-height: 1.7; padding: 1rem; background: var(--arena); border-left: 2px solid var(--salvia); margin-bottom: 1.5rem; }
     .mod-cond strong { color: var(--tinta); }
 
@@ -106,9 +107,11 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="/sobre/">Sobre mí</a></li>
     <li><a href="/academia/">Academia</a></li>
-    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
     <li><a href="/membresia/" style="color:var(--blanco)">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
     <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -253,7 +256,7 @@
         <div class="mod-body">
           <p class="mod-desc">Todos los empleados, contratistas y sus grupos familiares (conyugue, hijos, padres y hermanos) acceden a los beneficios. La empresa también obtiene tarifas preferenciales en todos los servicios y propuestas ajustadas a sus necesidades.</p>
           <div class="mod-cond"><strong>Condiciones:</strong> 12 meses de duración. Beneficios aplican desde la firma. El beneficiario presenta certificado laboral; los familiares, documento de parentesco.</div>
-          <a href="https://wa.me/573103700817?text=Hola,%20quiero%20información%20sobre%20la%20membresía%20empresarial" class="btn-dark" target="_blank">Solicitar membresía empresarial</a>
+          <div class="mod-btn-wrap"><a href="https://wa.me/573103700817?text=Quiero%20información%20sobre%20la%20membresía%20empresarial" class="btn-dark" target="_blank">Solicitar membresía empresarial</a></div>
         </div>
       </div>
       <div class="mod-card">
@@ -264,7 +267,7 @@
         <div class="mod-body">
           <p class="mod-desc">Todos los miembros de la comunidad educativa — colegio, instituto o universidad — acceden a los beneficios. La institución también obtiene tarifas preferenciales en servicios de intervención pedagógica y programas de bienestar escolar.</p>
           <div class="mod-cond"><strong>Condiciones:</strong> 12 meses de duración. Beneficios aplican desde la firma. El beneficiario presenta certificado de estudio vigente.</div>
-          <a href="https://wa.me/573103700817?text=Hola,%20quiero%20información%20sobre%20la%20membresía%20educativa" class="btn-salvia" target="_blank">Solicitar membresía educativa</a>
+          <div class="mod-btn-wrap"><a href="https://wa.me/573103700817?text=Quiero%20información%20sobre%20la%20membresía%20educativa" class="btn-salvia" target="_blank">Solicitar membresía educativa</a></div>
         </div>
       </div>
     </div>
@@ -310,7 +313,7 @@
     <div class="cta-box">
       <div>
         <h2>¿Listo para dar<br><em>el primer paso?</em></h2>
-        <p>Escríbenos y te contamos cómo la membresía puede adaptarse a tu organización.</p>
+        <p></p>
       </div>
       <div class="cta-btns">
         <a href="https://wa.me/573103700817?text=Hola,%20quiero%20información%20sobre%20la%20membresía%20de%20bienestar" class="btn-salvia" target="_blank">Agendar por WhatsApp</a>
@@ -331,13 +334,14 @@
         <h4>Navegación</h4>
         <a href="/sobre/">Sobre mí</a>
         <a href="/academia/">Academia</a>
-        <a href="/recursos/">Recursos</a>
+        <a href="/ebooks/">Ebooks</a>
         <a href="/proyectos-sociales/">Proyectos sociales</a>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
-        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+            <a href="mailto:info@prosercps.org">info@prosercps.org</a>
         <a href="/contacto/">Contacto</a>
       </div>
     </div>

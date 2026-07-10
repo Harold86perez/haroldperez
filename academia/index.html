@@ -131,6 +131,13 @@
       padding: 2.5rem;
       transition: background 0.25s;
       border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mem-card .btn-outline,
+    .mem-card .btn-primary {
+      margin-top: auto;
     }
 
     .mem-card:hover { background: var(--tinta-soft); }
@@ -257,9 +264,11 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="/sobre/">Sobre mí</a></li>
     <li><a href="/academia/" style="color:var(--blanco)">Academia</a></li>
-    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
     <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
     <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -415,21 +424,21 @@
     <span class="eyebrow">Recursos gratuitos</span>
     <h2 class="section-title">Herramientas que puedes<br>usar <em>hoy mismo</em></h2>
     <div class="recursos-aviso">
-      <p>Próximamente publicaremos recursos gratuitos descargables — guías, ejercicios y materiales basados en ACT y DBT. Escríbenos para que te avisemos cuando estén disponibles.</p>
+      <p>Más recursos gratuitos descargables están en camino — guías, ejercicios y materiales basados en ACT y DBT. Escríbenos para que te avisemos cuando se publiquen.</p>
       <br>
       <a href="https://wa.me/573054303746?text=Hola,%20quiero%20que%20me%20avisen%20cuando%20publiquen%20recursos%20gratuitos" class="btn-dark" target="_blank" style="margin-top:0.5rem;">Avisar cuando estén listos</a>
     </div>
     <div class="recursos-placeholders">
-      <div class="recurso-ph">
-        <div class="recurso-ph-icon">PDF</div>
-        <p class="recurso-ph-title">5 herramientas ACT para el día a día</p>
-        <p class="recurso-ph-desc">Próximamente disponible</p>
-      </div>
-      <div class="recurso-ph">
-        <div class="recurso-ph-icon">PDF</div>
-        <p class="recurso-ph-title">Guía de regulación emocional DBT</p>
-        <p class="recurso-ph-desc">Próximamente disponible</p>
-      </div>
+      <a href="/recurso-act5/" class="recurso-ph" style="text-decoration:none; opacity:1; border-style:solid; border-color:var(--salvia); transition:all 0.2s;">
+        <div class="recurso-ph-icon" style="background:var(--salvia); color:white;">PDF</div>
+        <p class="recurso-ph-title" style="color:var(--tinta);">5 herramientas ACT para el día a día</p>
+        <p class="recurso-ph-desc" style="color:var(--salvia); font-weight:600;">Disponible — Descargar gratis</p>
+      </a>
+      <a href="/recurso-dbt/" class="recurso-ph" style="text-decoration:none; opacity:1; border-style:solid; border-color:var(--salvia); transition:all 0.2s;">
+        <div class="recurso-ph-icon" style="background:var(--salvia); color:white;">PDF</div>
+        <p class="recurso-ph-title" style="color:var(--tinta);">Guía de regulación emocional DBT</p>
+        <p class="recurso-ph-desc" style="color:var(--salvia); font-weight:600;">Disponible — Descargar gratis</p>
+      </a>
       <div class="recurso-ph">
         <div class="recurso-ph-icon">PDF</div>
         <p class="recurso-ph-title">¿Por qué no puedo cambiar aunque quiero?</p>
@@ -448,14 +457,15 @@
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
-        <a href="/proser/">ProSer — Clínico</a>
+        <a href="/proser/">Acompañamiento Psicológico</a>
         <a href="/academia/">Academia</a>
-        <a href="/organizacional/">Organizacional</a>
+        <a href="/ebooks/">Recursos digitales</a>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
-        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+            <a href="mailto:info@prosercps.org">info@prosercps.org</a>
         <a href="/contacto/">Contacto</a>
       </div>
     </div>

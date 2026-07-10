@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harold Pérez — Psicólogo</title>
-  <meta name="description" content="Psicología basada en evidencia, no en autoayuda. Triple perfil clínico, educativo y social. Pereira, Colombia." />
+  <meta name="description" content="Psicología basada en evidencia, no en autoayuda. Tres líneas de trabajo clínico, educativo y social. Pereira, Colombia." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -424,6 +424,75 @@
       color: var(--gris);
     }
 
+    /* ── TICKER INSTITUCIONES ── */
+    #instituciones {
+      background: var(--blanco);
+      padding: 5rem 0 4rem;
+    }
+    .ticker-wrap {
+      overflow: hidden;
+      position: relative;
+      padding: 1.5rem 0;
+      margin-top: 2.5rem;
+    }
+    .ticker-fade-left,
+    .ticker-fade-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .ticker-fade-left { left: 0; background: linear-gradient(to right, var(--blanco), transparent); }
+    .ticker-fade-right { right: 0; background: linear-gradient(to left, var(--blanco), transparent); }
+    .ticker-track {
+      display: inline-flex;
+      animation: ticker-scroll 60s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 110px;
+      flex-shrink: 0;
+      padding: 4px 8px;
+    }
+    .ticker-logo {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .ticker-logo img {
+      max-width: 52px;
+      max-height: 52px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(1) opacity(0.25);
+      transition: filter 0.3s;
+    }
+    .ticker-logo img:hover { filter: none; }
+    .ticker-item span {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: var(--gris);
+      text-align: center;
+      line-height: 1.3;
+      white-space: normal;
+      max-width: 104px;
+    }
+    @keyframes ticker-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     /* ── CTA FINAL ── */
     #cta-final {
       background: var(--arena);
@@ -465,20 +534,32 @@
 
 
     /* ── SLIDER TESTIMONIOS ── */
-    .test-slider { overflow: hidden; margin-top: 0; }
+    .test-slider { overflow: hidden; margin-top: 0; width: 100%; }
     .test-track {
       display: flex;
-      gap: 1.5rem;
+      gap: 0;
       transition: transform 0.4s ease;
+      will-change: transform;
+      width: 100%;
+    }
+    .test-page {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      width: 100%;
+      min-width: 100%;
+      flex: 0 0 100%;
+      box-sizing: border-box;
     }
     .test-card {
       background: var(--blanco);
       padding: 2.5rem;
       border-radius: 2px;
       position: relative;
-      min-width: calc(33.333% - 1rem);
-      flex-shrink: 0;
       border: 1px solid var(--gris-claro);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      min-width: 0;
     }
     .test-controls {
       display: flex;
@@ -509,7 +590,7 @@
     }
     .test-dot.active { background: var(--salvia); }
     @media (max-width: 768px) {
-      .test-card { min-width: calc(100% - 0rem); }
+      .test-page { grid-template-columns: 1fr; }
     }
     /* ── MOBILE ── */
     @media (max-width: 768px) {
@@ -534,9 +615,11 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="/sobre/">Sobre mí</a></li>
     <li><a href="/academia/">Academia</a></li>
-    <li><a href="/recursos/">Recursos</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
     <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
     <li><a href="/proyectos-sociales/">Proyectos</a></li>
+    <li><a href="/blog/">Blog</a></li>
     <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -645,9 +728,9 @@
       <div>
         <span class="eyebrow-light">Sobre mí</span>
         <blockquote class="sobre-quote">No hago motivación vacía. Hago psicología que funciona y que se puede medir.</blockquote>
-        <p class="sobre-bio">Soy psicólogo con triple perfil profesional y más de 16 años de experiencia en contextos de alta complejidad — clínica, instituciones educativas, comunidades vulnerables y entornos de posconflicto.</p>
+        <p class="sobre-bio">Soy psicólogo con tres líneas de trabajo profesional y más de 16 años de experiencia en contextos de alta complejidad — clínica, instituciones educativas, comunidades vulnerables y entornos de posconflicto.</p>
         <p class="sobre-bio">Mi trabajo se basa en los marcos con mayor evidencia empírica disponible: Terapia de Aceptación y Compromiso (ACT), Terapia Dialéctico Conductual (DBT) y Terapia Cognitivo Conductual (TCC).</p>
-        <p class="sobre-bio">Con base en Pereira, Eje Cafetero. Atención presencial y virtual para cualquier persona en el mundo.</p>
+        <p class="sobre-bio">Ubicado en Pereira, Risaralda. Atención presencial y virtual para cualquier persona en el mundo.</p>
         <br>
         <a href="/contacto/" class="btn-dark">Contactar</a>
       </div>
@@ -690,75 +773,87 @@
     </div>
     <div class="test-slider" id="testSlider">
       <div class="test-track" id="testTrack">
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Gracias a la orientación vocacional que recibí pude descubrir mis fortalezas e intereses. El proceso fue muy completo y me ayudó a tomar una decisión, y ahora me siento seguro del camino que quiero continuar.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Joven — Orientación vocacional</p>
-          <p class="test-cargo">Proceso educativo · Pereira</p>
+        <!-- Página 1 -->
+        <div class="test-page">
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Gracias a la orientación vocacional que recibí pude descubrir mis fortalezas e intereses. El proceso fue muy completo y me ayudó a tomar una decisión, y ahora me siento seguro del camino que quiero continuar.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Joven — Orientación vocacional</p>
+            <p class="test-cargo">Proceso educativo · Pereira</p>
+          </div>
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Participar del taller para padres fue una gran experiencia. Aprendí que es bueno escuchar y comprender mejor a mis hijos, a manejar sus emociones, a validarlas y a establecer límites con amor. Este espacio me brindó herramientas que agradezco.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Madre de familia</p>
+            <p class="test-cargo">Taller Súper Pás y Más · Pereira</p>
+          </div>
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Trabajar con ProSer ha sido un acierto para nuestra empresa. Hemos implementado estrategias para fomentar un ambiente laboral más saludable y productivo. Son un equipo muy profesional y empático.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Gerente de Talento Humano</p>
+            <p class="test-cargo">Empresa de servicios · Dosquebradas</p>
+          </div>
         </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Participar del taller para padres fue una gran experiencia. Aprendí que es bueno escuchar y comprender mejor a mis hijos, a manejar sus emociones, a validarlas y a establecer límites con amor. Este espacio me brindó herramientas que agradezco.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Madre de familia</p>
-          <p class="test-cargo">Taller Súper Pás y Más · Pereira</p>
+        <!-- Página 2 -->
+        <div class="test-page">
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">La capacitación que recibimos fue muy enriquecedora. Como docentes enfrentamos retos a diario, pero esta experiencia me brindó herramientas para mejorar la comunicación con mis estudiantes y fortalecer el ambiente escolar.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Docente</p>
+            <p class="test-cargo">Institución educativa · Pereira</p>
+          </div>
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Desde que tenemos la membresía con ProSer hemos visto un impacto muy positivo en toda nuestra comunidad educativa. Su profesionalismo y compromiso ha superado nuestras expectativas. Sin duda son un aliado estratégico para el crecimiento de nuestra institución.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Rectora</p>
+            <p class="test-cargo">Institución educativa · Risaralda</p>
+          </div>
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Quiero darle las gracias por devolverme la esperanza como paciente. Le estaré eternamente agradecido por su compromiso y su calidez humana.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Paciente individual</p>
+            <p class="test-cargo">Proceso clínico · Pereira</p>
+          </div>
         </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Trabajar con ProSer ha sido un acierto para nuestra empresa. Hemos implementado estrategias para fomentar un ambiente laboral más saludable y productivo. Son un equipo muy profesional y empático.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Gerente de Talento Humano</p>
-          <p class="test-cargo">Empresa de servicios · Dosquebradas</p>
+        <!-- Página 3 -->
+        <div class="test-page">
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Gracias por ser parte de nuestro camino de vida, por su tiempo, su dedicación, por la paciencia y por los momentos vividos en el proceso.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Familia</p>
+            <p class="test-cargo">Proceso terapéutico familiar · Pereira</p>
+          </div>
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Gracias por tanto. Estoy feliz y agradecida con los cambios de mi hija, por la dedicación y el apoyo. Lo vamos a llevar toda la vida en nuestros corazones.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Madre de familia</p>
+            <p class="test-cargo">Proceso infantil · Pereira</p>
+          </div>
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Felicitaciones por ejercer excelentemente su labor. Dios lo bendiga siempre y pueda continuar ayudando a tantos seres que lo necesitamos.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Paciente individual</p>
+            <p class="test-cargo">Proceso clínico · Pereira</p>
+          </div>
         </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">La capacitación que recibimos fue muy enriquecedora. Como docentes enfrentamos retos a diario, pero esta experiencia me brindó herramientas para mejorar la comunicación con mis estudiantes y fortalecer el ambiente escolar.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Docente</p>
-          <p class="test-cargo">Institución educativa · Pereira</p>
-        </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Desde que tenemos la membresía con ProSer hemos visto un impacto muy positivo en toda nuestra comunidad educativa. Su profesionalismo y compromiso ha superado nuestras expectativas. Sin duda son un aliado estratégico para el crecimiento de nuestra institución.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Rectora</p>
-          <p class="test-cargo">Institución educativa · Risaralda</p>
-        </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Quiero darle las gracias por devolverme la esperanza como paciente. Le estaré eternamente agradecido por su compromiso y su calidez humana.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Paciente individual</p>
-          <p class="test-cargo">Proceso clínico · Pereira</p>
-        </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Gracias por ser parte de nuestro camino de vida, por su tiempo, su dedicación, por la paciencia y por los momentos vividos en el proceso.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Familia</p>
-          <p class="test-cargo">Proceso terapéutico familiar · Pereira</p>
-        </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Gracias por tanto. Estoy feliz y agradecida con los cambios de mi hija, por la dedicación y el apoyo. Lo vamos a llevar toda la vida en nuestros corazones.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Madre de familia</p>
-          <p class="test-cargo">Proceso infantil · Pereira</p>
-        </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Felicitaciones por ejercer excelentemente su labor. Dios lo bendiga siempre y pueda continuar ayudando a tantos seres que lo necesitamos.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Paciente individual</p>
-          <p class="test-cargo">Proceso clínico · Pereira</p>
-        </div>
-        <div class="test-card">
-          <div class="test-marca">"</div>
-          <p class="test-texto">Muchas gracias por el proceso que han llevado con mi hijo; es evidente el cambio que ha tenido con su acompañamiento.</p>
-          <div class="test-sep"></div>
-          <p class="test-autor">Padre de familia</p>
-          <p class="test-cargo">Proceso infantil · Pereira</p>
+        <!-- Página 4 -->
+        <div class="test-page">
+          <div class="test-card">
+            <div class="test-marca">"</div>
+            <p class="test-texto">Muchas gracias por el proceso que han llevado con mi hijo; es evidente el cambio que ha tenido con su acompañamiento.</p>
+            <div class="test-sep"></div>
+            <p class="test-autor">Padre de familia</p>
+            <p class="test-cargo">Proceso infantil · Pereira</p>
+          </div>
         </div>
       </div>
     </div>
@@ -774,14 +869,77 @@
   </div>
 </section>
 
+<!-- INSTITUCIONES -->
+<section id="instituciones">
+  <div class="container" style="text-align:center;">
+    <span class="eyebrow">Aliados y clientes</span>
+    <h2 class="section-title">Instituciones que han <em>confiado</em></h2>
+  </div>
+  <div class="ticker-wrap">
+    <div class="ticker-fade-left"></div>
+    <div class="ticker-fade-right"></div>
+    <div class="ticker-track" onmouseover="this.style.animationPlayState='paused'" onmouseout="this.style.animationPlayState='running'">
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-ucp.png" alt="Universidad Católica de Pereira"></div><span>U. Católica de Pereira</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-saint-andrews.jpg" alt="Saint Andrews School"></div><span>Saint Andrews School</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-la-salle.jpg" alt="La Salle Pereira"></div><span>La Salle Pereira</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-liceo-frances.jpg" alt="Liceo Francés de Pereira"></div><span>Liceo Francés</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-rodolfo-llinas.png" alt="Colegio Rodolfo Llinás"></div><span>Colegio Rodolfo Llinás</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-silveria-espinosa.jpg" alt="Silveria Espinosa IED"></div><span>Silveria Espinosa IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-santa-barbara.jpg" alt="Santa Bárbara IED"></div><span>Santa Bárbara IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-eduardo-santos.jpg" alt="Eduardo Santos IED"></div><span>Eduardo Santos IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-rodrigo-lara.jpg" alt="Rodrigo Lara Bonilla IED"></div><span>Rodrigo Lara Bonilla IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-cundinamarca.jpg" alt="Cundinamarca Bilingüe"></div><span>Cundinamarca Bilingüe</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-kennedy.jpg" alt="Kennedy IED"></div><span>Kennedy IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-san-pedro-claver.jpg" alt="San Pedro Claver IED"></div><span>San Pedro Claver IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-tom-adams.png" alt="Colegio Tom Adams"></div><span>Colegio Tom Adams</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-julio-garavito.png" alt="Julio Garavito IED"></div><span>Julio Garavito IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-santa-sofia.jpg" alt="I.E. Santa Sofía"></div><span>I.E. Santa Sofía</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-buena-esperanza.png" alt="Buena Esperanza IED"></div><span>Buena Esperanza IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-hotel-don-alfonso.png" alt="Hotel Don Alfonso"></div><span>Hotel Don Alfonso</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-bicco-farms.jpg" alt="Bicco Farms"></div><span>Bicco Farms</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-trackercol.jpg" alt="Trackercol"></div><span>Trackercol</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-velpati.jpg" alt="Velpati S.A.S."></div><span>Velpati S.A.S.</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-pixel.png" alt="Pixel Suministros"></div><span>Pixel Suministros</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-pizzas-piccolo.png" alt="Pizzas Piccolo"></div><span>Pizzas Piccolo</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-prodhes.jpg" alt="Fundación ProDHes"></div><span>Fundación ProDHes</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-tyt.jpg" alt="TyT Ingeniería"></div><span>TyT Ingeniería</span></div>
+      <!-- Duplicado para loop continuo -->
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-ucp.png" alt="Universidad Católica de Pereira"></div><span>U. Católica de Pereira</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-saint-andrews.jpg" alt="Saint Andrews School"></div><span>Saint Andrews School</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-la-salle.jpg" alt="La Salle Pereira"></div><span>La Salle Pereira</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-liceo-frances.jpg" alt="Liceo Francés de Pereira"></div><span>Liceo Francés</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-rodolfo-llinas.png" alt="Colegio Rodolfo Llinás"></div><span>Colegio Rodolfo Llinás</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-silveria-espinosa.jpg" alt="Silveria Espinosa IED"></div><span>Silveria Espinosa IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-santa-barbara.jpg" alt="Santa Bárbara IED"></div><span>Santa Bárbara IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-eduardo-santos.jpg" alt="Eduardo Santos IED"></div><span>Eduardo Santos IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-rodrigo-lara.jpg" alt="Rodrigo Lara Bonilla IED"></div><span>Rodrigo Lara Bonilla IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-cundinamarca.jpg" alt="Cundinamarca Bilingüe"></div><span>Cundinamarca Bilingüe</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-kennedy.jpg" alt="Kennedy IED"></div><span>Kennedy IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-san-pedro-claver.jpg" alt="San Pedro Claver IED"></div><span>San Pedro Claver IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-tom-adams.png" alt="Colegio Tom Adams"></div><span>Colegio Tom Adams</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-julio-garavito.png" alt="Julio Garavito IED"></div><span>Julio Garavito IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-santa-sofia.jpg" alt="I.E. Santa Sofía"></div><span>I.E. Santa Sofía</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-buena-esperanza.png" alt="Buena Esperanza IED"></div><span>Buena Esperanza IED</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-hotel-don-alfonso.png" alt="Hotel Don Alfonso"></div><span>Hotel Don Alfonso</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-bicco-farms.jpg" alt="Bicco Farms"></div><span>Bicco Farms</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-trackercol.jpg" alt="Trackercol"></div><span>Trackercol</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-velpati.jpg" alt="Velpati S.A.S."></div><span>Velpati S.A.S.</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-pixel.png" alt="Pixel Suministros"></div><span>Pixel Suministros</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-pizzas-piccolo.png" alt="Pizzas Piccolo"></div><span>Pizzas Piccolo</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-prodhes.jpg" alt="Fundación ProDHes"></div><span>Fundación ProDHes</span></div>
+      <div class="ticker-item"><div class="ticker-logo"><img src="/logos/logo-tyt.jpg" alt="TyT Ingeniería"></div><span>TyT Ingeniería</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA FINAL -->
 <section id="cta-final">
   <div class="container">
     <div class="cta-inner">
       <span class="eyebrow">El primer paso</span>
       <h2 class="section-title">¿Listo para<br><em>empezar?</em></h2>
-      <p class="lead">Una conversación de 20 minutos es suficiente para entender qué tipo de acompañamiento necesitas. Sin compromiso, sin presión.</p>
-      <div class="cta-actions">
+      <p class="lead"></p>
+      <div class="cta-actions" style="margin-top:2rem;">
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20una%20conversación%20diagnóstica" class="btn-primary" target="_blank">Escribir por WhatsApp</a>
         <a href="/contacto/" class="btn-dark">Ver todas las opciones</a>
       </div>
@@ -799,14 +957,15 @@
       </div>
       <div class="footer-col">
         <h4>Servicios</h4>
-        <a href="/proser/">ProSer — Clínico</a>
+        <a href="/proser/">Acompañamiento Psicológico</a>
         <a href="/academia/">Academia</a>
-        <a href="/proyectos/">Organizacional</a>
+        <a href="/proyectos/">Recursos digitales</a>
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
         <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
-        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+            <a href="mailto:info@prosercps.org">info@prosercps.org</a>
         <a href="/contacto/">Contacto</a>
       </div>
     </div>
@@ -828,31 +987,27 @@
     const track = document.getElementById('testTrack');
     const dotsContainer = document.getElementById('testDots');
     if (!track) return;
-    const cards = track.querySelectorAll('.test-card');
-    const perView = window.innerWidth <= 768 ? 1 : 3;
-    const total = cards.length;
-    const pages = Math.ceil(total / perView);
+    const pages = track.querySelectorAll('.test-page');
+    const total = pages.length;
     let current = 0;
 
-    // Create dots
-    for (let i = 0; i < pages; i++) {
+    for (let i = 0; i < total; i++) {
       const dot = document.createElement('button');
       dot.className = 'test-dot' + (i === 0 ? ' active' : '');
       dot.addEventListener('click', () => goTo(i));
       dotsContainer.appendChild(dot);
     }
 
-    function goTo(page) {
-      current = page;
-      const cardW = cards[0].offsetWidth + 24; // gap
-      track.style.transform = `translateX(-${current * perView * cardW}px)`;
+    function goTo(n) {
+      current = (n + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
       dotsContainer.querySelectorAll('.test-dot').forEach((d, i) => {
         d.classList.toggle('active', i === current);
       });
     }
 
-    document.getElementById('testPrev').addEventListener('click', () => goTo((current - 1 + pages) % pages));
-    document.getElementById('testNext').addEventListener('click', () => goTo((current + 1) % pages));
+    document.getElementById('testPrev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('testNext').addEventListener('click', () => goTo(current + 1));
   })();
 </script>
 </body>
