@@ -364,3 +364,41 @@ footer {
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
+
+/* ── WHATSAPP FLOTANTE ── */
+.wa-float {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  width: 56px;
+  height: 56px;
+  background: var(--salvia);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(26,26,46,0.25);
+  z-index: 90;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.wa-float:hover {
+  background: var(--salvia-light);
+  transform: scale(1.06);
+}
+
+.wa-float svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--blanco);
+}
+
+@media (max-width: 768px) {
+  .wa-float {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 50px;
+    height: 50px;
+  }
+  .wa-float svg { width: 24px; height: 24px; }
+}

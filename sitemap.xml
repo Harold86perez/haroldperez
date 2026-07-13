@@ -81,6 +81,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://haroldperez.com/blog/por-que-la-ansiedad-no-es-el-enemigo/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://haroldperez.com/recurso-dbt/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

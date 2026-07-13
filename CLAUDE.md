@@ -167,4 +167,10 @@ haroldperez/
 | 07 | Kliné | Plataforma en desarrollo — sección de venta desde el sitio | 🟡 En curso |
 | 08 | Página organizacional | Portafolio de proyectos con empresas e instituciones | 🟡 En curso |
 | 09 | Base de datos / CRM de leads | Consolidación de contactos captados por formularios | ⏳ Pendiente |
-| 10 | Nuevas fases | Por definir según prioridades de Harold | ⏳ Pendiente |
+| 10 | Consistencia + WhatsApp flotante + Open Graph | Emojis, frases prohibidas, sitemap, botón flotante y metadatos OG en las 21 páginas | ✅ Hecho |
+| 11 | Página de consulta individual | Landing dedicada a la consulta psicológica individual, con proceso y CTA claro | ⏳ Pendiente |
+| 12 | Página para clientes B2B | Landing dirigida a empresas y colegios | ⏳ Pendiente |
+| 13 | Política de privacidad | Página `/privacidad/` — requerida por Ley 1581 de 2012 | ⏳ Pendiente |
+| 14 | Nav unificado | Mismo menú de navegación en todas las páginas | ⏳ Pendiente |
+| 15 | Ebooks en Hotmart | Conectar botones de compra a Hotmart | ⏳ Pendiente |
+| 16 | Nuevas fases | Por definir según prioridades de Harold | ⏳ Pendiente |
