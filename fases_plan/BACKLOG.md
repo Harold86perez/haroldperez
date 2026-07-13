@@ -16,9 +16,11 @@
 - [ ] **Auditar contraste de color** — varios textos secundarios usan opacidad 0.4–0.45 sobre fondo oscuro (subtítulos, footer, dropdown). No se ha medido con una herramienta de contraste (ej. Lighthouse); candidato a no cumplir WCAG AA para usuarios con baja visión.
 - [ ] **Archivo `_headers` con cabeceras de seguridad** — Cloudflare permite declarar protecciones explícitas (anti-clickjacking, forzar HTTPS, etc.) vía un archivo `_headers` en la raíz. Hoy el sitio depende solo de los valores por defecto de Cloudflare. No es urgente, pero es una capa barata de agregar.
 
-## Arquitectura (para considerar si el sitio sigue creciendo)
+## Arquitectura (NO construir salvo que sea estrictamente necesario)
 
-- [ ] **Sistema de plantillas** — cada página repite manualmente el botón de WhatsApp, el nav completo y el script de apertura de menú. Es consecuencia de la decisión (correcta hasta ahora) de mantener HTML puro sin build tools. Funciona porque los cambios masivos se automatizan con scripts, pero con 26+ páginas cualquier cambio sitio-completo es más lento y más fácil de dejar una página desincronizada (ya pasó dos veces: el nav y el hueco del dropdown). Si el sitio sigue creciendo, valdría la pena evaluar un generador de sitio estático simple (ej. Eleventy/Astro) que siga produciendo HTML puro al final, pero con plantillas reales durante el desarrollo. No es urgente ahora.
+- [ ] **Sistema de plantillas (Eleventy/Astro)** — cada página repite manualmente el botón de WhatsApp, el nav completo y el script de apertura de menú. Es consecuencia de la decisión (correcta hasta ahora) de mantener HTML puro sin build tools. Funciona porque los cambios masivos se automatizan con scripts, pero con 26+ páginas cualquier cambio sitio-completo es más lento y más fácil de dejar una página desincronizada (ya pasó dos veces: el nav y el hueco del dropdown).
+  - **Harold decidió explícitamente (2026-07-13) NO hacer esto todavía.** Implica: instalar Node.js y las dependencias del framework (rompe el axioma actual de "sin frameworks"), agregar un paso de build antes de cada deploy, y que Cloudflare tenga que ejecutar ese build en cada push. Se gana consistencia; se pierde la simplicidad de que cualquier archivo `.html` se entiende con solo abrirlo.
+  - **Criterio para revisarlo:** solo si el sitio crece mucho más (ej. 60–80+ páginas) o si aparece contenido muy repetitivo (muchos talleres, muchos artículos con la misma estructura) que haga que mantenerlo a mano sea insostenible incluso con scripts. Antes de proponerlo de nuevo, explicar de nuevo qué implica (ver arriba) y esperar confirmación explícita.
 
 ## Visual / estética
 
