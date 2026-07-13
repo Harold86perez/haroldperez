@@ -93,6 +93,7 @@ haroldperez/
 ├── index.html              → Página de inicio (/)
 ├── style.css               → Hoja de estilos global — única fuente de estilos compartidos
 ├── harold.png              → Foto de Harold usada en hero y artículos del blog
+├── favicon.svg             → Ícono de pestaña del sitio
 ├── sitemap.xml             → Mapa del sitio para buscadores
 ├── robots.txt              → Instrucciones para rastreadores (noindex en /links/, /recursos/)
 ├── _redirects              → Redirecciones 301 de Cloudflare Pages (ej. /proser/ → /servicios/consulta/)
