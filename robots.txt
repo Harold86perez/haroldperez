@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 
 Disallow: /links/
-Disallow: /proser/
 Disallow: /recursos/
 
 Sitemap: https://haroldperez.com/sitemap.xml

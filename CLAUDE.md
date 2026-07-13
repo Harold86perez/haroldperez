@@ -61,6 +61,8 @@ Estas reglas no se negocian ni se cambian sin aprobación explícita de Harold.
 
 6. **Idioma:** El sitio es 100 % en español. No se agrega contenido en otro idioma sin autorización de Harold.
 
+7. **Responsable de datos:** El responsable del tratamiento de datos personales ante la Ley 1581 de 2012 es Harold David Pérez Ramírez, como persona natural (no ProSer como entidad). Ver `/privacidad/`.
+
 ### Axiomas de ingeniería (convenciones de código)
 
 - **Sin frameworks:** No se introduce React, Vue, ni ningún framework de JS. El sitio es HTML/CSS puro con JS vanilla mínimo.
@@ -92,9 +94,13 @@ haroldperez/
 ├── style.css               → Hoja de estilos global — única fuente de estilos compartidos
 ├── harold.png              → Foto de Harold usada en hero y artículos del blog
 ├── sitemap.xml             → Mapa del sitio para buscadores
-├── robots.txt              → Instrucciones para rastreadores (noindex en /links/, /proser/, /recursos/)
+├── robots.txt              → Instrucciones para rastreadores (noindex en /links/, /recursos/)
+├── _redirects              → Redirecciones 301 de Cloudflare Pages (ej. /proser/ → /servicios/consulta/)
 ├── wrangler.jsonc          → Configuración de Cloudflare Workers/Pages
 │
+├── servicios/              → Página hub /servicios/ — enlaza a consulta y empresas
+│   ├── consulta/           → Página /servicios/consulta/ — consulta psicológica individual (antes /proser/)
+│   └── empresas/           → Página /servicios/empresas/ — servicios B2B (antes /organizacional/)
 ├── sobre/                  → Página /sobre/ — bio extendida
 ├── academia/               → Página /academia/ — oferta formativa
 ├── ebooks/                 → Página /ebooks/ — tienda de recursos digitales
@@ -103,6 +109,7 @@ haroldperez/
 ├── proyectos-sociales/     → Página /proyectos-sociales/
 ├── proyectos/              → Página /proyectos/ — portafolio organizacional
 ├── contacto/               → Página /contacto/
+├── privacidad/             → Página /privacidad/ — política de tratamiento de datos (Ley 1581/2012)
 │
 ├── blog/                   → Índice del blog (/blog/) + subcarpetas por artículo
 │   ├── index.html
@@ -118,7 +125,6 @@ haroldperez/
 │
 ├── logos/                  → Logos de instituciones/empresas aliadas (usados en proyectos)
 │
-├── proser/                 → Página ProSer — servicios clínicos (noindex)
 ├── recursos/               → Página de recursos internos (noindex)
 ├── links/                  → Página de links en bio (noindex)
 │
@@ -168,9 +174,9 @@ haroldperez/
 | 08 | Página organizacional | Portafolio de proyectos con empresas e instituciones | 🟡 En curso |
 | 09 | Base de datos / CRM de leads | Consolidación de contactos captados por formularios | ⏳ Pendiente |
 | 10 | Consistencia + WhatsApp flotante + Open Graph | Emojis, frases prohibidas, sitemap, botón flotante y metadatos OG en las 21 páginas | ✅ Hecho |
-| 11 | Página de consulta individual | Landing dedicada a la consulta psicológica individual, con proceso y CTA claro | ⏳ Pendiente |
-| 12 | Página para clientes B2B | Landing dirigida a empresas y colegios | ⏳ Pendiente |
-| 13 | Política de privacidad | Página `/privacidad/` — requerida por Ley 1581 de 2012 | ⏳ Pendiente |
-| 14 | Nav unificado | Mismo menú de navegación en todas las páginas | ⏳ Pendiente |
+| 11 | Página de consulta individual | `/servicios/consulta/` — antes oculta en `/proser/`, ahora pública e indexable | ✅ Hecho |
+| 12 | Página para clientes B2B | `/servicios/empresas/` — antes huérfana en `/organizacional/`, ahora pública e indexable | ✅ Hecho |
+| 13 | Política de privacidad | Página `/privacidad/` — requerida por Ley 1581 de 2012 | ✅ Hecho |
+| 14 | Nav unificado | Mismo menú de navegación en todas las páginas (con link a Servicios ya agregado) | 🟡 En curso |
 | 15 | Ebooks en Hotmart | Conectar botones de compra a Hotmart | ⏳ Pendiente |
 | 16 | Nuevas fases | Por definir según prioridades de Harold | ⏳ Pendiente |
