@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios para Colegios e Instituciones Educativas — Harold Pérez</title>
+  <meta name="description" content="Orientación vocacional, bienestar socioemocional escolar, formación docente en salud mental y evaluación neuropsicológica. Para colegios, institutos y universidades." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Servicios para Colegios e Instituciones Educativas — Harold Pérez" />
+  <meta property="og:description" content="Orientación vocacional, bienestar socioemocional escolar, formación docente en salud mental y evaluación neuropsicológica. Para colegios, institutos y universidades." />
+  <meta property="og:image" content="https://haroldperez.com/harold.png" />
+  <meta property="og:url" content="https://haroldperez.com/servicios/colegios/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://haroldperez.com/servicios/colegios/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    #servicios { background: var(--blanco); padding: 7rem 0; }
+
+    .org-servicios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background: var(--gris-claro);
+      border: 1.5px solid var(--gris-claro);
+      margin-top: 4rem;
+    }
+
+    .org-item {
+      background: var(--blanco);
+      padding: 2.5rem;
+      transition: background 0.25s;
+    }
+
+    .org-item:hover { background: var(--arena); }
+
+    .oi-num {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      color: var(--gris-claro);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .oi-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--tinta);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .oi-desc {
+      font-size: 0.87rem;
+      color: var(--gris);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .oi-cta {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--salvia);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+
+    .oi-cta:hover { gap: 0.75rem; }
+
+    #diagnostico {
+      background: var(--tinta);
+      padding: 7rem 0;
+    }
+
+    .diag-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .diag-pasos {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .diag-paso {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .dp-num {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--salvia-light);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 2rem;
+    }
+
+    .dp-titulo {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blanco);
+      margin-bottom: 0.3rem;
+    }
+
+    .dp-desc {
+      font-size: 0.83rem;
+      color: rgba(250,250,248,0.45);
+      line-height: 1.65;
+    }
+
+    .diag-cta-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 3rem;
+    }
+
+    .diag-cta-box h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--blanco);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .diag-cta-box h3 em {
+      font-style: italic;
+      color: var(--salvia-light);
+      font-weight: 400;
+    }
+
+    .diag-cta-box p {
+      font-size: 0.88rem;
+      color: rgba(250,250,248,0.5);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .diag-btns {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .org-servicios { grid-template-columns: 1fr; }
+      .diag-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/573054303746" target="_blank" class="wa-float" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.35.66 4.55 1.8 6.43L3 29l7.74-2.7a12.9 12.9 0 0 0 5.28 1.13H16c6.62 0 12-5.4 12-12.02C28 8.4 22.64 3 16.02 3zm0 22.05c-1.9 0-3.68-.5-5.23-1.4l-.37-.22-4.6 1.6 1.62-4.48-.24-.38a9.98 9.98 0 0 1-1.55-5.35C5.65 9.28 10.28 4.95 16.02 4.95c5.7 0 10.32 4.63 10.32 10.07 0 5.44-4.62 10.03-10.32 10.03zm5.66-7.5c-.3-.15-1.8-.9-2.08-1-.28-.1-.48-.15-.68.15-.2.3-.78 1-.96 1.2-.18.2-.35.23-.65.08-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.65-.94-2.26-.25-.6-.5-.5-.68-.5h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.03-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.15 4.54.72.31 1.28.5 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.8-.74 2.05-1.44.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"/></svg></a>
+<nav>
+  <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/sobre/">Sobre mí</a></li>
+    <li class="nav-dropdown-wrap"><a href="/servicios/" style="color:var(--blanco)">Servicios</a>
+    <div class="nav-dropdown">
+      <a href="/servicios/consulta/">Consulta Individual</a>
+      <a href="/servicios/empresas/">Empresas y organizaciones</a>
+      <a href="/servicios/colegios/">Colegios</a>
+    </div>
+    </li>
+    <li><a href="/academia/">Academia</a></li>
+    <li><a href="/ebooks/">Ebooks</a></li>
+    <li><a href="/membresia/">Membresía</a></li>
+    <li><a href="/kline/">Kliné</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/contacto/" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow-light">Colegios e instituciones educativas</span>
+    <h1 class="display-title">Bienestar escolar<br><em>con evidencia</em></h1>
+    <div class="divider-light" style="margin-top:2rem;"></div>
+    <p class="lead-light" style="margin-top:1.5rem;">Programas para colegios, institutos y universidades. Orientación vocacional, bienestar socioemocional, formación docente y evaluación neuropsicológica, con experiencia en contextos escolares de alta complejidad.</p>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end;">
+      <div>
+        <span class="eyebrow">Portafolio educativo</span>
+        <h2 class="section-title">Programas para toda<br><em>la comunidad escolar</em></h2>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="lead">Cada institución tiene necesidades distintas según su población, contexto y proyecto educativo. Los programas se ajustan al diagnóstico de cada colegio o institución.</p>
+      </div>
+    </div>
+    <div class="org-servicios">
+      <div class="org-item">
+        <p class="oi-num">01</p>
+        <h3 class="oi-title">Orientación Vocacional Grupal</h3>
+        <p class="oi-desc">Proceso estructurado para estudiantes de últimos grados en la toma de decisiones vocacionales y de vida. Incluye evaluación psicométrica grupal e intervención con evidencia en orientación.</p>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20orientación%20vocacional%20grupal%20para%20mi%20institución" class="oi-cta" target="_blank">Solicitar cotización</a>
+      </div>
+      <div class="org-item">
+        <p class="oi-num">02</p>
+        <h3 class="oi-title">Bienestar Socioemocional Escolar</h3>
+        <p class="oi-desc">Programas para estudiantes centrados en regulación emocional, habilidades sociales y prevención de problemáticas de salud mental, adaptados por rango de edad.</p>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20bienestar%20socioemocional%20escolar" class="oi-cta" target="_blank">Solicitar cotización</a>
+      </div>
+      <div class="org-item">
+        <p class="oi-num">03</p>
+        <h3 class="oi-title">Formación Docente en Salud Mental</h3>
+        <p class="oi-desc">Capacitación a docentes y personal administrativo en identificación temprana de señales de alerta, primera respuesta emocional y manejo de situaciones de crisis en el aula.</p>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20formación%20docente%20en%20salud%20mental" class="oi-cta" target="_blank">Solicitar cotización</a>
+      </div>
+      <div class="org-item">
+        <p class="oi-num">04</p>
+        <h3 class="oi-title">Primera Respuesta Emocional</h3>
+        <p class="oi-desc">Protocolo de Primeros Auxilios Psicológicos para instituciones educativas, ante situaciones de crisis, duelo o emergencia dentro de la comunidad escolar.</p>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20protocolos%20de%20primera%20respuesta%20emocional%20escolar" class="oi-cta" target="_blank">Solicitar cotización</a>
+      </div>
+      <div class="org-item">
+        <p class="oi-num">05</p>
+        <h3 class="oi-title">Evaluación Neuropsicológica (WISC y CI)</h3>
+        <p class="oi-desc">Evaluación psicométrica del coeficiente intelectual y el perfil neuropsicológico para estudiantes, con enfoque en necesidades educativas especiales (NEE). Incluye informe técnico y retroalimentación a familias.</p>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20evaluación%20neuropsicológica%20para%20estudiantes" class="oi-cta" target="_blank">Solicitar cotización</a>
+      </div>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gris); margin-top:2rem;">¿Buscas servicios para una empresa u organización? Visita <a href="/servicios/empresas/" style="color:var(--salvia);">Servicios para Empresas</a>.</p>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO GRATUITO -->
+<section id="diagnostico">
+  <div class="container">
+    <div class="diag-inner">
+      <div>
+        <span class="eyebrow-light">Cómo empezamos</span>
+        <h2 class="section-title-light">Una conversación<br><em>diagnóstica gratuita</em></h2>
+        <div class="diag-pasos">
+          <div class="diag-paso">
+            <span class="dp-num">01</span>
+            <div>
+              <p class="dp-titulo">Contacto inicial</p>
+              <p class="dp-desc">Escribes por WhatsApp o correo. Coordinamos una reunión breve sin costo.</p>
+            </div>
+          </div>
+          <div class="diag-paso">
+            <span class="dp-num">02</span>
+            <div>
+              <p class="dp-titulo">Reunión diagnóstica</p>
+              <p class="dp-desc">Entendemos el contexto de tu institución, la población estudiantil y los objetivos. Sin presión, sin venta.</p>
+            </div>
+          </div>
+          <div class="diag-paso">
+            <span class="dp-num">03</span>
+            <div>
+              <p class="dp-titulo">Propuesta a medida</p>
+              <p class="dp-desc">En 48 horas recibes una propuesta específica para tu institución con alcance, metodología y condiciones.</p>
+            </div>
+          </div>
+          <div class="diag-paso">
+            <span class="dp-num">04</span>
+            <div>
+              <p class="dp-titulo">Inicio del proceso</p>
+              <p class="dp-desc">Con el 50% de anticipo, arrancamos. Tú defines los tiempos. Nosotros garantizamos la calidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="diag-cta-box">
+        <h3>¿Tu institución necesita<br><em>psicología que funcione?</em></h3>
+        <p>Trabajamos con colegios, institutos y universidades. Cada programa se diseña según las necesidades reales de la comunidad educativa — no hay paquetes genéricos.</p>
+        <div class="diag-btns">
+          <a href="https://wa.me/573054303746?text=Hola%20Harold,%20quiero%20agendar%20una%20conversación%20diagnóstica%20gratuita%20para%20mi%20institución%20educativa" class="btn-salvia" target="_blank">Agendar diagnóstico gratuito</a>
+          <a href="mailto:info@haroldperez.com?subject=Solicitud%20de%20propuesta%20para%20institución%20educativa" class="btn-outline">Escribir por correo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo">Harold <span>Pérez</span></a>
+        <p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="/servicios/consulta/">Consulta Individual</a>
+        <a href="/servicios/empresas/">Empresas y organizaciones</a>
+        <a href="/servicios/colegios/">Colegios</a>
+        <a href="/academia/">Academia</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a>
+        <a href="mailto:info@haroldperez.com">info@haroldperez.com</a>
+        <a href="mailto:harold@haroldperez.com">harold@haroldperez.com</a>
+        <a href="mailto:info@prosercps.org">info@prosercps.org</a>
+        <a href="/contacto/">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p>
+      <p><a href="/privacidad/" style="color:inherit;">Política de privacidad</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>

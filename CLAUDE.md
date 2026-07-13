@@ -100,7 +100,8 @@ haroldperez/
 │
 ├── servicios/              → Página hub /servicios/ — enlaza a consulta y empresas
 │   ├── consulta/           → Página /servicios/consulta/ — consulta psicológica individual (antes /proser/)
-│   └── empresas/           → Página /servicios/empresas/ — servicios B2B (antes /organizacional/)
+│   ├── empresas/           → Página /servicios/empresas/ — servicios B2B (antes /organizacional/)
+│   └── colegios/           → Página /servicios/colegios/ — servicios para instituciones educativas
 ├── sobre/                  → Página /sobre/ — bio extendida
 ├── academia/               → Página /academia/ — oferta formativa
 ├── ebooks/                 → Página /ebooks/ — tienda de recursos digitales
@@ -177,6 +178,8 @@ haroldperez/
 | 11 | Página de consulta individual | `/servicios/consulta/` — antes oculta en `/proser/`, ahora pública e indexable | ✅ Hecho |
 | 12 | Página para clientes B2B | `/servicios/empresas/` — antes huérfana en `/organizacional/`, ahora pública e indexable | ✅ Hecho |
 | 13 | Política de privacidad | Página `/privacidad/` — requerida por Ley 1581 de 2012 | ✅ Hecho |
-| 14 | Nav unificado | Mismo menú de navegación en todas las páginas (con link a Servicios ya agregado) | 🟡 En curso |
-| 15 | Ebooks en Hotmart | Conectar botones de compra a Hotmart | ⏳ Pendiente |
-| 16 | Nuevas fases | Por definir según prioridades de Harold | ⏳ Pendiente |
+| 14 | Nav unificado + dropdown de Servicios | Mismo menú en todas las páginas, con dropdown al pasar el cursor sobre "Servicios" (Consulta, Empresas, Colegios) | ✅ Hecho |
+| 15 | Página de Colegios | `/servicios/colegios/` — contenido educativo separado de `/servicios/empresas/` | ✅ Hecho |
+| 16 | Consolidación de Membresía | Una sola fuente de precios en `/membresia/`; `/servicios/empresas/` solo enlaza a ella | ✅ Hecho |
+| 17 | Ebooks en Hotmart | Conectar botones de compra a Hotmart | ⏳ Pendiente |
+| 18 | Nuevas fases | Por definir según prioridades de Harold | ⏳ Pendiente |

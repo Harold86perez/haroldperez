@@ -365,6 +365,64 @@ footer {
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 
+/* ── NAV DROPDOWN (Servicios) ── */
+.nav-dropdown-wrap { position: relative; }
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: var(--tinta);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 4px;
+  min-width: 210px;
+  padding: 0.5rem 0;
+  margin-top: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s, transform 0.18s;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+  z-index: 200;
+}
+
+.nav-dropdown-wrap:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(250,250,248,0.65);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.nav-dropdown a:hover { color: var(--salvia-light); }
+
+@media (max-width: 768px) {
+  .nav-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0.5rem 0 0 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .nav-dropdown a { padding: 0; }
+}
+
 /* ── WHATSAPP FLOTANTE ── */
 .wa-float {
   position: fixed;
