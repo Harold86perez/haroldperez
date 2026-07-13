@@ -8,6 +8,18 @@
 
 ---
 
+## Seguridad y accesibilidad (nuevo — auditoría del 2026-07-13)
+
+- [x] **Favicon** — no existía en ninguna página. Agregado `favicon.svg` (marca "H" en tinta/salvia) enlazado en las 26 páginas. *(Hecho 2026-07-13, ver P-06)*
+- [x] **Checkbox de consentimiento explícito** en los formularios de `/recurso-act5/` y `/recurso-dbt/` — antes solo había un texto de advertencia pasivo, no una casilla que el usuario marca y que enlaza a `/privacidad/`. Bajo la Ley 1581/2012 el consentimiento debe ser expreso; una casilla obligatoria es más defendible legalmente. *(Hecho 2026-07-13, ver P-06)*
+- [x] **`rel="noopener noreferrer"`** en los 154 links `target="_blank"` del sitio — protege contra "reverse tabnabbing" (la página abierta podía, en teoría, manipular la pestaña de origen). *(Hecho 2026-07-13, ver P-06)*
+- [ ] **Auditar contraste de color** — varios textos secundarios usan opacidad 0.4–0.45 sobre fondo oscuro (subtítulos, footer, dropdown). No se ha medido con una herramienta de contraste (ej. Lighthouse); candidato a no cumplir WCAG AA para usuarios con baja visión.
+- [ ] **Archivo `_headers` con cabeceras de seguridad** — Cloudflare permite declarar protecciones explícitas (anti-clickjacking, forzar HTTPS, etc.) vía un archivo `_headers` en la raíz. Hoy el sitio depende solo de los valores por defecto de Cloudflare. No es urgente, pero es una capa barata de agregar.
+
+## Arquitectura (para considerar si el sitio sigue creciendo)
+
+- [ ] **Sistema de plantillas** — cada página repite manualmente el botón de WhatsApp, el nav completo y el script de apertura de menú. Es consecuencia de la decisión (correcta hasta ahora) de mantener HTML puro sin build tools. Funciona porque los cambios masivos se automatizan con scripts, pero con 26+ páginas cualquier cambio sitio-completo es más lento y más fácil de dejar una página desincronizada (ya pasó dos veces: el nav y el hueco del dropdown). Si el sitio sigue creciendo, valdría la pena evaluar un generador de sitio estático simple (ej. Eleventy/Astro) que siga produciendo HTML puro al final, pero con plantillas reales durante el desarrollo. No es urgente ahora.
+
 ## Visual / estética
 
 - [ ] **Fotografía real adicional** — fotos de sesiones, talleres o del espacio físico (si Harold tiene disponibles), para dar más textura al sitio más allá del retrato personal.

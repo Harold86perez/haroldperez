@@ -193,4 +193,5 @@ haroldperez/
 | 21 | Micro-animaciones de scroll | Secciones con aparición suave al hacer scroll, en las 24 páginas | ✅ Hecho |
 | 22 | Iconografía/ilustración propia | Motivo SVG propio en los heroes del sitio (inicio + subpáginas) | ✅ Hecho |
 | 23 | Página 404 personalizada | `/404.html` con identidad visual del sitio | ✅ Hecho |
-| 24 | Nuevas fases | Por definir según prioridades de Harold. Ver también `fases_plan/BACKLOG.md` para ideas pendientes de construir | ⏳ Pendiente |
+| 24 | Favicon, `rel="noopener"` y consentimiento en formularios | Auditoría de seguridad/accesibilidad — ver P-06 | ✅ Hecho |
+| 25 | Nuevas fases | Por definir según prioridades de Harold. Ver también `fases_plan/BACKLOG.md` para ideas pendientes de construir | ⏳ Pendiente |
