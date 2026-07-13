@@ -250,6 +250,15 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  document.documentElement.classList.add('js-ready');
+  document.querySelectorAll('section').forEach((sec, i) => { if (i > 0) sec.setAttribute('data-reveal', ''); });
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
+
 </script>
 </body>
 </html>

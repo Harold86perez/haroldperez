@@ -172,6 +172,15 @@
 
 <footer><div class="container"><div class="footer-inner"><div class="footer-brand"><a href="/" class="nav-logo">Harold <span>Pérez</span></a><p>Psicología basada en evidencia, no en autoayuda. Pereira, Colombia.</p></div><div class="footer-col"><h4>Navegación</h4><a href="/servicios/consulta/">Servicios</a><a href="/academia/">Academia</a><a href="/ebooks/">Recursos digitales</a><a href="/blog/">Blog</a></div><div class="footer-col"><h4>Contacto</h4><a href="https://wa.me/573054303746" target="_blank">+57 305 430 3746</a><a href="mailto:info@haroldperez.com">info@haroldperez.com</a><a href="mailto:info@prosercps.org">info@prosercps.org</a><a href="/contacto/">Contacto</a></div></div><div class="footer-bottom"><p>© 2026 Harold Pérez — Psicólogo · Pereira, Colombia</p><p><a href="/privacidad/" style="color:inherit;">Política de privacidad</a></p><p>Psicología basada en evidencia, no en autoayuda.</p></div></div></footer>
 
-<script>const toggle=document.getElementById('navToggle');const links=document.getElementById('navLinks');toggle.addEventListener('click',()=>links.classList.toggle('open'));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));</script>
+<script>const toggle=document.getElementById('navToggle');const links=document.getElementById('navLinks');toggle.addEventListener('click',()=>links.classList.toggle('open'));links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  document.documentElement.classList.add('js-ready');
+  document.querySelectorAll('section').forEach((sec, i) => { if (i > 0) sec.setAttribute('data-reveal', ''); });
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
+</script>
 </body>
 </html>

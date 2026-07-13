@@ -68,6 +68,23 @@
         radial-gradient(ellipse 40% 60% at 10% 80%, rgba(74,107,90,0.06) 0%, transparent 50%);
     }
 
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: 4%;
+      left: 3%;
+      width: 260px;
+      height: 260px;
+      opacity: 0.55;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' fill='none'%3E%3Ccircle cx='150' cy='230' r='90' stroke='%2352A86E' stroke-width='1.2' stroke-opacity='0.3'/%3E%3Ccircle cx='230' cy='150' r='60' stroke='%2352A86E' stroke-width='1.2' stroke-opacity='0.24'/%3E%3Cpath d='M120 260C150 190 230 170 270 100' stroke='%2352A86E' stroke-width='1.2' stroke-opacity='0.26'/%3E%3Cpath d='M90 150C130 150 150 190 130 230' stroke='%2352A86E' stroke-width='1.2' stroke-opacity='0.2'/%3E%3Ccircle cx='120' cy='150' r='4' fill='%2352A86E' fill-opacity='0.35'/%3E%3Ccircle cx='270' cy='100' r='4' fill='%2352A86E' fill-opacity='0.35'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    @media (max-width: 768px) {
+      .hero-bg::after { display: none; }
+    }
+
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 420px;
@@ -1029,6 +1046,15 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  document.documentElement.classList.add('js-ready');
+  document.querySelectorAll('section').forEach((sec, i) => { if (i > 0) sec.setAttribute('data-reveal', ''); });
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('in-view'); revealObserver.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
+
 
   // Testimonios slider
   (function() {

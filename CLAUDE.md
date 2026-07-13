@@ -129,8 +129,11 @@ haroldperez/
 ├── recursos/               → Página de recursos internos (noindex)
 ├── links/                  → Página de links en bio (noindex)
 │
+├── 404.html                → Página de error 404 personalizada (Cloudflare Pages la sirve automáticamente)
+│
 └── fases_plan/             → Documentación de trabajo por fases (no se despliega, solo referencia)
-    └── P-01_ejemplo.md
+    ├── P-01_ejemplo.md
+    └── BACKLOG.md          → Lista viva de mejoras pendientes discutidas con Harold, aún no construidas
 ```
 
 **Cómo agregar una página nueva:** crear una carpeta con el slug de la URL y un `index.html` dentro. El deploy es automático al hacer push a `main`.
@@ -140,6 +143,8 @@ haroldperez/
 ## Protocolo de trabajo con fases_plan/
 
 `fases_plan/` es el registro de todo lo que se construye o modifica en el sitio. Su propósito es que en cualquier sesión futura — aunque hayan pasado semanas — sea posible retomar el trabajo sin perder contexto.
+
+**`fases_plan/BACKLOG.md`** es distinto: es la lista viva de ideas y mejoras pendientes que Harold ha mencionado pero aún no se construyen. Cuando Harold pregunte "¿qué está pendiente?", ese es el archivo de referencia — no hay que reconstruir la lista de memoria en cada conversación.
 
 ### Cómo abrir una fase
 
@@ -172,7 +177,7 @@ haroldperez/
 | 05 | Ebooks / tienda digital | Página de venta de recursos digitales con pasarela de pago | 🟡 En curso |
 | 06 | Membresía | Página de venta de membresías para empresas | 🟡 En curso |
 | 07 | Kliné | Plataforma en desarrollo — sección de venta desde el sitio | 🟡 En curso |
-| 08 | Página organizacional | Portafolio de proyectos con empresas e instituciones | 🟡 En curso |
+| 08 | Página organizacional | Migrada e integrada en `/servicios/empresas/` y `/servicios/colegios/` (ver fases 12 y 15) | ✅ Hecho |
 | 09 | Base de datos / CRM de leads | Consolidación de contactos captados por formularios | ⏳ Pendiente |
 | 10 | Consistencia + WhatsApp flotante + Open Graph | Emojis, frases prohibidas, sitemap, botón flotante y metadatos OG en las 21 páginas | ✅ Hecho |
 | 11 | Página de consulta individual | `/servicios/consulta/` — antes oculta en `/proser/`, ahora pública e indexable | ✅ Hecho |
@@ -182,4 +187,10 @@ haroldperez/
 | 15 | Página de Colegios | `/servicios/colegios/` — contenido educativo separado de `/servicios/empresas/` | ✅ Hecho |
 | 16 | Consolidación de Membresía | Una sola fuente de precios en `/membresia/`; `/servicios/empresas/` solo enlaza a ella | ✅ Hecho |
 | 17 | Ebooks en Hotmart | Los 3 ebooks ya tienen precio, link de Hotmart y compra directa por WhatsApp — verificado en `/ebooks/`, no requería trabajo adicional | ✅ Hecho |
-| 18 | Nuevas fases | Por definir según prioridades de Harold | ⏳ Pendiente |
+| 18 | Google Search Console | Conectado y sitemap enviado (23 páginas descubiertas) | ✅ Hecho |
+| 19 | SEO técnico (Schema markup) | JSON-LD `ProfessionalService`/`Person` en el inicio, `Article` en los 6 artículos del blog | ✅ Hecho |
+| 20 | Optimización de imágenes | Logos y fotos de `/proyectos-sociales/` redimensionados/recomprimidos; `loading="lazy"` agregado | ✅ Hecho |
+| 21 | Micro-animaciones de scroll | Secciones con aparición suave al hacer scroll, en las 24 páginas | ✅ Hecho |
+| 22 | Iconografía/ilustración propia | Motivo SVG propio en los heroes del sitio (inicio + subpáginas) | ✅ Hecho |
+| 23 | Página 404 personalizada | `/404.html` con identidad visual del sitio | ✅ Hecho |
+| 24 | Nuevas fases | Por definir según prioridades de Harold. Ver también `fases_plan/BACKLOG.md` para ideas pendientes de construir | ⏳ Pendiente |
