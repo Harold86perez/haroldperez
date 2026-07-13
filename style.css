@@ -382,7 +382,7 @@ footer {
   border-radius: 4px;
   min-width: 210px;
   padding: 0.5rem 0;
-  margin-top: 12px;
+  margin-top: 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
