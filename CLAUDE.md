@@ -181,5 +181,5 @@ haroldperez/
 | 14 | Nav unificado + dropdown de Servicios | Mismo menú en todas las páginas, con dropdown al pasar el cursor sobre "Servicios" (Consulta, Empresas, Colegios) | ✅ Hecho |
 | 15 | Página de Colegios | `/servicios/colegios/` — contenido educativo separado de `/servicios/empresas/` | ✅ Hecho |
 | 16 | Consolidación de Membresía | Una sola fuente de precios en `/membresia/`; `/servicios/empresas/` solo enlaza a ella | ✅ Hecho |
-| 17 | Ebooks en Hotmart | Conectar botones de compra a Hotmart | ⏳ Pendiente |
+| 17 | Ebooks en Hotmart | Los 3 ebooks ya tienen precio, link de Hotmart y compra directa por WhatsApp — verificado en `/ebooks/`, no requería trabajo adicional | ✅ Hecho |
 | 18 | Nuevas fases | Por definir según prioridades de Harold | ⏳ Pendiente |
