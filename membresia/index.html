@@ -31,7 +31,7 @@
     .stat-label { font-size: 0.78rem; color: var(--gris); line-height: 1.5; }
 
     /* ── BENEFICIOS ── */
-    #beneficios { background: var(--arena); padding: 7rem 0; }
+    #beneficios { background: var(--arena); padding: 9rem 0 7rem; }
     .ben-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
     .ben-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
     .ben-card { background: var(--blanco); border: 1px solid var(--gris-claro); padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: box-shadow 0.2s; }
@@ -75,7 +75,7 @@
     .mod-cond strong { color: var(--tinta); }
 
     /* ── PROCESO ── */
-    #proceso { background: var(--arena); padding: 7rem 0; }
+    #proceso { background: var(--arena); padding: 9rem 0 7rem; }
     .proc-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
     .proc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1.5px solid var(--gris-claro); background: var(--gris-claro); }
     .proc-step { background: var(--blanco); padding: 2.5rem; transition: background 0.2s; }
@@ -141,8 +141,10 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- POR QUÉ -->
-<section id="porque">
+<section id="porque" style="margin-top: -1px;">
   <div class="container">
     <div class="porq-grid">
       <div>
@@ -175,7 +177,7 @@
 </section>
 
 <!-- BENEFICIOS -->
-<section id="beneficios">
+<section id="beneficios" class="cta-diagonal">
   <div class="container">
     <div class="ben-header">
       <div>
@@ -263,7 +265,7 @@
       </div>
     </div>
     <div class="mod-grid">
-      <div class="mod-card">
+      <div class="mod-card card-notch">
         <div class="mod-hero">
           <p class="mod-label">Membresía empresarial</p>
           <h3 class="mod-title">Tu <em>empresa</em><br>y sus familias</h3>
@@ -274,7 +276,7 @@
           <div class="mod-btn-wrap"><a href="https://wa.me/573054303746?text=Quiero%20información%20sobre%20la%20membresía%20empresarial" class="btn-dark" target="_blank" rel="noopener noreferrer">Solicitar membresía empresarial</a></div>
         </div>
       </div>
-      <div class="mod-card">
+      <div class="mod-card card-notch">
         <div class="mod-hero">
           <p class="mod-label">Membresía educativa</p>
           <h3 class="mod-title">Tu <em>institución</em><br>y su comunidad</h3>
@@ -290,7 +292,7 @@
 </section>
 
 <!-- PROCESO -->
-<section id="proceso">
+<section id="proceso" class="cta-diagonal">
   <div class="container">
     <div class="proc-header">
       <div>
@@ -325,7 +327,7 @@
 <!-- CTA -->
 <section id="cta-mem">
   <div class="container">
-    <div class="cta-box">
+    <div class="cta-box card-notch">
       <div>
         <h2>¿Listo para dar<br><em>el primer paso?</em></h2>
         <p></p>
@@ -382,6 +384,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

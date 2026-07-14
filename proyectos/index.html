@@ -122,8 +122,10 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- PROSER -->
-<section class="proyecto-bloque pb-blanco" id="proser">
+<section class="proyecto-bloque pb-blanco" id="proser" style="margin-top: -1px;">
   <div class="container">
     <div class="py-grid">
       <div class="py-visual py-proser">
@@ -160,22 +162,22 @@
     <span class="eyebrow">Proyectos sociales de ProSer</span>
     <h2 class="section-title">Con tu ayuda,<br><em>todo es posible</em></h2>
     <div class="sub-grid">
-      <a href="https://prosercps.org/proyectos/#salud-mental" class="sub-card sc1" target="_blank" rel="noopener noreferrer">
+      <a href="https://prosercps.org/proyectos/#salud-mental" class="sub-card card-notch sc1" target="_blank" rel="noopener noreferrer">
         <div class="sub-pat"></div>
         <p class="sub-label">Proyecto 01</p>
         <p class="sub-title">Salud Mental</p>
       </a>
-      <a href="https://prosercps.org/proyectos/#superpas" class="sub-card sc2" target="_blank" rel="noopener noreferrer">
+      <a href="https://prosercps.org/proyectos/#superpas" class="sub-card card-notch sc2" target="_blank" rel="noopener noreferrer">
         <div class="sub-pat"></div>
         <p class="sub-label">Proyecto 02</p>
         <p class="sub-title">Súper Pás y Más</p>
       </a>
-      <a href="https://prosercps.org/proyectos/#juguete" class="sub-card sc3" target="_blank" rel="noopener noreferrer">
+      <a href="https://prosercps.org/proyectos/#juguete" class="sub-card card-notch sc3" target="_blank" rel="noopener noreferrer">
         <div class="sub-pat"></div>
         <p class="sub-label">Proyecto 03</p>
         <p class="sub-title">Un Juguete, Una Sonrisa</p>
       </a>
-      <a href="https://prosercps.org/proyectos/#unidos" class="sub-card sc4" target="_blank" rel="noopener noreferrer">
+      <a href="https://prosercps.org/proyectos/#unidos" class="sub-card card-notch sc4" target="_blank" rel="noopener noreferrer">
         <div class="sub-pat"></div>
         <p class="sub-label">Proyecto 04</p>
         <p class="sub-title">Unidos Somos Útiles</p>
@@ -260,6 +262,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

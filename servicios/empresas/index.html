@@ -123,7 +123,7 @@
     /* ── MEMBRESÍA ── */
     #membresia {
       background: var(--arena);
-      padding: 7rem 0;
+      padding: 9rem 0 7rem;
     }
 
     .mem-header {
@@ -359,10 +359,12 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- SERVICIOS -->
-<section id="servicios">
+<section id="servicios" style="margin-top: -1px;">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end;">
+    <div class="grid-header-2col">
       <div>
         <span class="eyebrow">Portafolio organizacional</span>
         <h2 class="section-title">Intervención que<br><em>genera impacto real</em></h2>
@@ -373,31 +375,31 @@
       </div>
     </div>
     <div class="org-servicios">
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">01</p>
         <h3 class="oi-title">Evaluación de Riesgo Psicosocial</h3>
         <p class="oi-desc">Aplicación de la Batería oficial del Ministerio de Trabajo. Cumplimiento de la Resolución 2646/2008. Incluye análisis de factores intralaborales, extralaborales y condiciones individuales. Informe ejecutivo y plan de intervención.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20evaluación%20de%20riesgo%20psicosocial" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">02</p>
         <h3 class="oi-title">Diagnóstico de Clima y Bienestar</h3>
         <p class="oi-desc">Evaluación del estado actual del clima organizacional, niveles de bienestar y factores de riesgo psicosocial. Herramienta de entrada para el diseño de intervenciones posteriores con evidencia real de la organización.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20diagnóstico%20de%20clima%20organizacional" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">03</p>
         <h3 class="oi-title">Talleres Corporativos</h3>
         <p class="oi-desc">Formación en gestión del estrés, regulación emocional, liderazgo y flexibilidad psicológica. Basados en ACT y DBT adaptados al contexto organizacional. Precio fijo por evento, independiente del número de participantes.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20talleres%20corporativos" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">04</p>
         <h3 class="oi-title">Programas Anuales de Bienestar</h3>
         <p class="oi-desc">Contrato anual de acompañamiento continuo. Incluye diagnóstico inicial, 8–12 talleres durante el año, seguimiento trimestral y evaluación de impacto final. El modelo más efectivo para cambios sostenibles en el clima organizacional.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20programas%20anuales%20de%20bienestar" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">05</p>
         <h3 class="oi-title">Intervención Social y Cooperación</h3>
         <p class="oi-desc">Diseño y ejecución de proyectos psicosociales para ONGs, entidades de cooperación internacional y organizaciones que trabajan con poblaciones vulnerables, en contextos de conflicto o emergencia humanitaria.</p>
@@ -445,7 +447,7 @@
 </section>
 
 <!-- MEMBRESÍA -->
-<section id="membresia">
+<section id="membresia" class="cta-diagonal">
   <div class="container">
     <div class="mem-header">
       <div>
@@ -457,7 +459,7 @@
         <p class="lead">Una intervención puntual no transforma el clima de una organización. La membresía garantiza acompañamiento continuo, acceso a talleres mensuales y seguimiento del impacto a lo largo del tiempo.</p>
       </div>
     </div>
-    <div style="background:var(--blanco); border:1.5px solid var(--gris-claro); padding:3rem; text-align:center;">
+    <div class="card-notch" style="background:var(--blanco); border:1.5px solid var(--gris-claro); padding:3rem; text-align:center;">
       <p style="font-size:0.95rem; color:var(--gris); line-height:1.85; max-width:560px; margin:0 auto 2rem;">Incluye talleres mensuales, seguimiento de clima y tarifas preferenciales en todos los servicios — para toda la comunidad de tu empresa, incluyendo las familias. Conoce los planes y precios completos.</p>
       <a href="/membresia/" class="btn-salvia">Conocer la Membresía de Bienestar</a>
     </div>
@@ -502,7 +504,7 @@
           </div>
         </div>
       </div>
-      <div class="diag-cta-box">
+      <div class="diag-cta-box card-notch">
         <h3>¿Tu organización necesita<br><em>psicología que funcione?</em></h3>
         <p>Trabajamos con empresas, instituciones educativas, ONGs y organizaciones sociales. Cada proceso se diseña según las necesidades reales — no hay paquetes genéricos.</p>
         <div class="diag-btns">
@@ -560,6 +562,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

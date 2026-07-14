@@ -201,10 +201,12 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- SERVICIOS -->
-<section id="servicios">
+<section id="servicios" style="margin-top: -1px;">
   <div class="container">
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end;">
+    <div class="grid-header-2col">
       <div>
         <span class="eyebrow">Portafolio educativo</span>
         <h2 class="section-title">Programas para toda<br><em>la comunidad escolar</em></h2>
@@ -215,31 +217,31 @@
       </div>
     </div>
     <div class="org-servicios">
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">01</p>
         <h3 class="oi-title">Orientación Vocacional Grupal</h3>
         <p class="oi-desc">Proceso estructurado para estudiantes de últimos grados en la toma de decisiones vocacionales y de vida. Incluye evaluación psicométrica grupal e intervención con evidencia en orientación.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20orientación%20vocacional%20grupal%20para%20mi%20institución" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">02</p>
         <h3 class="oi-title">Bienestar Socioemocional Escolar</h3>
         <p class="oi-desc">Programas para estudiantes centrados en regulación emocional, habilidades sociales y prevención de problemáticas de salud mental, adaptados por rango de edad.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20bienestar%20socioemocional%20escolar" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">03</p>
         <h3 class="oi-title">Formación Docente en Salud Mental</h3>
         <p class="oi-desc">Capacitación a docentes y personal administrativo en identificación temprana de señales de alerta, primera respuesta emocional y manejo de situaciones de crisis en el aula.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20formación%20docente%20en%20salud%20mental" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">04</p>
         <h3 class="oi-title">Primera Respuesta Emocional</h3>
         <p class="oi-desc">Protocolo de Primeros Auxilios Psicológicos para instituciones educativas, ante situaciones de crisis, duelo o emergencia dentro de la comunidad escolar.</p>
         <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20protocolos%20de%20primera%20respuesta%20emocional%20escolar" class="oi-cta" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
       </div>
-      <div class="org-item">
+      <div class="org-item card-notch">
         <p class="oi-num">05</p>
         <h3 class="oi-title">Evaluación Neuropsicológica (WISC y CI)</h3>
         <p class="oi-desc">Evaluación psicométrica del coeficiente intelectual y el perfil neuropsicológico para estudiantes, con enfoque en necesidades educativas especiales (NEE). Incluye informe técnico y retroalimentación a familias.</p>
@@ -288,7 +290,7 @@
           </div>
         </div>
       </div>
-      <div class="diag-cta-box">
+      <div class="diag-cta-box card-notch">
         <h3>¿Tu institución necesita<br><em>psicología que funcione?</em></h3>
         <p>Trabajamos con colegios, institutos y universidades. Cada programa se diseña según las necesidades reales de la comunidad educativa — no hay paquetes genéricos.</p>
         <div class="diag-btns">
@@ -345,6 +347,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

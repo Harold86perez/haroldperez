@@ -114,8 +114,10 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- EBOOKS -->
-<section id="ebooks">
+<section id="ebooks" style="margin-top: -1px;">
   <div class="container">
     <div class="ebook-header">
       <div>
@@ -128,7 +130,7 @@
       </div>
     </div>
     <div class="ebook-grid">
-      <div class="ebook-card">
+      <div class="ebook-card card-notch">
         <div class="ebook-portada p1">
           <div class="ebook-portada-pattern"></div>
           <div class="ebook-portada-inner">
@@ -146,7 +148,7 @@
           </div>
         </div>
       </div>
-      <div class="ebook-card">
+      <div class="ebook-card card-notch">
         <div class="ebook-portada p2">
           <div class="ebook-portada-pattern"></div>
           <div class="ebook-portada-inner">
@@ -164,7 +166,7 @@
           </div>
         </div>
       </div>
-      <div class="ebook-card">
+      <div class="ebook-card card-notch">
         <div class="ebook-portada p3">
           <div class="ebook-portada-pattern"></div>
           <div class="ebook-portada-inner">
@@ -200,7 +202,7 @@
       </div>
     </div>
     <div class="rec-grid">
-      <div class="rec-card">
+      <div class="rec-card card-notch">
         <div class="rec-card-top">
           <span class="rec-formato">Gratis · PDF</span>
           <div class="rec-icono">
@@ -214,7 +216,7 @@
           <a href="/recurso-act5/" class="rec-btn">Descargar guía</a>
         </div>
       </div>
-      <div class="rec-card">
+      <div class="rec-card card-notch">
         <div class="rec-card-top">
           <span class="rec-formato">Gratis · PDF</span>
           <div class="rec-icono">
@@ -228,7 +230,7 @@
           <a href="/recurso-dbt/" class="rec-btn">Descargar guía</a>
         </div>
       </div>
-      <div class="rec-card">
+      <div class="rec-card card-notch">
         <div class="rec-card-top">
           <span class="rec-formato proximo">Próximamente</span>
           <div class="rec-icono">
@@ -308,6 +310,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

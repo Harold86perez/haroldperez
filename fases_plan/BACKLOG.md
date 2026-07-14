@@ -10,8 +10,8 @@
 
 ## 🐛 Bugs de móvil confirmados (nuevo — cruce contra checklist de prosercps.org, 2026-07-13)
 
-- [ ] **5 grids con `grid-template-columns` fijo escrito inline en el HTML** (no en una clase CSS) — no colapsan a 1 columna en móvil como el resto de encabezados del sitio, quedando apretados. Ubicaciones exactas: `academia/index.html:303`, `contacto/index.html:133`, `servicios/colegios/index.html:207`, `servicios/consulta/index.html:227`, `servicios/empresas/index.html:365`.
-- [ ] **Foto de `/sobre/` oculta en móvil** — `.bio-foto-wrap { display: none; }` en el media query de esa página. Es el mismo bug que ya corregimos en la foto del hero del inicio, pero nunca se replicó la corrección aquí.
+- [x] **5 grids con `grid-template-columns` fijo escrito inline en el HTML** — corregido creando la clase compartida `.grid-header-2col` en `style.css` (colapsa a 1 columna en móvil) y aplicándola en `academia/`, `contacto/`, `servicios/colegios/`, `servicios/consulta/`, `servicios/empresas/`. *(Hecho 2026-07-14, ver rediseño visual)*
+- [x] **Foto de `/sobre/` oculta en móvil** — quitado el `display:none`; ahora se muestra centrada con `max-width` en el media query. *(Hecho 2026-07-14, ver rediseño visual)*
 - [ ] **Probar cada página en un ancho de 375px real** — no se ha hecho de forma sistemática, más allá de los casos puntuales ya encontrados arriba.
 
 ## Seguridad y accesibilidad
@@ -34,16 +34,16 @@
 
 ## Diseño y estética — nivel prosercps.org (nuevo — cruce del 2026-07-13)
 
-Ninguno de estos está construido todavía en haroldperez.com; es una categoría completa de trabajo visual, no ajustes puntuales:
+*(Actualizado 2026-07-14 — primera pasada de rediseño construida en el inicio y replicada al resto del sitio)*
 
-- [ ] **Tarjetas y secciones con más personalidad** — variar bordes, sombras y formas entre secciones en vez de un patrón uniforme repetido en todo el sitio.
-- [ ] **Mayor protagonismo de la tipografía de marca** (Cormorant Garamond) en números destacados y frases clave, no solo en títulos.
-- [ ] **Uso más variado de los colores de marca por sección** — hoy el salvia domina casi todo; falta ciclar entre tinta/salvia/salvia-light de forma más deliberada.
-- [ ] **Franja/elemento de marca con más presencia** — hoy solo hay líneas divisorias delgadas (`.divider`), no un acento visual real.
-- [ ] **Romper la simetría de layouts** — casi todo el sitio es 50/50 o grids perfectos; faltan columnas asimétricas o elementos escalonados.
-- [ ] **Micro-interacción de "spotlight" que sigue el cursor** en tarjetas — confirmado que no existe en ninguna parte del sitio (distinto del scroll-reveal que sí tenemos).
-- [ ] **Secciones con corte diagonal y textura** — confirmado 0 uso de `clip-path` en todo el sitio.
-- [ ] **Duotono real en fotos** (color al pasar el cursor, tono de marca en reposo) — hoy solo hay un `grayscale(20%)` parcial y estático en la foto del hero, no es duotono ni cambia con hover.
+- [x] **Tarjetas y secciones con más personalidad** — nueva clase compartida `.card-notch` (esquina cortada con `clip-path` + triángulo salvia + spotlight) aplicada a las tarjetas principales de casi todas las páginas. *(Ver style.css)*
+- [~] **Mayor protagonismo de la tipografía de marca** (Cormorant Garamond) — reforzado en la cita y el separador de comillas de `/` (inicio); no se replicó de forma sistemática al resto de páginas.
+- [~] **Uso más variado de los colores de marca por sección** — Harold pidió explícitamente revertir el ciclo de colores en las cifras del inicio; queda pendiente explorar esto con más cuidado más adelante.
+- [x] **Franja/elemento de marca con más presencia** — nueva clase compartida `.franja-marca` (banda diagonal en degradado salvia) colocada entre el hero y la siguiente sección en prácticamente todas las páginas.
+- [~] **Romper la simetría de layouts** — hecho en el inicio (grid de servicios, "Sobre mí") y ya existía en `/proyectos/` y `/proyectos-sociales/`; el resto de páginas mantiene sus grids simétricos originales.
+- [x] **Micro-interacción de "spotlight" que sigue el cursor** — implementada vía CSS variables (`--sx`/`--sy`) + JS de `mousemove`, parte de `.card-notch`, aplicada en todo el sitio.
+- [x] **Secciones con corte diagonal y textura** — `.franja-marca` y la nueva clase `.cta-diagonal` (corte diagonal + degradado radial verde, usada en CTAs sobre fondo arena) ya se usan en la mayoría de páginas.
+- [ ] **Duotono real en fotos** — sigue sin construirse.
 
 ## Arquitectura (NO construir salvo que sea estrictamente necesario)
 

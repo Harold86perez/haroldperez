@@ -166,13 +166,15 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- LISTADO -->
-<section id="blog-list">
+<section id="blog-list" style="margin-top: -1px;">
   <div class="container">
 
     <div class="blog-grid">
 
-      <a href="/blog/regulacion-emocional-que-es-y-por-que-cuesta/" class="blog-card" style="text-decoration:none;">
+      <a href="/blog/regulacion-emocional-que-es-y-por-que-cuesta/" class="blog-card card-notch" style="text-decoration:none;">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-card-tag">Regulación emocional</span>
@@ -184,7 +186,7 @@
         </div>
       </a>
 
-      <a href="/blog/que-es-act-y-como-puede-ayudarte/" class="blog-card" style="text-decoration:none;">
+      <a href="/blog/que-es-act-y-como-puede-ayudarte/" class="blog-card card-notch" style="text-decoration:none;">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-card-tag">ACT</span>
@@ -196,7 +198,7 @@
         </div>
       </a>
 
-      <a href="/blog/ansiedad-no-es-tu-enemiga/" class="blog-card" style="text-decoration:none;">
+      <a href="/blog/ansiedad-no-es-tu-enemiga/" class="blog-card card-notch" style="text-decoration:none;">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-card-tag">Ansiedad</span>
@@ -208,7 +210,7 @@
         </div>
       </a>
 
-      <a href="/blog/por-que-las-relaciones-de-pareja-se-desgastan/" class="blog-card" style="text-decoration:none;">
+      <a href="/blog/por-que-las-relaciones-de-pareja-se-desgastan/" class="blog-card card-notch" style="text-decoration:none;">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-card-tag">Parejas</span>
@@ -220,7 +222,7 @@
         </div>
       </a>
 
-      <a href="/blog/aprender-diferente-no-es-aprender-menos/" class="blog-card" style="text-decoration:none;">
+      <a href="/blog/aprender-diferente-no-es-aprender-menos/" class="blog-card card-notch" style="text-decoration:none;">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-card-tag">Educación</span>
@@ -232,7 +234,7 @@
         </div>
       </a>
 
-      <a href="/blog/por-que-la-ansiedad-no-es-el-enemigo/" class="blog-card" style="text-decoration:none;">
+      <a href="/blog/por-que-la-ansiedad-no-es-el-enemigo/" class="blog-card card-notch" style="text-decoration:none;">
         <div class="blog-card-body">
           <div class="blog-card-meta">
             <span class="blog-card-tag">Ansiedad</span>
@@ -294,6 +296,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

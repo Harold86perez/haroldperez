@@ -126,7 +126,7 @@
 
     @media (max-width: 768px) {
       .bio-grid, .perf-header, .form-grid, .enf-header, .proser-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .bio-foto-wrap { display: none; }
+      .bio-foto-wrap { max-width: 320px; margin: 0 auto; }
       .perf-grid { grid-template-columns: 1fr; }
       .enf-grid { grid-template-columns: 1fr; }
       .proser-servicios { grid-template-columns: 1fr; }
@@ -169,8 +169,10 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- BIO -->
-<section id="bio">
+<section id="bio" style="margin-top: -1px;">
   <div class="container">
     <div class="bio-grid">
       <div class="bio-foto-wrap">
@@ -213,19 +215,19 @@
       </div>
     </div>
     <div class="perf-grid">
-      <div class="perf-card">
+      <div class="perf-card card-notch">
         <p class="pc-num">01</p>
         <h3 class="pc-title">Perfil Clínico</h3>
         <p class="pc-desc">Terapia individual, de pareja y familiar. Intervención en crisis, duelo, ansiedad, depresión y procesos de cambio. ACT, DBT y mindfulness aplicado. Primera respuesta psicológica en situaciones de emergencia.</p>
         <div class="pc-tags"><span>ACT</span><span>DBT</span><span>TCC</span><span>Crisis</span><span>Duelo</span></div>
       </div>
-      <div class="perf-card">
+      <div class="perf-card card-notch">
         <p class="pc-num">02</p>
         <h3 class="pc-title">Perfil Educativo</h3>
         <p class="pc-desc">Orientación vocacional, bienestar socioemocional escolar, formación docente en salud mental y evaluación neuropsicológica. Experiencia en instituciones educativas de alta complejidad.</p>
         <div class="pc-tags"><span>Orientación</span><span>NEE</span><span>Docentes</span><span>WISC</span></div>
       </div>
-      <div class="perf-card">
+      <div class="perf-card card-notch">
         <p class="pc-num">03</p>
         <h3 class="pc-title">Perfil Social</h3>
         <p class="pc-desc">Intervención comunitaria, cooperación internacional, proyectos con poblaciones vulnerables y contextos de posconflicto. Diseño y ejecución de proyectos psicosociales de impacto colectivo.</p>
@@ -404,6 +406,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

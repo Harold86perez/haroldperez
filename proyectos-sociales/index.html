@@ -124,8 +124,10 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <!-- INTRO PARTICIPAR -->
-<section id="intro">
+<section id="intro" style="margin-top: -1px;">
   <div class="container">
     <div class="intro-grid">
       <div>
@@ -138,13 +140,13 @@
       </div>
     </div>
     <div class="participar-grid">
-      <div class="participar-card">
+      <div class="participar-card card-notch">
         <span class="pc-label">Voluntariado</span>
         <h3 class="pc-title">Dona tu tiempo y talento</h3>
         <p class="pc-desc">Si deseas brindar tu tiempo, habilidades y conocimientos, puedes unirte a nuestro equipo de voluntarios. Acompañamiento terapéutico, apoyo en proyectos sociales, asistencia en capacitaciones y más.</p>
         <a href="https://wa.me/573054303746?text=Quiero%20ser%20voluntario%20en%20los%20proyectos%20sociales" class="btn-dark" target="_blank" rel="noopener noreferrer" style="margin-top:auto;">Quiero ser voluntario</a>
       </div>
-      <div class="participar-card">
+      <div class="participar-card card-notch">
         <span class="pc-label" style="color:var(--tinta)">Donaciones</span>
         <h3 class="pc-title">Apoya económicamente</h3>
         <p class="pc-desc">Recibimos dinero por transferencia bancaria, juguetes nuevos, implementos y útiles escolares nuevos. Por tu donación recibes un certificado como donante. Tu información siempre es tratada con confidencialidad.</p>
@@ -265,15 +267,15 @@
         </div>
       </div>
       <div class="don-grid">
-        <div class="don-card">
+        <div class="don-card card-notch">
           <p class="don-title">Tipos de donación</p>
           <p class="don-desc">Recibimos dinero por transferencia bancaria, juguetes nuevos, implementos y útiles escolares nuevos. Puedes donar una o varias veces. Todas las donaciones en especie deben ser artículos nuevos.</p>
         </div>
-        <div class="don-card">
+        <div class="don-card card-notch">
           <p class="don-title">Certificado de donante</p>
           <p class="don-desc">Por tu donación recibes un certificado como donante. Estarás enterado de cómo se entrega tu donación a través de tu correo electrónico y nuestras redes sociales.</p>
         </div>
-        <div class="don-card">
+        <div class="don-card card-notch">
           <p class="don-title">Contacto para donar</p>
           <p class="don-desc">Escríbenos por WhatsApp al +57 310 370 0817 o al correo info@prosercps.org y te explicamos el proceso paso a paso.</p>
         </div>
@@ -329,6 +331,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>

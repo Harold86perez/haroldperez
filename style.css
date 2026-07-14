@@ -491,6 +491,85 @@ footer {
   .wa-float svg { width: 24px; height: 24px; }
 }
 
+/* ── ENCABEZADO DE SECCIÓN A 2 COLUMNAS (título + lead) ── */
+.grid-header-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+
+@media (max-width: 768px) {
+  .grid-header-2col { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ── FRANJA DE MARCA ── */
+.franja-marca {
+  height: 46px;
+  background: linear-gradient(100deg, var(--salvia) 0%, var(--salvia-light) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%);
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .franja-marca { height: 28px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%); }
+}
+
+/* ── TARJETA CON CORTE DE ESQUINA + SPOTLIGHT (requiere JS de mousemove) ── */
+.card-notch {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+}
+
+.card-notch::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 22px; height: 22px;
+  background: var(--salvia);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  transition: background 0.25s;
+}
+
+.card-notch:hover::before { background: var(--salvia-light); }
+
+.card-notch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(280px circle at var(--sx, 50%) var(--sy, 50%), rgba(82,168,110,0.14), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.card-notch:hover::after { opacity: 1; }
+
+/* ── CTA CON CORTE DIAGONAL (usar sobre un fondo --arena) ── */
+.cta-diagonal {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 55px, 100% 0, 100% 100%, 0 100%);
+  margin-top: -55px;
+  padding-top: 9rem;
+}
+
+.cta-diagonal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 0%, rgba(82,168,110,0.28) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 15% 100%, rgba(61,122,85,0.14) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .cta-diagonal { clip-path: polygon(0 22px, 100% 0, 100% 100%, 0 100%); margin-top: -22px; padding-top: 6rem; }
+}
+
 /* ── SCROLL REVEAL (progressive enhancement) ── */
 /* Sin JS o si falla, el contenido siempre es visible: solo se anima si .js-ready está presente */
 .js-ready [data-reveal] {

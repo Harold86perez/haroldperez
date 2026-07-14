@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <style>
-    #servicios-hub { background: var(--blanco); padding: 7rem 0; }
+    #servicios-hub { background: var(--blanco); padding: 7rem 0; margin-top: -1px; }
 
     .hub-grid {
       display: grid;
@@ -134,10 +134,12 @@
   </div>
 </section>
 
+<div class="franja-marca"></div>
+
 <section id="servicios-hub">
   <div class="container">
     <div class="hub-grid">
-      <a href="/servicios/consulta/" class="hub-card">
+      <a href="/servicios/consulta/" class="hub-card card-notch">
         <div class="hub-card-top">
           <span class="hub-card-eyebrow">Para personas</span>
         </div>
@@ -147,7 +149,7 @@
           <span class="hub-card-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
-      <a href="/servicios/empresas/" class="hub-card">
+      <a href="/servicios/empresas/" class="hub-card card-notch">
         <div class="hub-card-top">
           <span class="hub-card-eyebrow">Para empresas y organizaciones</span>
         </div>
@@ -157,7 +159,7 @@
           <span class="hub-card-link">Ver servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
         </div>
       </a>
-      <a href="/servicios/colegios/" class="hub-card">
+      <a href="/servicios/colegios/" class="hub-card card-notch">
         <div class="hub-card-top">
           <span class="hub-card-eyebrow">Para colegios e instituciones</span>
         </div>
@@ -217,6 +219,13 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('[data-reveal]').forEach(function(el) { revealObserver.observe(el); });
 
+  document.querySelectorAll('.card-notch').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--sx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--sy', (e.clientY - rect.top) + 'px');
+    });
+  });
 </script>
 </body>
 </html>
