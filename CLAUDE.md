@@ -6,6 +6,17 @@
 
 ---
 
+## Contexto de diseño (impeccable)
+
+Este proyecto tiene contexto estratégico y visual capturado para asistencia de diseño con Claude:
+
+- **`PRODUCT.md`** — registro (brand), audiencia, propósito, posicionamiento, CTA y anti-referencias.
+- **`DESIGN.md`** — sistema visual: tokens de color/tipografía, componentes (botones, `.card-notch`, `.franja-marca`, `.foto-real-frame`) y reglas nombradas.
+
+Cualquier trabajo de diseño (`/impeccable craft`, `critique`, `polish`, etc.) debe leer ambos archivos antes de proponer cambios.
+
+---
+
 ## Identidad del proyecto
 
 | Campo | Valor |
@@ -98,6 +109,17 @@ haroldperez/
 ├── robots.txt              → Instrucciones para rastreadores (noindex en /links/, /recursos/)
 ├── _redirects              → Redirecciones 301 de Cloudflare Pages (ej. /proser/ → /servicios/consulta/)
 ├── wrangler.jsonc          → Configuración de Cloudflare Workers/Pages
+├── img-salud-mental.jpg, img-superpas.jpg,
+│   img-juguete.jpg, img-unidos.jpg → Fotos de fondo de los 4 proyectos sociales en /proyectos-sociales/
+│
+├── fotos/                  → Fotografía real del consultorio y talleres (optimizada, <100 KB c/u)
+│                              usada en /servicios/consulta/, /servicios/empresas/, /servicios/colegios/,
+│                              /academia/ y /sobre/. Solo se suben fotos ya editadas y comprimidas aquí.
+│
+├── Fotos Nuevas/           → Banco de fotos originales sin editar (varios MB c/u) — SOLO LOCAL,
+│                              nunca se commitea. Fuente de la que se seleccionan y optimizan las de /fotos/.
+│                              Cualquier foto con menores en contexto terapéutico requiere confirmar con
+│                              Harold que existe autorización de imagen antes de usarla (ver axioma 1).
 │
 ├── servicios/              → Página hub /servicios/ — enlaza a consulta y empresas
 │   ├── consulta/           → Página /servicios/consulta/ — consulta psicológica individual (antes /proser/)
@@ -195,4 +217,6 @@ haroldperez/
 | 22 | Iconografía/ilustración propia | Motivo SVG propio en los heroes del sitio (inicio + subpáginas) | ✅ Hecho |
 | 23 | Página 404 personalizada | `/404.html` con identidad visual del sitio | ✅ Hecho |
 | 24 | Favicon, `rel="noopener"` y consentimiento en formularios | Auditoría de seguridad/accesibilidad — ver P-06 | ✅ Hecho |
-| 25 | Nuevas fases | Por definir según prioridades de Harold. Ver también `fases_plan/BACKLOG.md` para ideas pendientes de construir | ⏳ Pendiente |
+| 25 | Rediseño visual (franjas, tarjetas con spotlight, cortes diagonales) | Nuevo lenguaje visual con `.franja-marca`, `.card-notch` y `.cta-diagonal` en `style.css`, construido en el inicio y replicado a la mayoría de páginas. Hero y `.page-hero` pasaron de fondo tinta a fondo arena con el verde salvia como acento principal | ✅ Hecho |
+| 26 | Fotografía real en páginas sin imágenes | `/servicios/consulta/`, `/servicios/empresas/`, `/servicios/colegios/`, `/academia/` y `/sobre/` — antes solo texto — ahora tienen una foto real del consultorio o de talleres, con marco de degradado arena (`.foto-real-frame`) | ✅ Hecho |
+| 27 | Nuevas fases | Por definir según prioridades de Harold. Ver también `fases_plan/BACKLOG.md` para ideas pendientes de construir | ⏳ Pendiente |

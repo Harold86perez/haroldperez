@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-16T00:00:00Z",
+  "title": "Design System: haroldperez.com",
+  "extensions": {
+    "colorMeta": {
+      "salvia": { "role": "primary", "displayName": "Salvia", "canonical": "#3D7A55", "tonalRamp": ["#12251A", "#1C3A28", "#265036", "#316544", "#3D7A55", "#52A86E", "#8FC8A2", "#D3ECDA"] },
+      "salvia-light": { "role": "primary", "displayName": "Salvia Claro", "canonical": "#52A86E", "tonalRamp": ["#152A1D", "#20402B", "#2C563A", "#3F7350", "#52A86E", "#71C08B", "#A6DAB8", "#E1F4E6"] },
+      "tinta": { "role": "neutral", "displayName": "Tinta", "canonical": "#1A1A2E", "tonalRamp": ["#08080D", "#101018", "#1A1A2E", "#2A2A3E", "#45455C", "#6C6C88", "#A6A6BC", "#DEDEE8"] },
+      "tinta-soft": { "role": "neutral", "displayName": "Tinta Suave", "canonical": "#2A2A3E", "tonalRamp": ["#0D0D14", "#161621", "#2A2A3E", "#3C3C54", "#54546E", "#7C7C96", "#AFAFC2", "#E4E4EA"] },
+      "arena": { "role": "neutral", "displayName": "Arena", "canonical": "#EBEBEB", "tonalRamp": ["#2B2B2B", "#484848", "#666666", "#8C8C8C", "#B3B3B3", "#D6D6D6", "#EBEBEB", "#F8F8F8"] },
+      "blanco": { "role": "neutral", "displayName": "Blanco Cálido", "canonical": "#FAFAF8", "tonalRamp": ["#2C2C2A", "#4C4C48", "#6E6E68", "#9A9A92", "#C4C4BC", "#E4E4E0", "#FAFAF8", "#FFFFFF"] },
+      "gris": { "role": "neutral", "displayName": "Gris Texto", "canonical": "#6B7280", "tonalRamp": ["#1A1C20", "#2E3238", "#454A52", "#5B6068", "#6B7280", "#8A909C", "#B4B9C2", "#DEE1E6"] },
+      "gris-claro": { "role": "neutral", "displayName": "Gris Claro", "canonical": "#DEDEDE", "tonalRamp": ["#2E2E2E", "#4C4C4C", "#6B6B6B", "#909090", "#B5B5B5", "#D0D0D0", "#DEDEDE", "#F2F2F2"] },
+      "footer-ink": { "role": "neutral", "displayName": "Tinta Footer", "canonical": "#0F0F1E", "tonalRamp": ["#050509", "#0A0A12", "#0F0F1E", "#1E1E32", "#38384F", "#5C5C74", "#9494A6", "#D2D2DA"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Titular de hero, una vez por página, con una palabra clave en cursiva salvia." },
+      "section-title": { "displayName": "Section Title", "purpose": "Encabezado de cada sección interna, mismo patrón de énfasis en cursiva que el display." },
+      "body": { "displayName": "Lead / Body", "purpose": "Párrafo introductorio de sección, max-width 560px, line-height 1.85." },
+      "label": { "displayName": "Eyebrow / Label", "purpose": "Etiqueta en mayúsculas antes de cada titular; también usada en nav y botones." }
+    },
+    "shadows": [
+      { "name": "foto-frame", "value": "0 20px 50px rgba(26,26,46,0.12)", "purpose": "Despega la fotografía real (.foto-real-frame) del fondo arena/blanco." },
+      { "name": "nav-dropdown", "value": "0 16px 40px rgba(0,0,0,0.35)", "purpose": "Eleva el dropdown de Servicios sobre el contenido de página." },
+      { "name": "wa-float", "value": "0 6px 20px rgba(26,26,46,0.25)", "purpose": "Eleva el botón flotante de WhatsApp sobre cualquier contenido." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "ease", "purpose": "Transiciones de hover en botones, nav y tarjetas (0.2s–0.3s)." },
+      { "name": "reveal", "value": "0.7s ease", "purpose": "Aparición progresiva de secciones con [data-reveal] al hacer scroll; requiere .js-ready, siempre visible sin JS." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Salvia)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal del sitio: agendar consulta / WhatsApp.",
+      "html": "<a class=\"ds-btn-salvia\" href=\"#\">Agendar consulta</a>",
+      "css": ".ds-btn-salvia { display: inline-flex; align-items: center; gap: 0.5rem; background: #3D7A55; color: #FAFAF8; padding: 0.9rem 2rem; font-family: Inter, system-ui, sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; } .ds-btn-salvia:hover, .ds-btn-salvia:focus-visible { background: #52A86E; } .ds-btn-salvia:focus-visible { outline: 2px solid #52A86E; outline-offset: 2px; }"
+    },
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Botón secundario sobre fondo claro; se enciende a salvia en hover.",
+      "html": "<a class=\"ds-btn-dark\" href=\"#\">Ver servicios</a>",
+      "css": ".ds-btn-dark { display: inline-flex; align-items: center; gap: 0.5rem; background: #1A1A2E; color: #FAFAF8; padding: 0.9rem 2rem; font-family: Inter, system-ui, sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: background 0.2s; } .ds-btn-dark:hover, .ds-btn-dark:focus-visible { background: #3D7A55; } .ds-btn-dark:focus-visible { outline: 2px solid #52A86E; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Botón sobre fondo oscuro (hero); borde translúcido que se aclara en hover.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Conocer más</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: #FAFAF8; padding: 0.9rem 2rem; font-family: Inter, system-ui, sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 2px; transition: all 0.2s; } .ds-btn-outline:hover, .ds-btn-outline:focus-visible { border-color: #FAFAF8; background: rgba(255,255,255,0.05); }"
+    },
+    {
+      "name": "Card with Notch + Spotlight",
+      "kind": "card",
+      "refersTo": "card-notch",
+      "description": "Tarjeta con corte de esquina superior derecha en salvia y spotlight radial que sigue el cursor.",
+      "html": "<div class=\"ds-card-notch\"><h3>Consulta individual</h3><p>Acompañamiento psicológico personalizado.</p></div>",
+      "css": ".ds-card-notch { position: relative; overflow: hidden; background: #FAFAF8; padding: 2rem; clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%); } .ds-card-notch::before { content: ''; position: absolute; top: 0; right: 0; width: 22px; height: 22px; background: #3D7A55; clip-path: polygon(100% 0, 0 0, 100% 100%); transition: background 0.25s; } .ds-card-notch:hover::before { background: #52A86E; }"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Nav fijo con blur, logo en Cormorant, enlaces en mayúsculas y CTA salvia.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-logo\">Harold<span>Pérez</span></a><a class=\"ds-nav-cta\" href=\"#\">Agendar</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; background: rgba(26,26,46,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06); } .ds-nav-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 600; color: #FAFAF8; text-decoration: none; letter-spacing: 0.02em; } .ds-nav-logo span { color: #52A86E; } .ds-nav-cta { background: #3D7A55; color: #FAFAF8; padding: 0.55rem 1.25rem; border-radius: 2px; font-family: Inter, system-ui, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; } .ds-nav-cta:hover { background: #52A86E; }"
+    },
+    {
+      "name": "Real Photo Frame",
+      "kind": "custom",
+      "refersTo": "foto-real-frame",
+      "description": "Marco con degradado arena→blanco para fotografía real del consultorio o talleres.",
+      "html": "<div class=\"ds-foto-frame\"><img src=\"foto.jpg\" alt=\"\"></div>",
+      "css": ".ds-foto-frame { background: linear-gradient(155deg, #EBEBEB 0%, #FAFAF8 70%); padding: 0.75rem; border-radius: 10px; box-shadow: 0 20px 50px rgba(26,26,46,0.12); max-width: 440px; } .ds-foto-frame img { width: 100%; display: block; border-radius: 6px; aspect-ratio: 4/3; object-fit: cover; }"
+    },
+    {
+      "name": "Diagonal Brand Stripe",
+      "kind": "custom",
+      "refersTo": "franja-marca",
+      "description": "Franja diagonal salvia que separa secciones de marca.",
+      "html": "<div class=\"ds-franja-marca\"></div>",
+      "css": ".ds-franja-marca { height: 46px; background: linear-gradient(100deg, #3D7A55 0%, #52A86E 100%); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 40%); }"
+    },
+    {
+      "name": "WhatsApp Floating Button",
+      "kind": "custom",
+      "refersTo": "wa-float",
+      "description": "Botón circular flotante fijo en la esquina inferior derecha, sin el nombre 'Harold' en el mensaje pre-llenado.",
+      "html": "<a class=\"ds-wa-float\" href=\"#\" aria-label=\"WhatsApp\"><svg viewBox=\"0 0 32 32\" width=\"28\" height=\"28\"><path fill=\"#FAFAF8\" d=\"M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4.1 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3z\"/></svg></a>",
+      "css": ".ds-wa-float { position: fixed; bottom: 1.75rem; right: 1.75rem; width: 56px; height: 56px; background: #3D7A55; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(26,26,46,0.25); transition: transform 0.2s, background 0.2s; } .ds-wa-float:hover, .ds-wa-float:focus-visible { background: #52A86E; transform: scale(1.06); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El consultorio editorial",
+    "overview": "haroldperez.com se lee como un espacio clínico serio contado con lenguaje editorial: tinta profunda en el header y el footer, arena y blanco cálido en el cuerpo de las páginas, y el verde salvia como único acento que marca cada punto de contacto. El sistema evita la calidez plana de un sitio de bienestar genérico —nada de iconografía de manos sosteniendo corazones ni gradientes pastel difusos— y en su lugar apuesta por cortes geométricos (clip-path diagonal, notches de esquina), fotografía real del consultorio, y una tipografía display en cursiva Cormorant Garamond que puntúa las frases clave sin gritarlas. El sitio nunca suena a 'corporación': es la marca personal de un profesional, no una entidad. Esa distinción se nota en el tono de cada botón, cada CTA de WhatsApp y cada testimonio anónimo — cercanía humana con rigor clínico de fondo.",
+    "keyCharacteristics": [
+      "Tinta (#1A1A2E) en nav y footer; arena/blanco en el cuerpo — nunca al revés.",
+      "El salvia es el único acento de color; aparece en menos del 15% de cada pantalla.",
+      "Cortes geométricos (clip-path) reemplazan bordes o sombras duras como firma visual.",
+      "Cormorant Garamond en cursiva marca la palabra que el visitante debe recordar en cada titular."
+    ],
+    "rules": [
+      { "name": "La Regla del Acento Único", "body": "El salvia es el único color saturado del sistema. Todo énfasis adicional se logra con tipografía, corte geométrico o fotografía, nunca un segundo color de marca.", "section": "colors" },
+      { "name": "La Regla de la Cursiva Única", "body": "Cada titular tiene como máximo un fragmento en cursiva — la palabra que el visitante debe recordar. Nunca dos, nunca el titular completo.", "section": "typography" },
+      { "name": "La Regla del Corte, no la Sombra", "body": "Las secciones se separan con clip-path diagonal antes que con sombra o borde. El corte es la firma visual del sitio.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do mantener el salvia (#3D7A55 / #52A86E) como único color saturado.",
+      "Do usar fotografía real y optimizada (<100KB) en vez de ilustración genérica.",
+      "Do usar clip-path para separar secciones en vez de sombras o bordes de color.",
+      "Do mantener los tres botones con el mismo padding, radius (2px) y mayúsculas.",
+      "Do respetar prefers-reduced-motion en cualquier animación de scroll."
+    ],
+    "donts": [
+      "Don't usar iconografía de stock ni gradientes pastel difusos.",
+      "Don't introducir un segundo color de acento saturado, ni por línea de servicio.",
+      "Don't usar border-left/border-right como franja de color decorativa.",
+      "Don't poner más de un fragmento en cursiva Cormorant por titular.",
+      "Don't usar #000000 o #FFFFFF puros.",
+      "Don't sonar a 'corporación' en ningún copy — es la marca personal de Harold."
+    ]
+  }
+}
