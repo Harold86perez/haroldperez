@@ -144,7 +144,7 @@
       background: var(--blanco);
       padding: 2.5rem;
       border: 1px solid var(--gris-claro);
-      transition: all 0.25s;
+      transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out;
       position: relative;
     }
 
@@ -218,8 +218,11 @@
     }
 
     .mtc-features li::before {
-      content: '—';
-      color: var(--salvia);
+      content: '';
+      width: 6px;
+      height: 6px;
+      margin-top: 0.5em;
+      background: var(--salvia);
       flex-shrink: 0;
     }
 
@@ -228,7 +231,7 @@
       border-color: rgba(255,255,255,0.06);
     }
 
-    .featured .mtc-features li::before { color: var(--salvia-light); }
+    .featured .mtc-features li::before { background: var(--salvia-light); }
 
     /* ── CTA DIAGN ── */
     #diagnostico {

@@ -29,7 +29,7 @@
     .taller-card {
       border: 1px solid var(--gris-claro);
       padding: 2.5rem;
-      transition: all 0.25s;
+      transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
       position: relative;
       overflow: hidden;
     }
@@ -41,12 +41,34 @@
       height: 3px;
       background: var(--salvia);
       transform: scaleX(0);
-      transition: transform 0.3s;
+      transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1);
       transform-origin: left;
     }
 
     .taller-card:hover { border-color: var(--salvia); box-shadow: 0 8px 40px rgba(26,26,46,0.08); }
     .taller-card:hover::after { transform: scaleX(1); }
+
+    @media (hover: hover) and (pointer: fine) {
+      .taller-card { transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out; }
+      .taller-card:hover { transform: translateY(-3px); }
+    }
+
+    /* Retiro presencial: única oferta in-person, mismo tratamiento "featured" de la membresía Plus */
+    .taller-card.featured {
+      background: var(--salvia);
+      border-color: var(--salvia);
+    }
+
+    .taller-card.featured::before { background: var(--blanco); }
+    .taller-card.featured::after { background: var(--blanco); }
+    .taller-card.featured:hover { border-color: var(--salvia-light); box-shadow: 0 8px 40px rgba(26,26,46,0.18); }
+
+    .taller-card.featured .tc-tag { background: rgba(255,255,255,0.15); color: var(--blanco); }
+    .taller-card.featured .tc-title { color: var(--blanco); }
+    .taller-card.featured .tc-desc { color: rgba(250,250,248,0.75); }
+    .taller-card.featured .tc-meta-item { color: rgba(250,250,248,0.55); }
+    .taller-card.featured .tc-meta-item strong { color: var(--blanco); }
+    .taller-card.featured .tc-cta { color: var(--blanco); }
 
     .tc-tag {
       display: inline-block;
@@ -108,10 +130,11 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      transition: gap 0.2s;
     }
 
-    .tc-cta:hover { gap: 0.75rem; }
+    .tc-cta-arrow { transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); }
+    .tc-cta:hover .tc-cta-arrow { transform: translateX(4px); }
+    .tc-cta:active .tc-cta-arrow { transform: translateX(2px); }
 
     #membresia {
       background: var(--tinta);
@@ -194,13 +217,16 @@
     }
 
     .mem-features li::before {
-      content: '—';
-      color: var(--salvia-light);
+      content: '';
+      width: 6px;
+      height: 6px;
+      margin-top: 0.5em;
+      background: var(--salvia-light);
       flex-shrink: 0;
     }
 
     .mem-card.featured .mem-features li { color: rgba(250,250,248,0.8); border-color: rgba(255,255,255,0.1); }
-    .mem-card.featured .mem-features li::before { color: rgba(250,250,248,0.6); }
+    .mem-card.featured .mem-features li::before { background: rgba(250,250,248,0.6); }
 
     #recursos {
       background: var(--arena);
@@ -211,7 +237,6 @@
       background: var(--blanco);
       border: 1px solid var(--gris-claro);
       padding: 2.5rem;
-      border-left: 3px solid var(--salvia);
       margin-top: 3rem;
     }
 
@@ -221,9 +246,13 @@
       line-height: 1.7;
     }
 
+    .recursos-aviso .btn-dark {
+      margin-top: 1.5rem;
+    }
+
     .recursos-placeholders {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.2fr 1.2fr 1fr;
       gap: 1.5rem;
       margin-top: 2rem;
     }
@@ -237,10 +266,14 @@
     }
 
     .recurso-ph-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      opacity: 0.4;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 1rem;
+      color: var(--gris);
+      opacity: 0.5;
     }
+
+    .recurso-ph-icon svg { width: 100%; height: 100%; }
 
     .recurso-ph-title {
       font-family: var(--font-display);
@@ -253,6 +286,30 @@
     .recurso-ph-desc {
       font-size: 0.78rem;
       color: var(--gris);
+    }
+
+    .recurso-ph.disponible {
+      text-align: left;
+      text-decoration: none;
+      opacity: 1;
+      border-style: solid;
+      border-color: var(--salvia);
+      transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+
+    .recurso-ph.disponible .recurso-ph-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 0 1.25rem;
+      color: var(--salvia);
+      opacity: 1;
+    }
+
+    .recurso-ph.disponible .recurso-ph-title { color: var(--tinta); font-size: 1.1rem; }
+    .recurso-ph.disponible .recurso-ph-desc { color: var(--salvia); font-weight: 600; }
+
+    @media (hover: hover) and (pointer: fine) {
+      .recurso-ph.disponible:hover { box-shadow: 0 8px 40px rgba(26,26,46,0.08); }
     }
 
     @media (max-width: 768px) {
@@ -294,7 +351,7 @@
     <span class="eyebrow-light">Academia</span>
     <h1 class="display-title">Psicología aplicada<br><em>a tu vida real</em></h1>
     <div class="divider-light" style="margin-top:2rem;"></div>
-    <p class="lead-light" style="margin-top:1.5rem;">Talleres, cursos y recursos para personas que quieren entender cómo funciona su mente — sin jerga clínica, con respaldo científico real y herramientas que se pueden usar desde el primer día.</p>
+    <p class="lead-light" style="margin-top:1.5rem;">Talleres, cursos y recursos para entender tu mente: sin jerga clínica, con respaldo científico y herramientas que puedes usar desde hoy.</p>
   </div>
 </section>
 
@@ -324,7 +381,7 @@
           <div class="tc-meta-item"><strong>Modalidad</strong>Virtual · Zoom</div>
           <div class="tc-meta-item"><strong>Nivel</strong>Sin requisitos</div>
         </div>
-        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20ACT" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información</a>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20ACT" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información<span class="tc-cta-arrow" aria-hidden="true">&#8594;</span></a>
       </div>
       <div class="taller-card card-notch">
         <span class="tc-tag">Público general</span>
@@ -335,7 +392,7 @@
           <div class="tc-meta-item"><strong>Modalidad</strong>Virtual · Zoom</div>
           <div class="tc-meta-item"><strong>Nivel</strong>Sin requisitos</div>
         </div>
-        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20DBT" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información</a>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20DBT" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información<span class="tc-cta-arrow" aria-hidden="true">&#8594;</span></a>
       </div>
       <div class="taller-card card-notch">
         <span class="tc-tag">Ansiedad y estrés</span>
@@ -346,7 +403,7 @@
           <div class="tc-meta-item"><strong>Modalidad</strong>Virtual · Zoom</div>
           <div class="tc-meta-item"><strong>Nivel</strong>Sin requisitos</div>
         </div>
-        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20ACT%20para%20la%20ansiedad" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información</a>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20ACT%20para%20la%20ansiedad" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información<span class="tc-cta-arrow" aria-hidden="true">&#8594;</span></a>
       </div>
       <div class="taller-card card-notch">
         <span class="tc-tag">Crianza y familia</span>
@@ -357,7 +414,7 @@
           <div class="tc-meta-item"><strong>Modalidad</strong>Virtual · Zoom</div>
           <div class="tc-meta-item"><strong>Nivel</strong>Para padres</div>
         </div>
-        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20crianza" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información</a>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20crianza" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información<span class="tc-cta-arrow" aria-hidden="true">&#8594;</span></a>
       </div>
       <div class="taller-card card-notch">
         <span class="tc-tag">Duelo y pérdida</span>
@@ -368,9 +425,9 @@
           <div class="tc-meta-item"><strong>Modalidad</strong>Virtual · Zoom</div>
           <div class="tc-meta-item"><strong>Nivel</strong>Sin requisitos</div>
         </div>
-        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20duelo" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información</a>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20taller%20de%20duelo" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información<span class="tc-cta-arrow" aria-hidden="true">&#8594;</span></a>
       </div>
-      <div class="taller-card card-notch">
+      <div class="taller-card featured card-notch">
         <span class="tc-tag">Presencial · Pereira</span>
         <h3 class="tc-title">Retiro de bienestar</h3>
         <p class="tc-desc">Un día completo de inmersión en herramientas ACT y mindfulness. Formato presencial en Pereira, máximo 20 personas. Experiencia de aprendizaje profunda y transformadora.</p>
@@ -379,7 +436,7 @@
           <div class="tc-meta-item"><strong>Modalidad</strong>Presencial</div>
           <div class="tc-meta-item"><strong>Cupo</strong>Máx. 20p</div>
         </div>
-        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20retiro%20de%20bienestar" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información</a>
+        <a href="https://wa.me/573054303746?text=Hola,%20quiero%20información%20sobre%20el%20retiro%20de%20bienestar" class="tc-cta" target="_blank" rel="noopener noreferrer">Solicitar información<span class="tc-cta-arrow" aria-hidden="true">&#8594;</span></a>
       </div>
     </div>
   </div>
@@ -442,24 +499,23 @@
   <div class="container">
     <span class="eyebrow">Recursos gratuitos</span>
     <h2 class="section-title">Herramientas que puedes<br>usar <em>hoy mismo</em></h2>
-    <div class="recursos-aviso">
-      <p>Más recursos gratuitos descargables están en camino — guías, ejercicios y materiales basados en ACT y DBT. Escríbenos para que te avisemos cuando se publiquen.</p>
-      <br>
-      <a href="https://wa.me/573054303746?text=Hola,%20quiero%20que%20me%20avisen%20cuando%20publiquen%20recursos%20gratuitos" class="btn-dark" target="_blank" rel="noopener noreferrer" style="margin-top:0.5rem;">Avisar cuando estén listos</a>
+    <div class="recursos-aviso card-notch">
+      <p>Más recursos gratuitos descargables están en camino: guías, ejercicios y materiales basados en ACT y DBT. Escríbenos para que te avisemos cuando se publiquen.</p>
+      <a href="https://wa.me/573054303746?text=Hola,%20quiero%20que%20me%20avisen%20cuando%20publiquen%20recursos%20gratuitos" class="btn-dark" target="_blank" rel="noopener noreferrer">Avisar cuando estén listos</a>
     </div>
     <div class="recursos-placeholders">
-      <a href="/recurso-act5/" class="recurso-ph card-notch" style="text-decoration:none; opacity:1; border-style:solid; border-color:var(--salvia); transition:all 0.2s;">
-        <div class="recurso-ph-icon" style="background:var(--salvia); color:white;">PDF</div>
-        <p class="recurso-ph-title" style="color:var(--tinta);">5 herramientas ACT para el día a día</p>
-        <p class="recurso-ph-desc" style="color:var(--salvia); font-weight:600;">Disponible — Descargar gratis</p>
+      <a href="/recurso-act5/" class="recurso-ph disponible card-notch">
+        <div class="recurso-ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 13.5h5M9.5 16.5h5"/></svg></div>
+        <p class="recurso-ph-title">5 herramientas ACT para el día a día</p>
+        <p class="recurso-ph-desc">Disponible: descargar gratis</p>
       </a>
-      <a href="/recurso-dbt/" class="recurso-ph card-notch" style="text-decoration:none; opacity:1; border-style:solid; border-color:var(--salvia); transition:all 0.2s;">
-        <div class="recurso-ph-icon" style="background:var(--salvia); color:white;">PDF</div>
-        <p class="recurso-ph-title" style="color:var(--tinta);">Guía de regulación emocional DBT</p>
-        <p class="recurso-ph-desc" style="color:var(--salvia); font-weight:600;">Disponible — Descargar gratis</p>
+      <a href="/recurso-dbt/" class="recurso-ph disponible card-notch">
+        <div class="recurso-ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 13.5h5M9.5 16.5h5"/></svg></div>
+        <p class="recurso-ph-title">Guía de regulación emocional DBT</p>
+        <p class="recurso-ph-desc">Disponible: descargar gratis</p>
       </a>
       <div class="recurso-ph">
-        <div class="recurso-ph-icon">PDF</div>
+        <div class="recurso-ph-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 13.5h5M9.5 16.5h5"/></svg></div>
         <p class="recurso-ph-title">¿Por qué no puedo cambiar aunque quiero?</p>
         <p class="recurso-ph-desc">Próximamente disponible</p>
       </div>

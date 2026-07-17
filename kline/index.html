@@ -206,9 +206,9 @@
     .mem-card.featured .mem-users { color: rgba(250,250,248,0.8); border-color: rgba(255,255,255,0.15); }
     .mem-features { list-style: none; margin-bottom: 2rem; flex-grow: 1; }
     .mem-features li { font-size: 0.8rem; color: rgba(250,250,248,0.55); padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 0.6rem; line-height: 1.5; }
-    .mem-features li::before { content: '—'; color: var(--salvia-light); flex-shrink: 0; }
+    .mem-features li::before { content: ''; width: 6px; height: 6px; margin-top: 0.55em; background: var(--salvia-light); flex-shrink: 0; }
     .mem-card.featured .mem-features li { color: rgba(250,250,248,0.85); border-color: rgba(255,255,255,0.1); }
-    .mem-card.featured .mem-features li::before { color: rgba(250,250,248,0.6); }
+    .mem-card.featured .mem-features li::before { background: rgba(250,250,248,0.6); }
     .mem-card .btn-outline,
     .mem-card .btn-primary { width: 100%; justify-content: center; font-size: 0.75rem; padding: 0.8rem 1.5rem; }
     .mem-nota { position: relative; z-index: 1; margin-top: 2.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 2rem 2.5rem; }
