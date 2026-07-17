@@ -4,3 +4,9 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# banco de fotos originales sin editar (ver CLAUDE.md)
+/Fotos Nuevas/
+
+# permisos locales de Claude Code (específicos de esta máquina)
+.claude/settings.local.json

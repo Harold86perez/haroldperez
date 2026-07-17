@@ -73,10 +73,11 @@ nav {
   padding: 0.55rem 1.25rem !important;
   border-radius: 2px;
   font-size: 0.75rem !important;
-  transition: background 0.2s !important;
+  transition: background 0.2s ease-out, transform 0.16s ease-out !important;
 }
 
 .nav-cta:hover { background: var(--salvia-light) !important; }
+.nav-cta:active { transform: scale(0.96); }
 
 .nav-toggle {
   display: none;
@@ -109,11 +110,12 @@ nav {
   letter-spacing: 0.06em;
   text-decoration: none;
   border-radius: 2px;
-  transition: all 0.2s;
+  transition: background 0.2s ease-out, transform 0.16s ease-out;
   text-transform: uppercase;
 }
 
 .btn-primary:hover { background: var(--arena); }
+.btn-primary:active { transform: scale(0.97); }
 
 .btn-outline {
   display: inline-flex;
@@ -128,11 +130,12 @@ nav {
   text-decoration: none;
   border: 1px solid rgba(255,255,255,0.3);
   border-radius: 2px;
-  transition: all 0.2s;
+  transition: border-color 0.2s ease-out, background 0.2s ease-out, transform 0.16s ease-out;
   text-transform: uppercase;
 }
 
 .btn-outline:hover { border-color: var(--blanco); background: rgba(255,255,255,0.05); }
+.btn-outline:active { transform: scale(0.97); }
 
 .btn-dark {
   display: inline-flex;
@@ -146,11 +149,12 @@ nav {
   letter-spacing: 0.06em;
   text-decoration: none;
   border-radius: 2px;
-  transition: background 0.2s;
+  transition: background 0.2s ease-out, transform 0.16s ease-out;
   text-transform: uppercase;
 }
 
 .btn-dark:hover { background: var(--salvia); }
+.btn-dark:active { transform: scale(0.97); }
 
 .btn-salvia {
   display: inline-flex;
@@ -164,11 +168,12 @@ nav {
   letter-spacing: 0.06em;
   text-decoration: none;
   border-radius: 2px;
-  transition: background 0.2s;
+  transition: background 0.2s ease-out, transform 0.16s ease-out;
   text-transform: uppercase;
 }
 
 .btn-salvia:hover { background: var(--salvia-light); }
+.btn-salvia:active { transform: scale(0.97); }
 
 /* ── CONTENEDOR ── */
 .container {
