@@ -34,8 +34,8 @@
     #beneficios { background: var(--arena); padding: 9rem 0 7rem; }
     .ben-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
     .ben-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-    .ben-card { background: var(--blanco); border: 1px solid var(--gris-claro); padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: box-shadow 0.2s; }
-    .ben-card:hover { box-shadow: 0 6px 24px rgba(26,26,46,0.07); }
+    .ben-card { background: var(--blanco); border: 1px solid var(--gris-claro); padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: box-shadow 0.2s ease-out; }
+    .ben-card:hover { box-shadow: 0 8px 40px rgba(26,26,46,0.08); }
     .ben-num { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--salvia); opacity: 0.3; flex-shrink: 0; line-height: 1; margin-top: 2px; min-width: 28px; }
     .ben-titulo { font-size: 0.82rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.35rem; }
     .ben-desc { font-size: 0.8rem; color: var(--gris); line-height: 1.7; }
@@ -45,7 +45,7 @@
     #precios::before { content: ''; position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(61,122,85,0.1) 0%, transparent 70%); pointer-events: none; }
     .prec-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; position: relative; z-index: 1; }
     .prec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2rem; position: relative; z-index: 1; }
-    .prec-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; text-align: center; transition: background 0.25s; }
+    .prec-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 2rem; text-align: center; transition: background 0.2s ease-out; }
     .prec-card:hover { background: rgba(255,255,255,0.09); }
     .prec-card.featured { background: var(--salvia); border-color: var(--salvia); }
     .prec-card.featured:hover { background: var(--salvia-light); }

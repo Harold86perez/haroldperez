@@ -53,7 +53,12 @@
 
     .blog-card:hover {
       border-color: var(--salvia);
-      box-shadow: 0 8px 32px rgba(26,26,46,0.06);
+      box-shadow: 0 8px 40px rgba(26,26,46,0.08);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .blog-card { transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out; }
+      .blog-card:hover { transform: translateY(-3px); }
     }
 
     .blog-card-body {

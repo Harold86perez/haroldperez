@@ -178,21 +178,21 @@
     #para-quien { background: var(--arena); padding: 9rem 0 7rem; }
     .pq-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
     .pq-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--gris-claro); border: 1.5px solid var(--gris-claro); }
-    .pq-card { background: var(--blanco); padding: 2.25rem; transition: background 0.25s; }
+    .pq-card { background: var(--blanco); padding: 2.25rem; transition: background 0.2s ease-out; }
     .pq-card:hover { background: var(--tinta); }
     .pq-card:hover .pq-num { color: var(--salvia-light); }
     .pq-card:hover .pq-titulo { color: var(--blanco); }
     .pq-card:hover .pq-desc { color: rgba(250,250,248,0.5); }
-    .pq-num { font-family: var(--font-display); font-size: 0.85rem; color: var(--gris-claro); font-weight: 600; margin-bottom: 1.25rem; transition: color 0.25s; }
-    .pq-titulo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.6rem; transition: color 0.25s; }
-    .pq-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.75; transition: color 0.25s; }
+    .pq-num { font-family: var(--font-display); font-size: 0.85rem; color: var(--gris-claro); font-weight: 600; margin-bottom: 1.25rem; transition: color 0.2s ease-out; }
+    .pq-titulo { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--tinta); margin-bottom: 0.6rem; transition: color 0.2s ease-out; }
+    .pq-desc { font-size: 0.84rem; color: var(--gris); line-height: 1.75; transition: color 0.2s ease-out; }
 
     /* ── MEMBRESÍAS ── */
     #membresias { background: var(--tinta); padding: 7rem 0; position: relative; overflow: hidden; }
     #membresias::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 20%, rgba(74,107,90,0.1) 0%, transparent 70%); }
     .mem-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; position: relative; z-index: 1; }
     .mem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(255,255,255,0.06); position: relative; z-index: 1; }
-    .mem-card { background: var(--tinta); padding: 2.25rem; border: 1px solid rgba(255,255,255,0.06); transition: background 0.25s; display: flex; flex-direction: column; }
+    .mem-card { background: var(--tinta); padding: 2.25rem; border: 1px solid rgba(255,255,255,0.06); transition: background 0.2s ease-out; display: flex; flex-direction: column; }
     .mem-card:hover { background: var(--tinta-soft); }
     .mem-card.featured { background: var(--salvia); border-color: var(--salvia); }
     .mem-card.featured:hover { background: var(--salvia-light); }

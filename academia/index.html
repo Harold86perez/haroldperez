@@ -159,7 +159,7 @@
     .mem-card {
       background: var(--tinta);
       padding: 2.5rem;
-      transition: background 0.25s;
+      transition: background 0.2s ease-out;
       border: 1px solid rgba(255,255,255,0.06);
       display: flex;
       flex-direction: column;
@@ -309,7 +309,8 @@
     .recurso-ph.disponible .recurso-ph-desc { color: var(--salvia); font-weight: 600; }
 
     @media (hover: hover) and (pointer: fine) {
-      .recurso-ph.disponible:hover { box-shadow: 0 8px 40px rgba(26,26,46,0.08); }
+      .recurso-ph.disponible { transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out, transform 0.2s ease-out; }
+      .recurso-ph.disponible:hover { box-shadow: 0 8px 40px rgba(26,26,46,0.08); transform: translateY(-3px); }
     }
 
     @media (max-width: 768px) {
