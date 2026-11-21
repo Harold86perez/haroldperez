@@ -70,7 +70,7 @@
 - [x] **Página 404 personalizada** — `/404.html` con la identidad visual del sitio y links de salida (inicio, servicios, blog, ebooks, sobre mí). *(Hecho 2026-07-13, ver P-05)*
 - [ ] **Newsletter propia** — Resend ya está configurado; falta el formulario de suscripción y la lógica de captura, para construir audiencia propia sin depender de redes sociales.
 - [ ] **Formulario de contacto propio** en `/contacto/` — hoy todo redirige a WhatsApp o `mailto:`; no hay forma de capturar un lead sin salir del sitio.
-- [ ] **Google Analytics (GA4)** — Search Console ya está conectado (mide qué busca la gente y cómo aparece el sitio en Google), pero GA4 es distinto: mide qué hacen los visitantes *dentro* del sitio. Sin GA4 no se puede medir conversión real de formularios o botones.
+- [x] **Google Analytics (GA4)** — ID de medición `G-Q57673S9VT`, instalado en las 24 páginas indexables + 404.html, con medición mejorada (vistas, descargas de archivo, clics de salida) activada. *(Hecho 2026-11-21, ver P-07)*
 - [ ] **Página `/gracias/`** — de confirmación tras enviar un formulario. Solo tiene sentido una vez esté GA4 conectado, para poder medirla como conversión.
 - [ ] **Revisar el nav en pantallas de 1366px** (la resolución más común en Colombia) — confirmar que no se ve apretado con los 9 ítems + dropdown ya implementados.
 
